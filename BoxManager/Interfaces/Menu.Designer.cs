@@ -35,8 +35,8 @@
             this.buttonAbrirTorneo = new System.Windows.Forms.Button();
             this.buttonCrearTorneo = new System.Windows.Forms.Button();
             this.buttonBoxeadores = new System.Windows.Forms.Button();
-            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.buttonCatDiv = new System.Windows.Forms.Button();
+            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,17 +120,6 @@
             this.buttonBoxeadores.UseVisualStyleBackColor = true;
             this.buttonBoxeadores.Click += new System.EventHandler(this.buttonBoxeadores_Click);
             // 
-            // pictureBoxMenu
-            // 
-            this.pictureBoxMenu.Image = global::BoxManager.Properties.Resources.BoxMenu;
-            this.pictureBoxMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBoxMenu.Location = new System.Drawing.Point(429, 86);
-            this.pictureBoxMenu.Name = "pictureBoxMenu";
-            this.pictureBoxMenu.Size = new System.Drawing.Size(574, 504);
-            this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMenu.TabIndex = 13;
-            this.pictureBoxMenu.TabStop = false;
-            // 
             // buttonCatDiv
             // 
             this.buttonCatDiv.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -143,6 +132,18 @@
             this.buttonCatDiv.TabIndex = 14;
             this.buttonCatDiv.Text = "Divisiones y Categorías";
             this.buttonCatDiv.UseVisualStyleBackColor = true;
+            this.buttonCatDiv.Click += new System.EventHandler(this.buttonCatDiv_Click);
+            // 
+            // pictureBoxMenu
+            // 
+            this.pictureBoxMenu.Image = global::BoxManager.Properties.Resources.BoxMenu;
+            this.pictureBoxMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxMenu.Location = new System.Drawing.Point(429, 86);
+            this.pictureBoxMenu.Name = "pictureBoxMenu";
+            this.pictureBoxMenu.Size = new System.Drawing.Size(574, 504);
+            this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMenu.TabIndex = 13;
+            this.pictureBoxMenu.TabStop = false;
             // 
             // Menu
             // 

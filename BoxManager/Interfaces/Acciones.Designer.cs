@@ -35,11 +35,11 @@
             this.labelBuscarNombre = new System.Windows.Forms.Label();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.groupBoxBusqueda = new System.Windows.Forms.GroupBox();
-            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
-            this.labelFecha1 = new System.Windows.Forms.Label();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
+            this.labelFecha1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgAcciones)).BeginInit();
             this.groupBoxBusqueda.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.dgAcciones.Name = "dgAcciones";
             this.dgAcciones.ReadOnly = true;
             this.dgAcciones.RowTemplate.Height = 24;
-            this.dgAcciones.Size = new System.Drawing.Size(708, 447);
+            this.dgAcciones.Size = new System.Drawing.Size(736, 447);
             this.dgAcciones.TabIndex = 0;
             // 
             // labelTitulo
@@ -63,7 +63,7 @@
             this.labelTitulo.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.Location = new System.Drawing.Point(169, 28);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(447, 49);
+            this.labelTitulo.Size = new System.Drawing.Size(442, 49);
             this.labelTitulo.TabIndex = 17;
             this.labelTitulo.Text = "Historial de Acciones";
             // 
@@ -93,7 +93,7 @@
             // 
             this.textBoxBuscar.Location = new System.Drawing.Point(257, 284);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(463, 22);
+            this.textBoxBuscar.Size = new System.Drawing.Size(491, 22);
             this.textBoxBuscar.TabIndex = 20;
             this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
@@ -107,32 +107,21 @@
             this.groupBoxBusqueda.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxBusqueda.Location = new System.Drawing.Point(16, 107);
             this.groupBoxBusqueda.Name = "groupBoxBusqueda";
-            this.groupBoxBusqueda.Size = new System.Drawing.Size(704, 156);
+            this.groupBoxBusqueda.Size = new System.Drawing.Size(732, 156);
             this.groupBoxBusqueda.TabIndex = 21;
             this.groupBoxBusqueda.TabStop = false;
             this.groupBoxBusqueda.Text = "Buscar por rango de fechas:";
             // 
-            // dtpFecha1
+            // buttonBuscar
             // 
-            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpFecha1.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(162, 57);
-            this.dtpFecha1.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(156, 23);
-            this.dtpFecha1.TabIndex = 12;
-            this.dtpFecha1.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            // 
-            // labelFecha1
-            // 
-            this.labelFecha1.AutoSize = true;
-            this.labelFecha1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha1.Location = new System.Drawing.Point(6, 60);
-            this.labelFecha1.Name = "labelFecha1";
-            this.labelFecha1.Size = new System.Drawing.Size(126, 20);
-            this.labelFecha1.TabIndex = 3;
-            this.labelFecha1.Text = "Fecha inicial:";
+            this.buttonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBuscar.Location = new System.Drawing.Point(559, 95);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(89, 46);
+            this.buttonBuscar.TabIndex = 22;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // dtpFecha2
             // 
@@ -158,22 +147,33 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Fecha final:";
             // 
-            // buttonBuscar
+            // dtpFecha1
             // 
-            this.buttonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBuscar.Location = new System.Drawing.Point(559, 95);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(89, 46);
-            this.buttonBuscar.TabIndex = 22;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpFecha1.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(162, 57);
+            this.dtpFecha1.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.Size = new System.Drawing.Size(156, 23);
+            this.dtpFecha1.TabIndex = 12;
+            this.dtpFecha1.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            // 
+            // labelFecha1
+            // 
+            this.labelFecha1.AutoSize = true;
+            this.labelFecha1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha1.Location = new System.Drawing.Point(6, 60);
+            this.labelFecha1.Name = "labelFecha1";
+            this.labelFecha1.Size = new System.Drawing.Size(126, 20);
+            this.labelFecha1.TabIndex = 3;
+            this.labelFecha1.Text = "Fecha inicial:";
             // 
             // Acciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 803);
+            this.ClientSize = new System.Drawing.Size(773, 803);
             this.Controls.Add(this.groupBoxBusqueda);
             this.Controls.Add(this.labelBuscarNombre);
             this.Controls.Add(this.textBoxBuscar);

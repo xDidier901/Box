@@ -172,12 +172,12 @@ namespace BoxManager.Interfaces
 
         private void rbVaronil_CheckedChanged(object sender, EventArgs e)
         {
-            comboBoxCategorias = action.llenarCategorias(comboBoxCategorias, obtenerRama());
+            comboBoxCategorias = action.llenarCategoriasByRama(comboBoxCategorias, obtenerRama());
         }
 
         private void rbFemenil_CheckedChanged(object sender, EventArgs e)
         {
-            comboBoxCategorias = action.llenarCategorias(comboBoxCategorias, obtenerRama());
+            comboBoxCategorias = action.llenarCategoriasByRama(comboBoxCategorias, obtenerRama());
         }
 
         private void comboBoxCategorias_SelectedIndexChanged(object sender, EventArgs e)

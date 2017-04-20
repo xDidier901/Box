@@ -1,6 +1,6 @@
 ﻿namespace BoxManager.Interfaces
 {
-    partial class DivsionesCategorias
+    partial class DivisionesCategorias
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,9 @@
             this.dgCategorias = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBoxDivisiones = new System.Windows.Forms.GroupBox();
+            this.comboBoxCategorias = new System.Windows.Forms.ComboBox();
             this.textBoxNombreDiv = new System.Windows.Forms.TextBox();
+            this.labelCategoria = new System.Windows.Forms.Label();
             this.labelNombreDiv = new System.Windows.Forms.Label();
             this.buttonCancelarDiv = new System.Windows.Forms.Button();
             this.buttonEliminarDiv = new System.Windows.Forms.Button();
@@ -55,8 +57,8 @@
             this.textBoxNombreCat = new System.Windows.Forms.TextBox();
             this.labelRamaCat = new System.Windows.Forms.Label();
             this.labelNombreCat = new System.Windows.Forms.Label();
-            this.comboBoxCategorias = new System.Windows.Forms.ComboBox();
-            this.labelCategoria = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxFiltCat = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgDivisiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategorias)).BeginInit();
             this.groupBoxDivisiones.SuspendLayout();
@@ -67,9 +69,9 @@
             // 
             this.labelDivisiones.AutoSize = true;
             this.labelDivisiones.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDivisiones.Location = new System.Drawing.Point(354, 393);
+            this.labelDivisiones.Location = new System.Drawing.Point(349, 312);
             this.labelDivisiones.Name = "labelDivisiones";
-            this.labelDivisiones.Size = new System.Drawing.Size(229, 49);
+            this.labelDivisiones.Size = new System.Drawing.Size(227, 49);
             this.labelDivisiones.TabIndex = 18;
             this.labelDivisiones.Text = "Divisiones";
             // 
@@ -77,9 +79,9 @@
             // 
             this.labelCategorias.AutoSize = true;
             this.labelCategorias.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorias.Location = new System.Drawing.Point(341, 70);
+            this.labelCategorias.Location = new System.Drawing.Point(341, 20);
             this.labelCategorias.Name = "labelCategorias";
-            this.labelCategorias.Size = new System.Drawing.Size(242, 49);
+            this.labelCategorias.Size = new System.Drawing.Size(241, 49);
             this.labelCategorias.TabIndex = 19;
             this.labelCategorias.Text = "Categorías";
             // 
@@ -93,6 +95,7 @@
             this.buttonMenu.TabIndex = 20;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // dgDivisiones
             // 
@@ -105,13 +108,14 @@
             this.dgDivisiones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgDivisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDivisiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgDivisiones.Location = new System.Drawing.Point(622, 465);
+            this.dgDivisiones.Location = new System.Drawing.Point(589, 376);
             this.dgDivisiones.MultiSelect = false;
             this.dgDivisiones.Name = "dgDivisiones";
             this.dgDivisiones.ReadOnly = true;
             this.dgDivisiones.RowTemplate.Height = 24;
-            this.dgDivisiones.Size = new System.Drawing.Size(689, 205);
+            this.dgDivisiones.Size = new System.Drawing.Size(617, 311);
             this.dgDivisiones.TabIndex = 21;
+            this.dgDivisiones.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDivisiones_CellEnter);
             // 
             // dgCategorias
             // 
@@ -124,12 +128,12 @@
             this.dgCategorias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgCategorias.Location = new System.Drawing.Point(616, 138);
+            this.dgCategorias.Location = new System.Drawing.Point(589, 82);
             this.dgCategorias.MultiSelect = false;
             this.dgCategorias.Name = "dgCategorias";
             this.dgCategorias.ReadOnly = true;
             this.dgCategorias.RowTemplate.Height = 24;
-            this.dgCategorias.Size = new System.Drawing.Size(689, 205);
+            this.dgCategorias.Size = new System.Drawing.Size(381, 185);
             this.dgCategorias.TabIndex = 22;
             // 
             // groupBoxDivisiones
@@ -140,25 +144,44 @@
             this.groupBoxDivisiones.Controls.Add(this.labelNombreDiv);
             this.groupBoxDivisiones.Enabled = false;
             this.groupBoxDivisiones.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDivisiones.Location = new System.Drawing.Point(18, 465);
+            this.groupBoxDivisiones.Location = new System.Drawing.Point(12, 417);
             this.groupBoxDivisiones.Name = "groupBoxDivisiones";
-            this.groupBoxDivisiones.Size = new System.Drawing.Size(571, 139);
+            this.groupBoxDivisiones.Size = new System.Drawing.Size(571, 224);
             this.groupBoxDivisiones.TabIndex = 23;
             this.groupBoxDivisiones.TabStop = false;
-            this.groupBoxDivisiones.Text = "Categoría";
+            this.groupBoxDivisiones.Text = "División";
+            // 
+            // comboBoxCategorias
+            // 
+            this.comboBoxCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxCategorias.FormattingEnabled = true;
+            this.comboBoxCategorias.Location = new System.Drawing.Point(114, 130);
+            this.comboBoxCategorias.Name = "comboBoxCategorias";
+            this.comboBoxCategorias.Size = new System.Drawing.Size(410, 28);
+            this.comboBoxCategorias.TabIndex = 34;
             // 
             // textBoxNombreDiv
             // 
-            this.textBoxNombreDiv.Location = new System.Drawing.Point(114, 43);
+            this.textBoxNombreDiv.Location = new System.Drawing.Point(114, 56);
             this.textBoxNombreDiv.Name = "textBoxNombreDiv";
             this.textBoxNombreDiv.Size = new System.Drawing.Size(451, 27);
             this.textBoxNombreDiv.TabIndex = 8;
+            // 
+            // labelCategoria
+            // 
+            this.labelCategoria.AutoSize = true;
+            this.labelCategoria.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategoria.Location = new System.Drawing.Point(4, 130);
+            this.labelCategoria.Name = "labelCategoria";
+            this.labelCategoria.Size = new System.Drawing.Size(99, 20);
+            this.labelCategoria.TabIndex = 33;
+            this.labelCategoria.Text = "Categoría:";
             // 
             // labelNombreDiv
             // 
             this.labelNombreDiv.AutoSize = true;
             this.labelNombreDiv.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreDiv.Location = new System.Drawing.Point(19, 50);
+            this.labelNombreDiv.Location = new System.Drawing.Point(19, 63);
             this.labelNombreDiv.Name = "labelNombreDiv";
             this.labelNombreDiv.Size = new System.Drawing.Size(84, 20);
             this.labelNombreDiv.TabIndex = 1;
@@ -169,51 +192,55 @@
             this.buttonCancelarDiv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancelarDiv.Enabled = false;
             this.buttonCancelarDiv.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarDiv.Location = new System.Drawing.Point(314, 619);
+            this.buttonCancelarDiv.Location = new System.Drawing.Point(302, 647);
             this.buttonCancelarDiv.Name = "buttonCancelarDiv";
             this.buttonCancelarDiv.Size = new System.Drawing.Size(119, 40);
             this.buttonCancelarDiv.TabIndex = 27;
             this.buttonCancelarDiv.Text = "Cancelar";
             this.buttonCancelarDiv.UseVisualStyleBackColor = true;
+            this.buttonCancelarDiv.Click += new System.EventHandler(this.buttonCancelarDiv_Click);
             // 
             // buttonEliminarDiv
             // 
             this.buttonEliminarDiv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminarDiv.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarDiv.Location = new System.Drawing.Point(439, 619);
+            this.buttonEliminarDiv.Location = new System.Drawing.Point(427, 647);
             this.buttonEliminarDiv.Name = "buttonEliminarDiv";
             this.buttonEliminarDiv.Size = new System.Drawing.Size(150, 40);
             this.buttonEliminarDiv.TabIndex = 26;
             this.buttonEliminarDiv.Text = "Eliminar";
             this.buttonEliminarDiv.UseVisualStyleBackColor = true;
+            this.buttonEliminarDiv.Click += new System.EventHandler(this.buttonEliminarDiv_Click);
             // 
             // buttonEditarDiv
             // 
             this.buttonEditarDiv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditarDiv.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarDiv.Location = new System.Drawing.Point(180, 619);
+            this.buttonEditarDiv.Location = new System.Drawing.Point(168, 647);
             this.buttonEditarDiv.Name = "buttonEditarDiv";
             this.buttonEditarDiv.Size = new System.Drawing.Size(128, 40);
             this.buttonEditarDiv.TabIndex = 25;
             this.buttonEditarDiv.Text = "Editar";
             this.buttonEditarDiv.UseVisualStyleBackColor = true;
+            this.buttonEditarDiv.Click += new System.EventHandler(this.buttonEditarDiv_Click);
             // 
             // buttonAgregarDiv
             // 
             this.buttonAgregarDiv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregarDiv.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarDiv.Location = new System.Drawing.Point(18, 619);
+            this.buttonAgregarDiv.Location = new System.Drawing.Point(6, 647);
             this.buttonAgregarDiv.Name = "buttonAgregarDiv";
             this.buttonAgregarDiv.Size = new System.Drawing.Size(156, 40);
             this.buttonAgregarDiv.TabIndex = 24;
             this.buttonAgregarDiv.Text = "Agregar";
             this.buttonAgregarDiv.UseVisualStyleBackColor = true;
+            this.buttonAgregarDiv.Click += new System.EventHandler(this.buttonAgregarDiv_Click);
             // 
             // labelBuscarDiv
             // 
             this.labelBuscarDiv.AutoSize = true;
             this.labelBuscarDiv.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscarDiv.Location = new System.Drawing.Point(618, 422);
+            this.labelBuscarDiv.Location = new System.Drawing.Point(585, 341);
             this.labelBuscarDiv.Name = "labelBuscarDiv";
             this.labelBuscarDiv.Size = new System.Drawing.Size(179, 20);
             this.labelBuscarDiv.TabIndex = 28;
@@ -221,16 +248,17 @@
             // 
             // textBoxBuscarDivision
             // 
-            this.textBoxBuscarDivision.Location = new System.Drawing.Point(818, 422);
+            this.textBoxBuscarDivision.Location = new System.Drawing.Point(785, 341);
             this.textBoxBuscarDivision.Name = "textBoxBuscarDivision";
-            this.textBoxBuscarDivision.Size = new System.Drawing.Size(493, 23);
+            this.textBoxBuscarDivision.Size = new System.Drawing.Size(421, 23);
             this.textBoxBuscarDivision.TabIndex = 29;
+            this.textBoxBuscarDivision.TextChanged += new System.EventHandler(this.textBoxBuscarDivision_TextChanged);
             // 
             // labelBuscarNombreCat
             // 
             this.labelBuscarNombreCat.AutoSize = true;
             this.labelBuscarNombreCat.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscarNombreCat.Location = new System.Drawing.Point(612, 99);
+            this.labelBuscarNombreCat.Location = new System.Drawing.Point(591, 43);
             this.labelBuscarNombreCat.Name = "labelBuscarNombreCat";
             this.labelBuscarNombreCat.Size = new System.Drawing.Size(179, 20);
             this.labelBuscarNombreCat.TabIndex = 30;
@@ -238,9 +266,9 @@
             // 
             // textBoxBuscarCategoria
             // 
-            this.textBoxBuscarCategoria.Location = new System.Drawing.Point(812, 99);
+            this.textBoxBuscarCategoria.Location = new System.Drawing.Point(776, 40);
             this.textBoxBuscarCategoria.Name = "textBoxBuscarCategoria";
-            this.textBoxBuscarCategoria.Size = new System.Drawing.Size(493, 23);
+            this.textBoxBuscarCategoria.Size = new System.Drawing.Size(194, 23);
             this.textBoxBuscarCategoria.TabIndex = 31;
             // 
             // buttonCancelarCat
@@ -248,7 +276,7 @@
             this.buttonCancelarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancelarCat.Enabled = false;
             this.buttonCancelarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCat.Location = new System.Drawing.Point(308, 292);
+            this.buttonCancelarCat.Location = new System.Drawing.Point(308, 227);
             this.buttonCancelarCat.Name = "buttonCancelarCat";
             this.buttonCancelarCat.Size = new System.Drawing.Size(119, 40);
             this.buttonCancelarCat.TabIndex = 32;
@@ -259,7 +287,7 @@
             // 
             this.buttonEliminarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarCat.Location = new System.Drawing.Point(433, 292);
+            this.buttonEliminarCat.Location = new System.Drawing.Point(433, 227);
             this.buttonEliminarCat.Name = "buttonEliminarCat";
             this.buttonEliminarCat.Size = new System.Drawing.Size(150, 40);
             this.buttonEliminarCat.TabIndex = 31;
@@ -270,7 +298,7 @@
             // 
             this.buttonEditarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarCat.Location = new System.Drawing.Point(174, 292);
+            this.buttonEditarCat.Location = new System.Drawing.Point(174, 227);
             this.buttonEditarCat.Name = "buttonEditarCat";
             this.buttonEditarCat.Size = new System.Drawing.Size(128, 40);
             this.buttonEditarCat.TabIndex = 30;
@@ -281,7 +309,7 @@
             // 
             this.buttonAgregarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarCat.Location = new System.Drawing.Point(12, 292);
+            this.buttonAgregarCat.Location = new System.Drawing.Point(12, 227);
             this.buttonAgregarCat.Name = "buttonAgregarCat";
             this.buttonAgregarCat.Size = new System.Drawing.Size(156, 40);
             this.buttonAgregarCat.TabIndex = 29;
@@ -297,7 +325,7 @@
             this.groupBoxCategorias.Controls.Add(this.labelNombreCat);
             this.groupBoxCategorias.Enabled = false;
             this.groupBoxCategorias.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCategorias.Location = new System.Drawing.Point(12, 138);
+            this.groupBoxCategorias.Location = new System.Drawing.Point(11, 82);
             this.groupBoxCategorias.Name = "groupBoxCategorias";
             this.groupBoxCategorias.Size = new System.Drawing.Size(571, 139);
             this.groupBoxCategorias.TabIndex = 28;
@@ -355,30 +383,34 @@
             this.labelNombreCat.TabIndex = 1;
             this.labelNombreCat.Text = "Nombre:";
             // 
-            // comboBoxCategorias
+            // label1
             // 
-            this.comboBoxCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxCategorias.FormattingEnabled = true;
-            this.comboBoxCategorias.Location = new System.Drawing.Point(114, 85);
-            this.comboBoxCategorias.Name = "comboBoxCategorias";
-            this.comboBoxCategorias.Size = new System.Drawing.Size(410, 28);
-            this.comboBoxCategorias.TabIndex = 34;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 376);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 20);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Filtrar por categoría:";
             // 
-            // labelCategoria
+            // comboBoxFiltCat
             // 
-            this.labelCategoria.AutoSize = true;
-            this.labelCategoria.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategoria.Location = new System.Drawing.Point(4, 85);
-            this.labelCategoria.Name = "labelCategoria";
-            this.labelCategoria.Size = new System.Drawing.Size(99, 20);
-            this.labelCategoria.TabIndex = 33;
-            this.labelCategoria.Text = "Categoría:";
+            this.comboBoxFiltCat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxFiltCat.FormattingEnabled = true;
+            this.comboBoxFiltCat.Location = new System.Drawing.Point(199, 376);
+            this.comboBoxFiltCat.Name = "comboBoxFiltCat";
+            this.comboBoxFiltCat.Size = new System.Drawing.Size(384, 24);
+            this.comboBoxFiltCat.TabIndex = 35;
+            this.comboBoxFiltCat.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltCat_SelectedIndexChanged);
+            this.comboBoxFiltCat.Click += new System.EventHandler(this.comboBoxFiltCat_Click);
             // 
-            // DivsionesCategorias
+            // DivisionesCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 705);
+            this.ClientSize = new System.Drawing.Size(1226, 706);
+            this.Controls.Add(this.comboBoxFiltCat);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarCat);
             this.Controls.Add(this.labelBuscarNombreCat);
             this.Controls.Add(this.buttonEliminarCat);
@@ -401,9 +433,10 @@
             this.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "DivsionesCategorias";
+            this.Name = "DivisionesCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DivsionesCategorias";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DivsionesCategorias_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgDivisiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategorias)).EndInit();
             this.groupBoxDivisiones.ResumeLayout(false);
@@ -446,5 +479,7 @@
         private System.Windows.Forms.Label labelNombreCat;
         private System.Windows.Forms.ComboBox comboBoxCategorias;
         private System.Windows.Forms.Label labelCategoria;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxFiltCat;
     }
 }

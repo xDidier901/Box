@@ -13,6 +13,10 @@ namespace BoxManager.Classes
 
         BoxDBDataContext Database = new BoxDBDataContext();
 
+
+
+        ///////////////BOXEADORES//////////////////////////
+
         //agregar boxeador a la base de datos
         public void agregarBoxeador(Boxeadore x)
         {
@@ -96,6 +100,7 @@ namespace BoxManager.Classes
                         where valor2.Id_Categoria == valor.Categoria &&
                          valor3.Id_Division == valor.Division &&
                          valor4.Id_Municipio == valor.Municipio
+                        orderby valor.Nombre ascending
 
                         select new
                         {
@@ -123,6 +128,7 @@ namespace BoxManager.Classes
                          valor2.Id_Categoria == valor.Categoria &&
                          valor3.Id_Division == valor.Division &&
                          valor4.Id_Municipio == valor.Municipio
+                        orderby valor.Nombre ascending
 
                         select new
                         {
@@ -139,7 +145,7 @@ namespace BoxManager.Classes
         }
 
         //Llena un combobox con las categorias con cierta rama
-        public ComboBox llenarCategorias(ComboBox combo, string rama)
+        public ComboBox llenarCategoriasByRama(ComboBox combo, string rama)
         {
             var query = from valor in Database.Categorias
                         where valor.Rama.Equals(rama)
@@ -180,6 +186,9 @@ namespace BoxManager.Classes
             return combo;
         }
 
+
+        ///////////////ACCIONES//////////////////////////
+
         //Agrega una accion en la base de datos
         public void registrarAccion(String accion)
         {
@@ -203,6 +212,7 @@ namespace BoxManager.Classes
         {
 
             var query = from valor in Database.Acciones
+                        orderby valor.Id_Accion descending
                         select new { Descripción = valor.Descripcion, Fecha = valor.Fecha };
 
             x.DataSource = query;
@@ -214,6 +224,7 @@ namespace BoxManager.Classes
 
             var query = from valor in Database.Acciones
                         where valor.Descripcion.Contains(descp)
+                        orderby valor.Id_Accion descending
                         select new { Descripción = valor.Descripcion, Fecha = valor.Fecha };
 
             x.DataSource = query;
@@ -230,6 +241,163 @@ namespace BoxManager.Classes
 
             x.DataSource = query;
         }
+
+
+        ///////////////CATEGORIAS Y DIVISIONES//////////////////////////
+
+        //Muestra todas las categorias de la base de datos
+        public void mostrarCategorias(DataGridView x)
+        {
+
+            var query = from valor in Database.Categorias
+                        orderby valor.Nombre ascending
+                        select valor;
+            x.DataSource = query;
+        }
+
+        //Muestra todas las divisiones de la base de datos
+        public void mostrarDivisiones(DataGridView x)
+        {
+
+            var query = from valor in Database.Divisiones
+                        from valor2 in Database.Categorias
+                        where valor.Categoria == valor2.Id_Categoria
+                        orderby valor2.Nombre ascending
+                        select new {
+                            Id_Division = valor.Id_Division,
+                            Nombre = valor.Nombre,
+                            Categoría = valor2.Nombre,
+                            Rama = valor2.Rama
+                        };
+            x.DataSource = query;
+        }
+
+        //Busca una division en la base de datos
+        public void buscarDivisiones(DataGridView x, string nombre)
+        {
+
+            var query = from valor in Database.Divisiones
+                        from valor2 in Database.Categorias
+                        where valor.Categoria == valor2.Id_Categoria && valor.Nombre.Contains(nombre)
+                        orderby valor2.Nombre ascending
+                        select new
+                        {
+                            Id_Division = valor.Id_Division,
+                            Nombre = valor.Nombre,
+                            Categoría = valor2.Nombre,
+                            Rama = valor2.Rama
+                        };
+            x.DataSource = query;
+        }
+
+        //Muestra todas las divisiones en base a cierta categoria de la base de datos
+        public void mostrarDivisionesByCategoria(DataGridView x, int id)
+        {
+
+            var query = from valor in Database.Divisiones
+                        from valor2 in Database.Categorias
+                        where valor.Categoria == id && valor.Categoria == valor2.Id_Categoria
+                        orderby valor2.Nombre ascending
+                        select new
+                        {
+                            Id_Division = valor.Id_Division,
+                            Nombre = valor.Nombre,
+                            Categoría = valor2.Nombre,
+                            Rama = valor2.Rama
+                        };
+            x.DataSource = query;
+        }
+
+        //Llena un combobox con las categorias y su respectiva rama
+        public ComboBox llenarCategorias(ComboBox combo)
+        {
+            var query = from valor in Database.Categorias
+                        select new {
+                            Name = valor.Nombre.Trim() +" - "+ valor.Rama.Trim(),
+                            ID = valor.Id_Categoria.ToString().Trim()
+                        };
+
+            combo.DisplayMember = "Name";
+            combo.ValueMember = "ID";
+            combo.DataSource = query.ToList();
+
+
+            return combo;
+        }
+
+        //Agrega una division a la base de datos
+        public void agregarDivision(Divisione d)
+        {
+            Database.Divisiones.InsertOnSubmit(d);
+
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion("Se agregó la división " + d.Nombre + " en la base de datos");
+                MessageBox.Show("División " + d.Nombre + " agregada correctamente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar agregar la división");
+            }
+
+
+
+
+        }
+
+        //Actualiza la informacion de una division
+        public void actualizarDivisión(Divisione d, int id)
+        {
+            var resultado = from valor in Database.Divisiones
+                            where valor.Id_Division == id
+                            select valor;
+
+            foreach (var valor in resultado)
+            {
+                valor.Nombre = d.Nombre;
+                valor.Categoria = d.Categoria;
+            }
+
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion("Se modificó la división " + d.Nombre + " en la base de datos");
+                MessageBox.Show("División " + d.Nombre + " actualizada correctamente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al actualizar la división");
+            }
+
+        }
+
+        //Borra una division de la base de datos
+        public void eliminarDivision(String nombre, int id)
+        {
+            var query =
+            from valor in Database.Divisiones
+            where valor.Id_Division == id
+            select valor;
+
+            foreach (var detail in query)
+            {
+                Database.Divisiones.DeleteOnSubmit(detail);
+            }
+
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion("Se eliminó la división " + nombre + " de la base de datos");
+                MessageBox.Show("Se eliminó la división " + nombre + " correctamente");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hubo un error al tratar de eliminar la división", e.ToString());
+            }
+        }
+
+
 
 
     }

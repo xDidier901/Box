@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BoxManager.Interfaces;
+using BoxManager.Interfaces;
 
 namespace BoxManager
 {
@@ -33,6 +34,12 @@ namespace BoxManager
         {
             this.Hide();
             new Acciones().Show();
+        }
+
+        private void buttonCatDiv_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new DivisionesCategorias().Show();
         }
     }
 }
