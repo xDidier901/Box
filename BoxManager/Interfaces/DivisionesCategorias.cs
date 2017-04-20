@@ -27,7 +27,8 @@ namespace BoxManager.Interfaces
             action.mostrarCategorias(dgCategorias);
             action.mostrarDivisiones(dgDivisiones);
             comboBoxCategorias = action.llenarCategorias(comboBoxCategorias);
-            
+            comboBoxFiltRama.SelectedIndex = -1;
+
         }
 
         private void DivsionesCategorias_FormClosing(object sender, FormClosingEventArgs e)
@@ -130,7 +131,7 @@ namespace BoxManager.Interfaces
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no estan correctos, no se puede agregar el boxeador a la base de datos");
+                    MessageBox.Show("Los datos no estan correctos, no se puede la división a la base de datos");
                 }
             }
         }
@@ -218,6 +219,218 @@ namespace BoxManager.Interfaces
             else
             {
                 reestablecerPredeterminadoDiv();
+            }
+        }
+
+        private void textBoxBuscarCategoria_TextChanged(object sender, EventArgs e)
+        {
+            action.buscarCategorias(dgCategorias, textBoxBuscarCategoria.Text.Trim());
+        }
+
+        private void dgCategorias_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            llenarCamposCat();
+        }
+
+        private void llenarCamposCat()
+        {
+            this.textBoxNombreCat.Text = dgCategorias.CurrentRow.Cells[1].Value.ToString().Trim();
+            establecerRama();
+        }
+
+        //Marca cheked al radiobutton sobre la rama de acuerdo al datagrid
+        private void establecerRama()
+        {
+            String rama = dgCategorias.CurrentRow.Cells[2].Value.ToString().Trim();
+
+            if (rama.Equals("Varonil"))
+            {
+                this.rbVarCat.Checked = true;
+                this.rbFemCat.Checked = false;
+            }
+            else if (rama.Equals("Femenil"))
+            {
+                this.rbFemCat.Checked = true;
+                this.rbVarCat.Checked = false;
+            }
+
+        }
+
+        private void comboBoxFiltRama_Click(object sender, EventArgs e)
+        {
+            comboBoxFiltRama.Items.Clear();
+            comboBoxFiltRama.Items.Add("Varonil");
+            comboBoxFiltRama.Items.Add("Femenil");
+            buttonCancelarCat.Enabled = true;
+        }
+
+        private void comboBoxFiltRama_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxFiltRama.SelectedIndex != -1)
+            {
+                action.mostrarCategoriasByRama(dgCategorias, comboBoxFiltRama.SelectedItem.ToString().Trim());
+            }
+            else
+            {
+                action.mostrarCategorias(dgCategorias);
+            }
+        }
+
+        //Retorna la rama dependiendo de que radiobutton este presionado
+        private String obtenerRama()
+        {
+            if (this.rbVarCat.Checked == true)
+            {
+                return "Varonil";
+            }
+            else if (this.rbFemCat.Checked == true)
+            {
+                return "Femenil";
+            }
+            else return "Undefined";
+        }
+
+        private void reestablecerPredeterminadoCat()
+        {
+            c = null;
+            botonPresionadoCat = false;
+            this.dgCategorias.Enabled = true;
+            action.mostrarCategorias(dgCategorias);
+            this.textBoxBuscarCategoria.Enabled = true;
+            this.textBoxBuscarCategoria.Focus();
+            this.llenarCamposCat();
+            this.groupBoxCategorias.Enabled = false;
+            this.buttonAgregarCat.Enabled = true;
+            this.buttonAgregarCat.Text = "Agregar";
+            this.buttonEditarCat.Enabled = true;
+            this.buttonEditarCat.Text = "Editar";
+            this.buttonCancelarCat.Enabled = false;
+            this.buttonEliminarCat.Enabled = true;
+            comboBoxFiltRama.Text = "";
+            comboBoxFiltRama.Enabled = true;
+        }
+
+        private void buttonCancelarCat_Click(object sender, EventArgs e)
+        {
+            reestablecerPredeterminadoCat();
+        }
+
+        private void buttonAgregarCat_Click(object sender, EventArgs e)
+        {
+
+            if (botonPresionadoCat == false)
+            {
+
+                botonPresionadoCat = true;
+                limpiarCamposCat();
+
+                this.groupBoxCategorias.Enabled = true;
+                this.buttonEditarCat.Enabled = false;
+                comboBoxFiltRama.Enabled = false;
+                this.buttonEliminarCat.Enabled = false;
+                this.buttonCancelarCat.Enabled = true;
+                this.dgCategorias.Enabled = false;
+                this.textBoxBuscarCategoria.Enabled = false;
+                this.buttonAgregarCat.Text = "Guardar";
+                this.textBoxNombreCat.Focus();
+
+            }
+            else if (botonPresionadoCat == true)
+            {
+                if (datosCorrectosCat())
+                {
+                   crearCategoria();
+                   action.agregarCategoria(c);
+                   reestablecerPredeterminadoCat();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no estan correctos, no se puede agregar la categoría a la base de datos");
+                }
+            }
+        }
+
+        //Crea un objeto categirua con la informacion de los campos
+        private void crearCategoria()
+        {
+            c = new Categoria();
+            c.Nombre = textBoxNombreCat.Text.Trim();
+            c.Rama = obtenerRama();
+        }
+
+        //Valida los campos de categoria del formulario
+        private bool datosCorrectosCat()
+        {
+            int camposCorrectos = 0;
+            if (this.textBoxNombreCat.Text.Length != 0) camposCorrectos++;
+            if (this.rbVarCat.Checked || this.rbFemCat.Checked) camposCorrectos++;
+
+            if (camposCorrectos == 2) return true;
+            else return false;
+        }
+
+        private void limpiarCamposCat()
+        {
+            this.textBoxNombreCat.ResetText();
+            rbVarCat.Checked = false;
+            rbFemCat.Checked = false;
+        }
+
+        private void buttonEditarCat_Click(object sender, EventArgs e)
+        {
+            if (botonPresionadoCat == false)
+            {
+
+                botonPresionadoCat = true;
+
+
+                this.groupBoxCategorias.Enabled = true;
+                this.buttonAgregarCat.Enabled = false;
+                comboBoxFiltRama.Enabled = false;
+                this.buttonEliminarCat.Enabled = false;
+                this.buttonCancelarCat.Enabled = true;
+                this.dgCategorias.Enabled = false;
+                this.textBoxBuscarCategoria.Enabled = false;
+                this.buttonEditarCat.Text = "Guardar";
+                this.textBoxNombreCat.Focus();
+
+
+            }
+            else if (botonPresionadoCat == true)
+            {
+
+                if (datosCorrectosCat())
+                {
+                    crearCategoria();
+                    action.actualizarCategoria(c, obtenerIdCat());
+                    reestablecerPredeterminadoCat();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no estan correctos, no se puede editar la categoría en la base de datos");
+                }
+
+            }
+        }
+
+        private int obtenerIdCat()
+        {
+            int id = Convert.ToInt32(dgCategorias.CurrentRow.Cells[0].Value.ToString().Trim());
+            return id;
+        }
+
+        private void buttonEliminarCat_Click(object sender, EventArgs e)
+        {
+            String nombre = textBoxNombreCat.Text.Trim();
+
+            if (MessageBox.Show("¿Está seguro que desea eliminar la categoría " + nombre + " de la base de datos?", "Eliminar categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                action.eliminarCategoria(nombre, obtenerIdCat());
+                reestablecerPredeterminadoCat();
+            }
+            else
+            {
+                reestablecerPredeterminadoCat();
             }
         }
     }

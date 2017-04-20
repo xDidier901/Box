@@ -248,8 +248,17 @@ namespace BoxManager.Classes
         //Muestra todas las categorias de la base de datos
         public void mostrarCategorias(DataGridView x)
         {
-
             var query = from valor in Database.Categorias
+                        orderby valor.Nombre ascending
+                        select valor;
+            x.DataSource = query;
+        }
+
+        //Muestra todas las categorias en base a cierta rama de la base de datos
+        public void mostrarCategoriasByRama(DataGridView x, String rama)
+        {
+            var query = from valor in Database.Categorias
+                        where valor.Rama == rama
                         orderby valor.Nombre ascending
                         select valor;
             x.DataSource = query;
@@ -287,6 +296,16 @@ namespace BoxManager.Classes
                             Categoría = valor2.Nombre,
                             Rama = valor2.Rama
                         };
+            x.DataSource = query;
+        }
+
+        //Busca una categoria en la base de datos
+        public void buscarCategorias(DataGridView x, string nombre)
+        {
+            var query = from valor in Database.Categorias
+                        where valor.Nombre.Contains(nombre)
+                        orderby valor.Nombre ascending
+                        select valor;
             x.DataSource = query;
         }
 
@@ -340,10 +359,6 @@ namespace BoxManager.Classes
             {
                 MessageBox.Show("Error al intentar agregar la división");
             }
-
-
-
-
         }
 
         //Actualiza la informacion de una division
@@ -369,7 +384,6 @@ namespace BoxManager.Classes
             {
                 MessageBox.Show("Hubo un error al actualizar la división");
             }
-
         }
 
         //Borra una division de la base de datos
@@ -397,8 +411,72 @@ namespace BoxManager.Classes
             }
         }
 
+        //Agrega una categoria a la base de datos
+        public void agregarCategoria(Categoria c)
+        {
+            Database.Categorias.InsertOnSubmit(c);
 
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion("Se agregó la categoría " + c.Nombre + " en la base de datos");
+                MessageBox.Show("Categoría " + c.Nombre + " agregada correctamente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar agregar la categoría");
+            }
+        }
 
+        //Actualiza la informacion de una categoria
+        public void actualizarCategoria(Categoria c, int id)
+        {
+            var resultado = from valor in Database.Categorias
+                            where valor.Id_Categoria == id
+                            select valor;
+
+            foreach (var valor in resultado)
+            {
+                valor.Nombre = c.Nombre;
+                valor.Rama = c.Rama;
+            }
+
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion("Se modificó la categoría " + c.Nombre + " en la base de datos");
+                MessageBox.Show("Categoría " + c.Nombre + " actualizada correctamente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al actualizar la categoría");
+            }
+        }
+
+        //Borra una categoria de la base de datos
+        public void eliminarCategoria(String nombre, int id)
+        {
+            var query =
+            from valor in Database.Categorias
+            where valor.Id_Categoria == id
+            select valor;
+
+            foreach (var detail in query)
+            {
+                Database.Categorias.DeleteOnSubmit(detail);
+            }
+
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion("Se eliminó la categoría " + nombre + " de la base de datos");
+                MessageBox.Show("Se eliminó la categoría " + nombre + " correctamente");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hubo un error al tratar de eliminar la categoría", e.ToString());
+            }
+        }
 
     }
 }

@@ -59,6 +59,8 @@
             this.labelNombreCat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxFiltCat = new System.Windows.Forms.ComboBox();
+            this.comboBoxFiltRama = new System.Windows.Forms.ComboBox();
+            this.label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgDivisiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategorias)).BeginInit();
             this.groupBoxDivisiones.SuspendLayout();
@@ -79,7 +81,7 @@
             // 
             this.labelCategorias.AutoSize = true;
             this.labelCategorias.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorias.Location = new System.Drawing.Point(341, 20);
+            this.labelCategorias.Location = new System.Drawing.Point(342, 56);
             this.labelCategorias.Name = "labelCategorias";
             this.labelCategorias.Size = new System.Drawing.Size(241, 49);
             this.labelCategorias.TabIndex = 19;
@@ -128,13 +130,14 @@
             this.dgCategorias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgCategorias.Location = new System.Drawing.Point(589, 82);
+            this.dgCategorias.Location = new System.Drawing.Point(589, 122);
             this.dgCategorias.MultiSelect = false;
             this.dgCategorias.Name = "dgCategorias";
             this.dgCategorias.ReadOnly = true;
             this.dgCategorias.RowTemplate.Height = 24;
             this.dgCategorias.Size = new System.Drawing.Size(381, 185);
             this.dgCategorias.TabIndex = 22;
+            this.dgCategorias.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategorias_CellEnter);
             // 
             // groupBoxDivisiones
             // 
@@ -258,7 +261,7 @@
             // 
             this.labelBuscarNombreCat.AutoSize = true;
             this.labelBuscarNombreCat.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscarNombreCat.Location = new System.Drawing.Point(591, 43);
+            this.labelBuscarNombreCat.Location = new System.Drawing.Point(585, 85);
             this.labelBuscarNombreCat.Name = "labelBuscarNombreCat";
             this.labelBuscarNombreCat.Size = new System.Drawing.Size(179, 20);
             this.labelBuscarNombreCat.TabIndex = 30;
@@ -266,55 +269,60 @@
             // 
             // textBoxBuscarCategoria
             // 
-            this.textBoxBuscarCategoria.Location = new System.Drawing.Point(776, 40);
+            this.textBoxBuscarCategoria.Location = new System.Drawing.Point(770, 82);
             this.textBoxBuscarCategoria.Name = "textBoxBuscarCategoria";
             this.textBoxBuscarCategoria.Size = new System.Drawing.Size(194, 23);
             this.textBoxBuscarCategoria.TabIndex = 31;
+            this.textBoxBuscarCategoria.TextChanged += new System.EventHandler(this.textBoxBuscarCategoria_TextChanged);
             // 
             // buttonCancelarCat
             // 
             this.buttonCancelarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancelarCat.Enabled = false;
             this.buttonCancelarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCat.Location = new System.Drawing.Point(308, 227);
+            this.buttonCancelarCat.Location = new System.Drawing.Point(308, 267);
             this.buttonCancelarCat.Name = "buttonCancelarCat";
             this.buttonCancelarCat.Size = new System.Drawing.Size(119, 40);
             this.buttonCancelarCat.TabIndex = 32;
             this.buttonCancelarCat.Text = "Cancelar";
             this.buttonCancelarCat.UseVisualStyleBackColor = true;
+            this.buttonCancelarCat.Click += new System.EventHandler(this.buttonCancelarCat_Click);
             // 
             // buttonEliminarCat
             // 
             this.buttonEliminarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarCat.Location = new System.Drawing.Point(433, 227);
+            this.buttonEliminarCat.Location = new System.Drawing.Point(433, 267);
             this.buttonEliminarCat.Name = "buttonEliminarCat";
             this.buttonEliminarCat.Size = new System.Drawing.Size(150, 40);
             this.buttonEliminarCat.TabIndex = 31;
             this.buttonEliminarCat.Text = "Eliminar";
             this.buttonEliminarCat.UseVisualStyleBackColor = true;
+            this.buttonEliminarCat.Click += new System.EventHandler(this.buttonEliminarCat_Click);
             // 
             // buttonEditarCat
             // 
             this.buttonEditarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarCat.Location = new System.Drawing.Point(174, 227);
+            this.buttonEditarCat.Location = new System.Drawing.Point(174, 267);
             this.buttonEditarCat.Name = "buttonEditarCat";
             this.buttonEditarCat.Size = new System.Drawing.Size(128, 40);
             this.buttonEditarCat.TabIndex = 30;
             this.buttonEditarCat.Text = "Editar";
             this.buttonEditarCat.UseVisualStyleBackColor = true;
+            this.buttonEditarCat.Click += new System.EventHandler(this.buttonEditarCat_Click);
             // 
             // buttonAgregarCat
             // 
             this.buttonAgregarCat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregarCat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarCat.Location = new System.Drawing.Point(12, 227);
+            this.buttonAgregarCat.Location = new System.Drawing.Point(12, 267);
             this.buttonAgregarCat.Name = "buttonAgregarCat";
             this.buttonAgregarCat.Size = new System.Drawing.Size(156, 40);
             this.buttonAgregarCat.TabIndex = 29;
             this.buttonAgregarCat.Text = "Agregar";
             this.buttonAgregarCat.UseVisualStyleBackColor = true;
+            this.buttonAgregarCat.Click += new System.EventHandler(this.buttonAgregarCat_Click);
             // 
             // groupBoxCategorias
             // 
@@ -325,9 +333,9 @@
             this.groupBoxCategorias.Controls.Add(this.labelNombreCat);
             this.groupBoxCategorias.Enabled = false;
             this.groupBoxCategorias.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCategorias.Location = new System.Drawing.Point(11, 82);
+            this.groupBoxCategorias.Location = new System.Drawing.Point(12, 159);
             this.groupBoxCategorias.Name = "groupBoxCategorias";
-            this.groupBoxCategorias.Size = new System.Drawing.Size(571, 139);
+            this.groupBoxCategorias.Size = new System.Drawing.Size(571, 102);
             this.groupBoxCategorias.TabIndex = 28;
             this.groupBoxCategorias.TabStop = false;
             this.groupBoxCategorias.Text = "Categoría";
@@ -336,7 +344,7 @@
             // 
             this.rbFemCat.AutoSize = true;
             this.rbFemCat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbFemCat.Location = new System.Drawing.Point(224, 90);
+            this.rbFemCat.Location = new System.Drawing.Point(230, 59);
             this.rbFemCat.Name = "rbFemCat";
             this.rbFemCat.Size = new System.Drawing.Size(101, 24);
             this.rbFemCat.TabIndex = 11;
@@ -348,7 +356,7 @@
             this.rbVarCat.AutoSize = true;
             this.rbVarCat.Checked = true;
             this.rbVarCat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbVarCat.Location = new System.Drawing.Point(114, 90);
+            this.rbVarCat.Location = new System.Drawing.Point(120, 59);
             this.rbVarCat.Name = "rbVarCat";
             this.rbVarCat.Size = new System.Drawing.Size(93, 24);
             this.rbVarCat.TabIndex = 10;
@@ -358,7 +366,7 @@
             // 
             // textBoxNombreCat
             // 
-            this.textBoxNombreCat.Location = new System.Drawing.Point(114, 43);
+            this.textBoxNombreCat.Location = new System.Drawing.Point(114, 26);
             this.textBoxNombreCat.Name = "textBoxNombreCat";
             this.textBoxNombreCat.Size = new System.Drawing.Size(451, 27);
             this.textBoxNombreCat.TabIndex = 8;
@@ -367,7 +375,7 @@
             // 
             this.labelRamaCat.AutoSize = true;
             this.labelRamaCat.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRamaCat.Location = new System.Drawing.Point(39, 92);
+            this.labelRamaCat.Location = new System.Drawing.Point(45, 61);
             this.labelRamaCat.Name = "labelRamaCat";
             this.labelRamaCat.Size = new System.Drawing.Size(64, 20);
             this.labelRamaCat.TabIndex = 2;
@@ -377,7 +385,7 @@
             // 
             this.labelNombreCat.AutoSize = true;
             this.labelNombreCat.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreCat.Location = new System.Drawing.Point(19, 50);
+            this.labelNombreCat.Location = new System.Drawing.Point(19, 33);
             this.labelNombreCat.Name = "labelNombreCat";
             this.labelNombreCat.Size = new System.Drawing.Size(84, 20);
             this.labelNombreCat.TabIndex = 1;
@@ -404,11 +412,37 @@
             this.comboBoxFiltCat.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltCat_SelectedIndexChanged);
             this.comboBoxFiltCat.Click += new System.EventHandler(this.comboBoxFiltCat_Click);
             // 
+            // comboBoxFiltRama
+            // 
+            this.comboBoxFiltRama.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxFiltRama.FormattingEnabled = true;
+            this.comboBoxFiltRama.Items.AddRange(new object[] {
+            "Varonil",
+            "Femenil"});
+            this.comboBoxFiltRama.Location = new System.Drawing.Point(193, 122);
+            this.comboBoxFiltRama.Name = "comboBoxFiltRama";
+            this.comboBoxFiltRama.Size = new System.Drawing.Size(384, 24);
+            this.comboBoxFiltRama.TabIndex = 37;
+            this.comboBoxFiltRama.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltRama_SelectedIndexChanged);
+            this.comboBoxFiltRama.Click += new System.EventHandler(this.comboBoxFiltRama_Click);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(2, 122);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(156, 20);
+            this.label.TabIndex = 36;
+            this.label.Text = "Filtrar por Rama:";
+            // 
             // DivisionesCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 706);
+            this.Controls.Add(this.comboBoxFiltRama);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.comboBoxFiltCat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarCat);
@@ -481,5 +515,7 @@
         private System.Windows.Forms.Label labelCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxFiltCat;
+        private System.Windows.Forms.ComboBox comboBoxFiltRama;
+        private System.Windows.Forms.Label label;
     }
 }
