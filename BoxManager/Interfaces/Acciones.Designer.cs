@@ -40,8 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.labelFecha1 = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAcciones)).BeginInit();
             this.groupBoxBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgAcciones
@@ -60,8 +62,9 @@
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
+            this.labelTitulo.BackColor = System.Drawing.Color.Transparent;
             this.labelTitulo.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(169, 28);
+            this.labelTitulo.Location = new System.Drawing.Point(140, 44);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(442, 49);
             this.labelTitulo.TabIndex = 17;
@@ -167,6 +170,16 @@
             this.labelFecha1.TabIndex = 3;
             this.labelFecha1.Text = "Fecha inicial:";
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(601, 12);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(160, 50);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 24;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // Acciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -178,6 +191,7 @@
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.dgAcciones);
+            this.Controls.Add(this.pictureBoxLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -189,6 +203,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgAcciones)).EndInit();
             this.groupBoxBusqueda.ResumeLayout(false);
             this.groupBoxBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFecha1;
         private System.Windows.Forms.Label labelFecha1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

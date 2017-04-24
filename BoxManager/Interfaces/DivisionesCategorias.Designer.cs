@@ -62,10 +62,12 @@
             this.comboBoxFiltCat = new System.Windows.Forms.ComboBox();
             this.comboBoxFiltRama = new System.Windows.Forms.ComboBox();
             this.label = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgDivisiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategorias)).BeginInit();
             this.groupBoxDivisiones.SuspendLayout();
             this.groupBoxCategorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDivisiones
@@ -437,11 +439,22 @@
             this.label.TabIndex = 36;
             this.label.Text = "Filtrar por Rama:";
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1019, 12);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(195, 86);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 38;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // DivisionesCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 706);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.comboBoxFiltRama);
             this.Controls.Add(this.label);
             this.Controls.Add(this.comboBoxFiltCat);
@@ -479,6 +492,7 @@
             this.groupBoxDivisiones.PerformLayout();
             this.groupBoxCategorias.ResumeLayout(false);
             this.groupBoxCategorias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,5 +533,6 @@
         private System.Windows.Forms.ComboBox comboBoxFiltCat;
         private System.Windows.Forms.ComboBox comboBoxFiltRama;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

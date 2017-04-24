@@ -54,8 +54,10 @@
             this.dgBoxeadores = new System.Windows.Forms.DataGridView();
             this.labelBuscarNombre = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.groupBoxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBoxeadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCancelar
@@ -347,11 +349,22 @@
             this.labelTitulo.TabIndex = 16;
             this.labelTitulo.Text = "Boxeadores";
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1105, 9);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(228, 90);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 25;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // Boxeadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 828);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.labelBuscarNombre);
             this.Controls.Add(this.textBoxBuscar);
@@ -373,6 +386,7 @@
             this.groupBoxDatos.ResumeLayout(false);
             this.groupBoxDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBoxeadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +419,6 @@
         private System.Windows.Forms.DataGridView dgBoxeadores;
         private System.Windows.Forms.Label labelBuscarNombre;
         private System.Windows.Forms.Label labelTitulo;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

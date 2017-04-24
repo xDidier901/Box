@@ -16,7 +16,16 @@ namespace BoxManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+
+            try
+            {
+                Application.Run(new Menu());
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al ejecutar el sistema: " + e.ToString());
+            }
+
         }
     }
 }
