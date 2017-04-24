@@ -341,6 +341,7 @@ namespace BoxManager.Interfaces
                 {
                    crearCategoria();
                    action.agregarCategoria(c);
+                   comboBoxCategorias = action.llenarCategorias(comboBoxCategorias);
                    reestablecerPredeterminadoCat();
                 }
                 else

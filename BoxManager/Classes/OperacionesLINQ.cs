@@ -10,10 +10,8 @@ namespace BoxManager.Classes
     class OperacionesLINQ
     {
 
-
+        //Variables
         BoxDBDataContext Database = new BoxDBDataContext();
-
-
 
         ///////////////BOXEADORES//////////////////////////
 
@@ -21,7 +19,6 @@ namespace BoxManager.Classes
         public void agregarBoxeador(Boxeadore x)
         {
             Database.Boxeadores.InsertOnSubmit(x);
-
             try
             {
                 Database.SubmitChanges();
@@ -40,7 +37,6 @@ namespace BoxManager.Classes
             var resultado = from valor in Database.Boxeadores
                             where valor.Id_Boxeador == id
                             select valor;
-
             foreach (var valor in resultado)
             {
                 valor.Nombre = x.Nombre;
@@ -50,7 +46,6 @@ namespace BoxManager.Classes
                 valor.Division = x.Division;
                 valor.Municipio = x.Municipio;
             }
-
             try
             {
                 Database.SubmitChanges();
@@ -61,22 +56,18 @@ namespace BoxManager.Classes
             {
                 MessageBox.Show("Hubo un error al actualizar el boxeador");
             }
-
         }
 
         //Borra un boxeador de la base de datos
         public void eliminarBoxeador(String nombre, int id)
         {
-            var query =
-            from valor in Database.Boxeadores
-            where valor.Id_Boxeador == id
-            select valor;
-
-            foreach (var detail in query)
+            var query = from valor in Database.Boxeadores
+                where valor.Id_Boxeador == id
+                select valor;
+                foreach (var detail in query)
             {
                 Database.Boxeadores.DeleteOnSubmit(detail);
             }
-
             try
             {
                 Database.SubmitChanges();
@@ -92,7 +83,6 @@ namespace BoxManager.Classes
         //Mostrar boxeadores en datagrid
         public void mostrarBoxeadores(DataGridView x)
         {
-
             var query = from valor in Database.Boxeadores
                         from valor2 in Database.Categorias
                         from valor3 in Database.Divisiones
@@ -101,7 +91,6 @@ namespace BoxManager.Classes
                          valor3.Id_Division == valor.Division &&
                          valor4.Id_Municipio == valor.Municipio
                         orderby valor.Nombre ascending
-
                         select new
                         {
                             ID = valor.Id_Boxeador,
@@ -112,14 +101,12 @@ namespace BoxManager.Classes
                             Division = valor3.Nombre,
                             Municipio = valor4.Nombre
                         };
-
             x.DataSource = query;
         }
 
         //Buscar boxeador
         public void buscarBoxeador(DataGridView x, string nombre)
         {
-
             var query = from valor in Database.Boxeadores
                         from valor2 in Database.Categorias
                         from valor3 in Database.Divisiones
@@ -129,7 +116,6 @@ namespace BoxManager.Classes
                          valor3.Id_Division == valor.Division &&
                          valor4.Id_Municipio == valor.Municipio
                         orderby valor.Nombre ascending
-
                         select new
                         {
                             ID = valor.Id_Boxeador,
@@ -140,7 +126,6 @@ namespace BoxManager.Classes
                             Division = valor3.Nombre,
                             Municipio = valor4.Nombre
                         };
-
             x.DataSource = query;
         }
 
@@ -150,42 +135,34 @@ namespace BoxManager.Classes
             var query = from valor in Database.Categorias
                         where valor.Rama.Equals(rama)
                         select new { Name = valor.Nombre.Trim(), ID = valor.Id_Categoria.ToString().Trim() };
-            
             combo.DisplayMember = "Name";
             combo.ValueMember = "ID";
             combo.DataSource = query.ToList();
-           
-            
             return combo;
         }
 
         //Llena un combobox con las divisiones con cierta categoria
         public ComboBox llenarDivisiones(ComboBox combo, int id)
         {
-            //combo.Items.Clear();
             var query = from valor in Database.Divisiones
                         where valor.Categoria == id
                         select new { Name = valor.Nombre.Trim(), ID = valor.Id_Division.ToString().Trim() };
             combo.DisplayMember = "Name";
             combo.ValueMember = "ID";
             combo.DataSource = query.ToList();
-            
             return combo;
         }
 
         //Llena un combobox con los municipios
         public ComboBox llenarMunicipios(ComboBox combo)
         {
-            //combo.Items.Clear();
             var query = from valor in Database.Municipios
                         select new { Name = valor.Nombre, ID = valor.Id_Municipio.ToString().Trim() };
             combo.DisplayMember = "Name";
             combo.ValueMember = "ID";
             combo.DataSource = query.ToList();
-            
             return combo;
         }
-
 
         ///////////////ACCIONES//////////////////////////
 
@@ -204,44 +181,32 @@ namespace BoxManager.Classes
             {
                 MessageBox.Show("Error al registrar la accion");
             }
-
         }
 
         //Muestra todas las acciones de la base de datos
         public void mostrarAcciones(DataGridView x)
         {
-
             var query = from valor in Database.Acciones
                         orderby valor.Id_Accion descending
                         select new { Descripción = valor.Descripcion, Fecha = valor.Fecha };
-
             x.DataSource = query;
         }
 
         //Busca acciones en la base de datos
         public void buscarAcciones(DataGridView x, string descp)
         {
-
             var query = from valor in Database.Acciones
                         where valor.Descripcion.Contains(descp)
                         orderby valor.Id_Accion descending
                         select new { Descripción = valor.Descripcion, Fecha = valor.Fecha };
-
             x.DataSource = query;
         }
 
         //Busca acciones en la base de datos por rango de fechas
         public void buscarAccionesFechas(DataGridView x, DateTime[] fechas)
         {
-            Console.WriteLine("Fecha 1: " + fechas[0] + "\n Fecha 2: " + fechas[1]);
-
-            var query = from valor in Database.Acciones
-                        where (valor.Fecha.Date >= fechas[0].Date) //&& (valor.Fecha.Date <= fechas[1].Date)
-                        select new { Descripción = valor.Descripcion, Fecha = valor.Fecha.Date };
-
-            x.DataSource = query;
+            x.DataSource = Database.accionesPor2Fechas(fechas[0], fechas[1]);
         }
-
 
         ///////////////CATEGORIAS Y DIVISIONES//////////////////////////
 
@@ -267,7 +232,6 @@ namespace BoxManager.Classes
         //Muestra todas las divisiones de la base de datos
         public void mostrarDivisiones(DataGridView x)
         {
-
             var query = from valor in Database.Divisiones
                         from valor2 in Database.Categorias
                         where valor.Categoria == valor2.Id_Categoria
@@ -284,7 +248,6 @@ namespace BoxManager.Classes
         //Busca una division en la base de datos
         public void buscarDivisiones(DataGridView x, string nombre)
         {
-
             var query = from valor in Database.Divisiones
                         from valor2 in Database.Categorias
                         where valor.Categoria == valor2.Id_Categoria && valor.Nombre.Contains(nombre)
@@ -312,7 +275,6 @@ namespace BoxManager.Classes
         //Muestra todas las divisiones en base a cierta categoria de la base de datos
         public void mostrarDivisionesByCategoria(DataGridView x, int id)
         {
-
             var query = from valor in Database.Divisiones
                         from valor2 in Database.Categorias
                         where valor.Categoria == id && valor.Categoria == valor2.Id_Categoria
@@ -335,12 +297,9 @@ namespace BoxManager.Classes
                             Name = valor.Nombre.Trim() +" - "+ valor.Rama.Trim(),
                             ID = valor.Id_Categoria.ToString().Trim()
                         };
-
             combo.DisplayMember = "Name";
             combo.ValueMember = "ID";
             combo.DataSource = query.ToList();
-
-
             return combo;
         }
 
@@ -348,7 +307,6 @@ namespace BoxManager.Classes
         public void agregarDivision(Divisione d)
         {
             Database.Divisiones.InsertOnSubmit(d);
-
             try
             {
                 Database.SubmitChanges();
@@ -367,13 +325,11 @@ namespace BoxManager.Classes
             var resultado = from valor in Database.Divisiones
                             where valor.Id_Division == id
                             select valor;
-
             foreach (var valor in resultado)
             {
                 valor.Nombre = d.Nombre;
                 valor.Categoria = d.Categoria;
             }
-
             try
             {
                 Database.SubmitChanges();
@@ -393,12 +349,10 @@ namespace BoxManager.Classes
             from valor in Database.Divisiones
             where valor.Id_Division == id
             select valor;
-
             foreach (var detail in query)
             {
                 Database.Divisiones.DeleteOnSubmit(detail);
             }
-
             try
             {
                 Database.SubmitChanges();
@@ -415,7 +369,6 @@ namespace BoxManager.Classes
         public void agregarCategoria(Categoria c)
         {
             Database.Categorias.InsertOnSubmit(c);
-
             try
             {
                 Database.SubmitChanges();
@@ -434,13 +387,11 @@ namespace BoxManager.Classes
             var resultado = from valor in Database.Categorias
                             where valor.Id_Categoria == id
                             select valor;
-
             foreach (var valor in resultado)
             {
                 valor.Nombre = c.Nombre;
                 valor.Rama = c.Rama;
             }
-
             try
             {
                 Database.SubmitChanges();
@@ -460,12 +411,10 @@ namespace BoxManager.Classes
             from valor in Database.Categorias
             where valor.Id_Categoria == id
             select valor;
-
             foreach (var detail in query)
             {
                 Database.Categorias.DeleteOnSubmit(detail);
             }
-
             try
             {
                 Database.SubmitChanges();
@@ -476,6 +425,19 @@ namespace BoxManager.Classes
             {
                 MessageBox.Show("Hubo un error al tratar de eliminar la categoría", e.ToString());
             }
+        }
+
+        ///////////////REGISTROS//////////////////////////
+
+        //Muestra todas las divisiones de la base de datos
+        public int[] obtenerRegistros()
+        {
+            int[] datos = new int[4];
+            datos[0]  = Database.Boxeadores.Count(); //totalBoxeadores
+            datos[1]  = Database.Categorias.Count(); //totalCategorias
+            datos[2]  = Database.Divisiones.Count(); //totalDivisiones
+            datos[3]  = Database.Acciones.Count();   //totalAcciones
+            return datos;
         }
 
     }

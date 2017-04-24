@@ -23,6 +23,7 @@ namespace BoxManager.Interfaces
             InitializeComponent();
             this.dtpFecha1.MaxDate = DateTime.Today;
             this.dtpFecha2.MaxDate = DateTime.Today;
+            this.dtpFecha2.Value = DateTime.Today;
         }
 
         private void Acciones_FormClosing(object sender, FormClosingEventArgs e)
@@ -48,10 +49,7 @@ namespace BoxManager.Interfaces
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("boton");
             DateTime[] fechas = new DateTime[] { dtpFecha1.Value, dtpFecha2.Value };
-            Console.WriteLine("Fecha 1: "+fechas[0]+" Fecha 2: "+fechas[1]);
-
             action.buscarAccionesFechas(dgAcciones, fechas);
 
         }

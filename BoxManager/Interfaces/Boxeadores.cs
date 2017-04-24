@@ -184,7 +184,6 @@ namespace BoxManager.Interfaces
         {
                 if (comboBoxCategorias.SelectedValue != null)
             {
-                //Console.WriteLine(comboBoxCategorias.SelectedValue.ToString());
                 categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue.ToString());
                 comboBoxDivisiones = action.llenarDivisiones(comboBoxDivisiones, categoria);
             }

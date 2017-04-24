@@ -126,7 +126,6 @@
             // dtpFecha2
             // 
             this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpFecha2.Enabled = false;
             this.dtpFecha2.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha2.Location = new System.Drawing.Point(492, 57);
@@ -139,7 +138,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(358, 60);
             this.label1.Name = "label1";

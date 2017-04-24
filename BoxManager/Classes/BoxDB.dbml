@@ -45,4 +45,12 @@
       <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Function Name="dbo.accionesPor2Fechas" Method="accionesPor2Fechas">
+    <Parameter Name="fecha1" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fecha2" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="accionesPor2FechasResult">
+      <Column Name="Descripción" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
