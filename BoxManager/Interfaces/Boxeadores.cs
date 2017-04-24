@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BoxManager.Classes;
 
@@ -19,7 +12,7 @@ namespace BoxManager.Interfaces
         private Boxeadore b;
         private Boolean botonPresionado = false;
         private int categoria;
- 
+
         //Constructor
         public Boxeadores()
         {
@@ -58,7 +51,6 @@ namespace BoxManager.Interfaces
                 age--;
 
             textBoxEdad.Text = age.ToString();
-
         }
 
         //Retorna la rama dependiendo de que radiobutton este presionado
@@ -88,14 +80,12 @@ namespace BoxManager.Interfaces
 
             if (camposCorrectos == 6) return true;
             else return false;
-
         }
 
         //Crea un objeto boxeador con la informacion de los campos
         private void crearBoxeador()
         {
             b = new Boxeadore();
-
             b.Nombre = textBoxNombre.Text.Trim();
             b.Rama = obtenerRama();
             b.FechaNacimiento = dtpFechaN.Value;
@@ -110,7 +100,6 @@ namespace BoxManager.Interfaces
             b = null;
             botonPresionado = false;
             categoria = -1;
-
             this.dgBoxeadores.Enabled = true;
             action.mostrarBoxeadores(dgBoxeadores);
             this.textBoxBuscar.Enabled = true;
@@ -131,7 +120,6 @@ namespace BoxManager.Interfaces
             int id = Convert.ToInt32(dgBoxeadores.CurrentRow.Cells[0].Value.ToString().Trim());
             return id;
         }
-
 
         private void Boxeadores_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -162,8 +150,8 @@ namespace BoxManager.Interfaces
             establecerRama();
             this.comboBoxMunicipios.Text = dgBoxeadores.CurrentRow.Cells[6].Value.ToString().Trim();
             this.comboBoxDivisiones.Text = dgBoxeadores.CurrentRow.Cells[5].Value.ToString().Trim();
-            this.comboBoxCategorias.Text = dgBoxeadores.CurrentRow.Cells[4].Value.ToString().Trim();     
-    }
+            this.comboBoxCategorias.Text = dgBoxeadores.CurrentRow.Cells[4].Value.ToString().Trim();
+        }
 
         private void dtpFechaN_ValueChanged(object sender, EventArgs e)
         {
@@ -182,7 +170,7 @@ namespace BoxManager.Interfaces
 
         private void comboBoxCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-                if (comboBoxCategorias.SelectedValue != null)
+            if (comboBoxCategorias.SelectedValue != null)
             {
                 categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue.ToString());
                 comboBoxDivisiones = action.llenarDivisiones(comboBoxDivisiones, categoria);
@@ -196,7 +184,7 @@ namespace BoxManager.Interfaces
             this.rbVaronil.Checked = false;
             this.rbFemenil.Checked = false;
             this.dtpFechaN.Value = dtpFechaN.MinDate;
-            comboBoxCategorias.DataSource = null; 
+            comboBoxCategorias.DataSource = null;
             comboBoxDivisiones.DataSource = null;
             comboBoxCategorias.SelectedIndex = -1;
             comboBoxDivisiones.SelectedIndex = -1;
@@ -272,9 +260,9 @@ namespace BoxManager.Interfaces
 
                 if (datosCorrectos())
                 {
-                   crearBoxeador();
-                   action.actualizarBoxeador(b, obtenerIdBoxeador());
-                   reestablecerPredeterminado();
+                    crearBoxeador();
+                    action.actualizarBoxeador(b, obtenerIdBoxeador());
+                    reestablecerPredeterminado();
                 }
                 else
                 {

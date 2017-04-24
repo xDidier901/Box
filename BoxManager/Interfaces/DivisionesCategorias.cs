@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BoxManager.Classes;
 
@@ -38,7 +31,7 @@ namespace BoxManager.Interfaces
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             new Menu().Show();
         }
 
@@ -48,7 +41,8 @@ namespace BoxManager.Interfaces
             {
                 int id = Convert.ToInt32(comboBoxFiltCat.SelectedValue.ToString().Trim());
                 action.mostrarDivisionesByCategoria(dgDivisiones, id);
-            } else
+            }
+            else
             {
                 action.mostrarDivisiones(dgDivisiones);
             }
@@ -339,10 +333,10 @@ namespace BoxManager.Interfaces
             {
                 if (datosCorrectosCat())
                 {
-                   crearCategoria();
-                   action.agregarCategoria(c);
-                   comboBoxCategorias = action.llenarCategorias(comboBoxCategorias);
-                   reestablecerPredeterminadoCat();
+                    crearCategoria();
+                    action.agregarCategoria(c);
+                    comboBoxCategorias = action.llenarCategorias(comboBoxCategorias);
+                    reestablecerPredeterminadoCat();
                 }
                 else
                 {

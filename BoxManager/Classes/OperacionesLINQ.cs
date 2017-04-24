@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BoxManager.Classes
@@ -62,9 +59,9 @@ namespace BoxManager.Classes
         public void eliminarBoxeador(String nombre, int id)
         {
             var query = from valor in Database.Boxeadores
-                where valor.Id_Boxeador == id
-                select valor;
-                foreach (var detail in query)
+                        where valor.Id_Boxeador == id
+                        select valor;
+            foreach (var detail in query)
             {
                 Database.Boxeadores.DeleteOnSubmit(detail);
             }
@@ -236,7 +233,8 @@ namespace BoxManager.Classes
                         from valor2 in Database.Categorias
                         where valor.Categoria == valor2.Id_Categoria
                         orderby valor2.Nombre ascending
-                        select new {
+                        select new
+                        {
                             Id_Division = valor.Id_Division,
                             Nombre = valor.Nombre,
                             Categoría = valor2.Nombre,
@@ -293,8 +291,9 @@ namespace BoxManager.Classes
         public ComboBox llenarCategorias(ComboBox combo)
         {
             var query = from valor in Database.Categorias
-                        select new {
-                            Name = valor.Nombre.Trim() +" - "+ valor.Rama.Trim(),
+                        select new
+                        {
+                            Name = valor.Nombre.Trim() + " - " + valor.Rama.Trim(),
                             ID = valor.Id_Categoria.ToString().Trim()
                         };
             combo.DisplayMember = "Name";
@@ -433,10 +432,10 @@ namespace BoxManager.Classes
         public int[] obtenerRegistros()
         {
             int[] datos = new int[4];
-            datos[0]  = Database.Boxeadores.Count(); //totalBoxeadores
-            datos[1]  = Database.Categorias.Count(); //totalCategorias
-            datos[2]  = Database.Divisiones.Count(); //totalDivisiones
-            datos[3]  = Database.Acciones.Count();   //totalAcciones
+            datos[0] = Database.Boxeadores.Count(); //totalBoxeadores
+            datos[1] = Database.Categorias.Count(); //totalCategorias
+            datos[2] = Database.Divisiones.Count(); //totalDivisiones
+            datos[3] = Database.Acciones.Count();   //totalAcciones
             return datos;
         }
 

@@ -134,6 +134,62 @@ namespace BoxManager.Classes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha1, fecha2);
 			return ((ISingleResult<accionesPor2FechasResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorCategoria")]
+		public ISingleResult<reporteBoxeadoresPorCategoriaResult> reporteBoxeadoresPorCategoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoria);
+			return ((ISingleResult<reporteBoxeadoresPorCategoriaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorCategoriaDivision")]
+		public ISingleResult<reporteBoxeadoresPorCategoriaDivisionResult> reporteBoxeadoresPorCategoriaDivision([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> division)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoria, division);
+			return ((ISingleResult<reporteBoxeadoresPorCategoriaDivisionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorCategoriaDivisionMunicipio")]
+		public ISingleResult<reporteBoxeadoresPorCategoriaDivisionMunicipioResult> reporteBoxeadoresPorCategoriaDivisionMunicipio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> division, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> municipio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoria, division, municipio);
+			return ((ISingleResult<reporteBoxeadoresPorCategoriaDivisionMunicipioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorCategoriaMunicipio")]
+		public ISingleResult<reporteBoxeadoresPorCategoriaMunicipioResult> reporteBoxeadoresPorCategoriaMunicipio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> municipio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoria, municipio);
+			return ((ISingleResult<reporteBoxeadoresPorCategoriaMunicipioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorMunicipio")]
+		public ISingleResult<reporteBoxeadoresPorMunicipioResult> reporteBoxeadoresPorMunicipio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> municipio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), municipio);
+			return ((ISingleResult<reporteBoxeadoresPorMunicipioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorRama")]
+		public ISingleResult<reporteBoxeadoresPorRamaResult> reporteBoxeadoresPorRama([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Rama", DbType="VarChar(10)")] string rama)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rama);
+			return ((ISingleResult<reporteBoxeadoresPorRamaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadoresPorRamaMunicipio")]
+		public ISingleResult<reporteBoxeadoresPorRamaMunicipioResult> reporteBoxeadoresPorRamaMunicipio([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Rama", DbType="VarChar(10)")] string rama, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> municipio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rama, municipio);
+			return ((ISingleResult<reporteBoxeadoresPorRamaMunicipioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reporteBoxeadores")]
+		public ISingleResult<reporteBoxeadoresResult> reporteBoxeadores()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<reporteBoxeadoresResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Acciones")]
@@ -907,6 +963,934 @@ namespace BoxManager.Classes
 				if ((this._Fecha != value))
 				{
 					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorCategoriaResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorCategoriaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorCategoriaDivisionResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorCategoriaDivisionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorCategoriaDivisionMunicipioResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorCategoriaDivisionMunicipioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorCategoriaMunicipioResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorCategoriaMunicipioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorMunicipioResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorMunicipioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorRamaResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorRamaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresPorRamaMunicipioResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresPorRamaMunicipioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reporteBoxeadoresResult
+	{
+		
+		private string _Nombre;
+		
+		private string _Rama;
+		
+		private System.DateTime _FechaNacimiento;
+		
+		private string _Categoria;
+		
+		private string _Division;
+		
+		private string _Municipio;
+		
+		public reporteBoxeadoresResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this._Rama = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaNacimiento", DbType="Date NOT NULL")]
+		public System.DateTime FechaNacimiento
+		{
+			get
+			{
+				return this._FechaNacimiento;
+			}
+			set
+			{
+				if ((this._FechaNacimiento != value))
+				{
+					this._FechaNacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Division", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Division
+		{
+			get
+			{
+				return this._Division;
+			}
+			set
+			{
+				if ((this._Division != value))
+				{
+					this._Division = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Municipio", DbType="NChar(40) NOT NULL", CanBeNull=false)]
+		public string Municipio
+		{
+			get
+			{
+				return this._Municipio;
+			}
+			set
+			{
+				if ((this._Municipio != value))
+				{
+					this._Municipio = value;
 				}
 			}
 		}

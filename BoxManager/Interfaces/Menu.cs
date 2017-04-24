@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BoxManager.Interfaces;
 using BoxManager.Classes;
+using BoxManager.Reportes;
 
 namespace BoxManager
 {
@@ -36,7 +30,7 @@ namespace BoxManager
         private void buttonBoxeadores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Boxeadores().Show();
+            new Interfaces.Boxeadores().Show();
         }
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,13 +53,19 @@ namespace BoxManager
         private void buttonAgregarBoxeador_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Boxeadores().Show();
+            new Interfaces.Boxeadores().Show();
         }
 
         private void buttonAgregarCateDiv_Click(object sender, EventArgs e)
         {
             this.Hide();
             new DivisionesCategorias().Show();
+        }
+
+        private void buttonCrearTorneo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new BoxeadoresReport().Show();
         }
     }
 }
