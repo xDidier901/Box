@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using BoxManager.Interfaces;
 using BoxManager.Classes;
 using BoxManager.Reportes;
+using LibreriaRegistros;
 
 namespace BoxManager
 {
@@ -10,22 +11,23 @@ namespace BoxManager
     {
         //Variables
         private OperacionesLINQ action = new OperacionesLINQ();
-        int[] registro = new int[4];
+        int[] registro;
 
         public Menu()
         {
             InitializeComponent();
+
             registro = action.obtenerRegistros();
-            llenarRegistrios();
+            //    llenarRegistrios();
         }
 
-        public void llenarRegistrios()
-        {
-            labelCantBoxeadores.Text = registro[0].ToString();
-            labelCantCategorias.Text = registro[1].ToString();
-            labelCantDivisiones.Text = registro[2].ToString();
-            labelCantAcciones.Text = registro[3].ToString();
-        }
+        //public void llenarRegistrios()
+        //{
+        //    labelCantBoxeadores.Text = registro[0].ToString();
+        //    labelCantCategorias.Text = registro[1].ToString();
+        //    labelCantDivisiones.Text = registro[2].ToString();
+        //    labelCantAcciones.Text = registro[3].ToString();
+        //}
 
         private void buttonBoxeadores_Click(object sender, EventArgs e)
         {
@@ -66,6 +68,11 @@ namespace BoxManager
         {
             this.Hide();
             new BoxeadoresReport().Show();
+        }
+
+        private void buttonRegistros_Click(object sender, EventArgs e)
+        {
+            new Registros(registro).Show();
         }
     }
 }

@@ -33,6 +33,7 @@
             this.buttonBoxeadores = new System.Windows.Forms.Button();
             this.buttonCatDiv = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonRegistros = new System.Windows.Forms.Button();
             this.buttonAgregarCateDiv = new System.Windows.Forms.Button();
             this.buttonAgregarBoxeador = new System.Windows.Forms.Button();
             this.labelCantAcciones = new System.Windows.Forms.Label();
@@ -104,12 +105,27 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(334, 297);
+            this.groupBox1.Location = new System.Drawing.Point(21, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(252, 187);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registros";
+            this.groupBox1.Visible = false;
+            // 
+            // buttonRegistros
+            // 
+            this.buttonRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegistros.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRegistros.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold);
+            this.buttonRegistros.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonRegistros.Location = new System.Drawing.Point(387, 408);
+            this.buttonRegistros.Name = "buttonRegistros";
+            this.buttonRegistros.Size = new System.Drawing.Size(199, 76);
+            this.buttonRegistros.TabIndex = 42;
+            this.buttonRegistros.Text = "Registros (DLL)";
+            this.buttonRegistros.UseVisualStyleBackColor = true;
+            this.buttonRegistros.Click += new System.EventHandler(this.buttonRegistros_Click);
             // 
             // buttonAgregarCateDiv
             // 
@@ -249,6 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 511);
+            this.Controls.Add(this.buttonRegistros);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCatDiv);
             this.Controls.Add(this.buttonHistorial);
@@ -286,6 +303,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonHistorial;
+        private System.Windows.Forms.Button buttonRegistros;
     }
 }
 

@@ -16,5 +16,6 @@ AS
 	 (Boxeadores.Categoria = @categoria) and  
 	 (Boxeadores.Division = @division)   and 
 	 (Boxeadores.Municipio = @municipio)
-	
+	order by Boxeadores.Nombre desc
+
 	
