@@ -96,9 +96,15 @@
     <Compile Include="Reportes\BoxeadoresReport.Designer.cs">
       <DependentUpon>BoxeadoresReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\GraficaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GraficaDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Reportes\BoxeadoresReport.resx">
       <DependentUpon>BoxeadoresReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportGrafica.rdlc" />
     <EmbeddedResource Include="Reportes\ReportBox.rdlc" />
     <None Include="Classes\BoxDB.dbml.layout">
       <DependentUpon>BoxDB.dbml</DependentUpon>
@@ -149,6 +155,17 @@
     </None>
     <None Include="Reportes\BoxeadoresDataSet.xss">
       <DependentUpon>BoxeadoresDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\GraficaDataSet.xsc">
+      <DependentUpon>GraficaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\GraficaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GraficaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\GraficaDataSet.xss">
+      <DependentUpon>GraficaDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

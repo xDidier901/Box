@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoxeadoresReport));
             this.reporteBoxeadoresPorCategoriaDivisionMunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ReporteBoxeadores = new BoxManager.Reportes.ReporteBoxeadores();
+            this.ReporteGraficaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GraficaDataSet = new BoxManager.Reportes.GraficaDataSet();
             this.reportBoxeadores = new Microsoft.Reporting.WinForms.ReportViewer();
             this.labelCategorias = new System.Windows.Forms.Label();
             this.buttonMenu = new System.Windows.Forms.Button();
@@ -49,11 +52,15 @@
             this.labelDiv = new System.Windows.Forms.Label();
             this.labelCategoria = new System.Windows.Forms.Label();
             this.labelRama = new System.Windows.Forms.Label();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.reportGrafica = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ReporteGraficaTableAdapter = new BoxManager.Reportes.GraficaDataSetTableAdapters.ReporteGraficaTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.reporteBoxeadoresPorCategoriaDivisionMunicipioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteBoxeadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteGraficaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficaDataSet)).BeginInit();
             this.groupBoxFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // reporteBoxeadoresPorCategoriaDivisionMunicipioBindingSource
@@ -65,6 +72,16 @@
             // 
             this.ReporteBoxeadores.DataSetName = "ReporteBoxeadores";
             this.ReporteBoxeadores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ReporteGraficaBindingSource
+            // 
+            this.ReporteGraficaBindingSource.DataMember = "ReporteGrafica";
+            this.ReporteGraficaBindingSource.DataSource = this.GraficaDataSet;
+            // 
+            // GraficaDataSet
+            // 
+            this.GraficaDataSet.DataSetName = "GraficaDataSet";
+            this.GraficaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportBoxeadores
             // 
@@ -117,7 +134,7 @@
             this.groupBoxFiltros.Controls.Add(this.labelCategoria);
             this.groupBoxFiltros.Controls.Add(this.labelRama);
             this.groupBoxFiltros.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFiltros.Location = new System.Drawing.Point(925, 157);
+            this.groupBoxFiltros.Location = new System.Drawing.Point(925, 74);
             this.groupBoxFiltros.Name = "groupBoxFiltros";
             this.groupBoxFiltros.Size = new System.Drawing.Size(518, 282);
             this.groupBoxFiltros.TabIndex = 22;
@@ -246,22 +263,39 @@
             this.labelRama.TabIndex = 2;
             this.labelRama.Text = "Rama:";
             // 
-            // pictureBoxLogo
+            // reportGrafica
             // 
-            this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(925, 12);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(518, 129);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 23;
-            this.pictureBoxLogo.TabStop = false;
+            reportDataSource2.Name = "Grafica";
+            reportDataSource2.Value = this.ReporteGraficaBindingSource;
+            this.reportGrafica.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportGrafica.LocalReport.ReportEmbeddedResource = "BoxManager.Reportes.ReportGrafica.rdlc";
+            this.reportGrafica.Location = new System.Drawing.Point(925, 362);
+            this.reportGrafica.Name = "reportGrafica";
+            this.reportGrafica.Size = new System.Drawing.Size(526, 332);
+            this.reportGrafica.TabIndex = 23;
+            this.reportGrafica.Load += new System.EventHandler(this.reportGrafica_Load);
+            // 
+            // ReporteGraficaTableAdapter
+            // 
+            this.ReporteGraficaTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BoxManager.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1236, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // BoxeadoresReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1463, 706);
-            this.Controls.Add(this.pictureBoxLogo);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.reportGrafica);
             this.Controls.Add(this.groupBoxFiltros);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.labelCategorias);
@@ -275,9 +309,11 @@
             this.Load += new System.EventHandler(this.ReporteBoxeadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporteBoxeadoresPorCategoriaDivisionMunicipioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteBoxeadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteGraficaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficaDataSet)).EndInit();
             this.groupBoxFiltros.ResumeLayout(false);
             this.groupBoxFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,6 +339,10 @@
         private System.Windows.Forms.Label labelRama;
         private System.Windows.Forms.Button buttonGenerarR;
         private System.Windows.Forms.Button buttonReestablecer;
-        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private Microsoft.Reporting.WinForms.ReportViewer reportGrafica;
+        private System.Windows.Forms.BindingSource ReporteGraficaBindingSource;
+        private GraficaDataSet GraficaDataSet;
+        private GraficaDataSetTableAdapters.ReporteGraficaTableAdapter ReporteGraficaTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

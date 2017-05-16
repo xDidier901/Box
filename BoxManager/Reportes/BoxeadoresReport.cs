@@ -197,10 +197,12 @@ namespace BoxManager.Reportes
 
         private void ReporteBoxeadores_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'GraficaDataSet.ReporteGrafica' table. You can move, or remove it, as needed.
+            this.ReporteGraficaTableAdapter.Fill(this.GraficaDataSet.ReporteGrafica);
             // TODO: This line of code loads data into the 'ReporteBoxeadores.reporteBoxeadoresPorCategoriaDivisionMunicipio' table. You can move, or remove it, as needed.
             reporteBoxeadoresPorCategoriaDivisionMunicipioBindingSource.DataSource = Database.reporteBoxeadores();
-
             this.reportBoxeadores.RefreshReport();
+            this.reportGrafica.RefreshReport();
         }
 
         private void Boxeadores_FormClosing(object sender, FormClosingEventArgs e)
@@ -277,6 +279,12 @@ namespace BoxManager.Reportes
         private void buttonGenerarR_Click(object sender, EventArgs e)
         {
             escogerReporte();
+        }
+
+        private void reportGrafica_Load(object sender, EventArgs e)
+        {
+            ReporteGraficaBindingSource.DataSource = Database.ReporteGrafica();
+            reportGrafica.RefreshReport();
         }
     }
 }

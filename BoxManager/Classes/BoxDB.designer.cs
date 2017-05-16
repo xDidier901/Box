@@ -190,6 +190,13 @@ namespace BoxManager.Classes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rama, municipio);
 			return ((ISingleResult<reporteBoxeadoresPorRamaMunicipioResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ReporteGrafica")]
+		public ISingleResult<ReporteGraficaResult> ReporteGrafica()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ReporteGraficaResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Acciones")]
@@ -1891,6 +1898,50 @@ namespace BoxManager.Classes
 				if ((this._Municipio != value))
 				{
 					this._Municipio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ReporteGraficaResult
+	{
+		
+		private string _Categoria;
+		
+		private System.Nullable<int> _Divisiones;
+		
+		public ReporteGraficaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string Categoria
+		{
+			get
+			{
+				return this._Categoria;
+			}
+			set
+			{
+				if ((this._Categoria != value))
+				{
+					this._Categoria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Divisiones", DbType="Int")]
+		public System.Nullable<int> Divisiones
+		{
+			get
+			{
+				return this._Divisiones;
+			}
+			set
+			{
+				if ((this._Divisiones != value))
+				{
+					this._Divisiones = value;
 				}
 			}
 		}
