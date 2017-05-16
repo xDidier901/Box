@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BoxManagerDB" Class="BoxDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BoxManagerDB;Integrated Security=True" SettingsObjectName="BoxManager.Properties.Settings" SettingsPropertyName="BoxManagerDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Acciones" Member="Acciones">
+    <Type Name="Accione">
+      <Column Name="Id_Accion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Boxeadores" Member="Boxeadores">
+    <Type Name="Boxeadore">
+      <Column Name="Id_Boxeador" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categorias" Member="Categorias">
+    <Type Name="Categoria">
+      <Column Name="Id_Categoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Divisiones" Member="Divisiones">
+    <Type Name="Divisione">
+      <Column Name="Id_Division" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Municipios" Member="Municipios">
+    <Type Name="Municipio">
+      <Column Name="Id_Municipio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NChar(40) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Registros" Member="Registros">
+    <Type Name="Registro">
+      <Column Name="Id_Registros" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Registro" Member="Registro1" Type="System.String" DbType="NChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.accionesPor2Fechas" Method="accionesPor2Fechas">
+    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="accionesPor2FechasResult">
+      <Column Name="Descripción" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadores" Method="reporteBoxeadores">
+    <ElementType Name="reporteBoxeadoresResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorCategoria" Method="reporteBoxeadoresPorCategoria">
+    <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reporteBoxeadoresPorCategoriaResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorRama" Method="reporteBoxeadoresPorRama">
+    <Parameter Name="Rama" Parameter="rama" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="reporteBoxeadoresPorRamaResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorCategoriaDivision" Method="reporteBoxeadoresPorCategoriaDivision">
+    <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="division" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reporteBoxeadoresPorCategoriaDivisionResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorCategoriaDivisionMunicipio" Method="reporteBoxeadoresPorCategoriaDivisionMunicipio">
+    <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="division" Type="System.Int32" DbType="Int" />
+    <Parameter Name="municipio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reporteBoxeadoresPorCategoriaDivisionMunicipioResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorCategoriaMunicipio" Method="reporteBoxeadoresPorCategoriaMunicipio">
+    <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="municipio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reporteBoxeadoresPorCategoriaMunicipioResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorMunicipio" Method="reporteBoxeadoresPorMunicipio">
+    <Parameter Name="municipio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reporteBoxeadoresPorMunicipioResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.reporteBoxeadoresPorRamaMunicipio" Method="reporteBoxeadoresPorRamaMunicipio">
+    <Parameter Name="Rama" Parameter="rama" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="municipio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reporteBoxeadoresPorRamaMunicipioResult">
+      <Column Name="Nombre" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Municipio" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ReporteGrafica" Method="ReporteGrafica">
+    <ElementType Name="ReporteGraficaResult">
+      <Column Name="Categoria" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Divisiones" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
