@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BoxManagerDB" Class="BoxDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BoxManagerDB;Integrated Security=True" SettingsObjectName="BoxManager.Properties.Settings" SettingsPropertyName="BoxManagerDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BoxManagerDB;Integrated Security=True;" SettingsObjectName="BoxManager.Properties.Settings" SettingsPropertyName="BoxManagerDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Acciones" Member="Acciones">
     <Type Name="Accione">
       <Column Name="Id_Accion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
