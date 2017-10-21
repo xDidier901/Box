@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BoxManagerDB" Class="BoxDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BoxManagerDB;Integrated Security=True;" SettingsObjectName="BoxManager.Properties.Settings" SettingsPropertyName="BoxManagerDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BoxManagerDB;Integrated Security=True" SettingsObjectName="BoxManager.Properties.Settings" SettingsPropertyName="BoxManagerDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Acciones" Member="Acciones">
     <Type Name="Accione">
       <Column Name="Id_Accion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -43,6 +43,27 @@
       <Column Name="Id_Registros" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Registro" Member="Registro1" Type="System.String" DbType="NChar(40) NOT NULL" CanBeNull="false" />
       <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Torneo" Member="Torneos">
+    <Type Name="Torneo">
+      <Column Name="Id_Torneo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rama" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NumParticipantes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pelea" Member="Peleas">
+    <Type Name="Pelea">
+      <Column Name="Id_Pelea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Boxeador1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Boxeador2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Torneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Etapa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ganador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.accionesPor2Fechas" Method="accionesPor2Fechas">

@@ -48,6 +48,12 @@ namespace BoxManager.Classes
     partial void InsertRegistro(Registro instance);
     partial void UpdateRegistro(Registro instance);
     partial void DeleteRegistro(Registro instance);
+    partial void InsertTorneo(Torneo instance);
+    partial void UpdateTorneo(Torneo instance);
+    partial void DeleteTorneo(Torneo instance);
+    partial void InsertPelea(Pelea instance);
+    partial void UpdatePelea(Pelea instance);
+    partial void DeletePelea(Pelea instance);
     #endregion
 		
 		public BoxDBDataContext() : 
@@ -125,6 +131,22 @@ namespace BoxManager.Classes
 			get
 			{
 				return this.GetTable<Registro>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Torneo> Torneos
+		{
+			get
+			{
+				return this.GetTable<Torneo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Pelea> Peleas
+		{
+			get
+			{
+				return this.GetTable<Pelea>();
 			}
 		}
 		
@@ -906,6 +928,394 @@ namespace BoxManager.Classes
 					this._Cantidad = value;
 					this.SendPropertyChanged("Cantidad");
 					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Torneo")]
+	public partial class Torneo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_Torneo;
+		
+		private string _Nombre;
+		
+		private int _Id_Categoria;
+		
+		private string _Rama;
+		
+		private int _NumParticipantes;
+		
+		private System.DateTime _FechaCreacion;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_TorneoChanging(int value);
+    partial void OnId_TorneoChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnId_CategoriaChanging(int value);
+    partial void OnId_CategoriaChanged();
+    partial void OnRamaChanging(string value);
+    partial void OnRamaChanged();
+    partial void OnNumParticipantesChanging(int value);
+    partial void OnNumParticipantesChanged();
+    partial void OnFechaCreacionChanging(System.DateTime value);
+    partial void OnFechaCreacionChanged();
+    #endregion
+		
+		public Torneo()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Torneo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_Torneo
+		{
+			get
+			{
+				return this._Id_Torneo;
+			}
+			set
+			{
+				if ((this._Id_Torneo != value))
+				{
+					this.OnId_TorneoChanging(value);
+					this.SendPropertyChanging();
+					this._Id_Torneo = value;
+					this.SendPropertyChanged("Id_Torneo");
+					this.OnId_TorneoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Categoria", DbType="Int NOT NULL")]
+		public int Id_Categoria
+		{
+			get
+			{
+				return this._Id_Categoria;
+			}
+			set
+			{
+				if ((this._Id_Categoria != value))
+				{
+					this.OnId_CategoriaChanging(value);
+					this.SendPropertyChanging();
+					this._Id_Categoria = value;
+					this.SendPropertyChanged("Id_Categoria");
+					this.OnId_CategoriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rama", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Rama
+		{
+			get
+			{
+				return this._Rama;
+			}
+			set
+			{
+				if ((this._Rama != value))
+				{
+					this.OnRamaChanging(value);
+					this.SendPropertyChanging();
+					this._Rama = value;
+					this.SendPropertyChanged("Rama");
+					this.OnRamaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumParticipantes", DbType="Int NOT NULL")]
+		public int NumParticipantes
+		{
+			get
+			{
+				return this._NumParticipantes;
+			}
+			set
+			{
+				if ((this._NumParticipantes != value))
+				{
+					this.OnNumParticipantesChanging(value);
+					this.SendPropertyChanging();
+					this._NumParticipantes = value;
+					this.SendPropertyChanged("NumParticipantes");
+					this.OnNumParticipantesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCreacion", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaCreacion
+		{
+			get
+			{
+				return this._FechaCreacion;
+			}
+			set
+			{
+				if ((this._FechaCreacion != value))
+				{
+					this.OnFechaCreacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaCreacion = value;
+					this.SendPropertyChanged("FechaCreacion");
+					this.OnFechaCreacionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pelea")]
+	public partial class Pelea : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_Pelea;
+		
+		private int _Id_Boxeador1;
+		
+		private int _Id_Boxeador2;
+		
+		private int _Id_Torneo;
+		
+		private int _Etapa;
+		
+		private System.Nullable<int> _Ganador;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_PeleaChanging(int value);
+    partial void OnId_PeleaChanged();
+    partial void OnId_Boxeador1Changing(int value);
+    partial void OnId_Boxeador1Changed();
+    partial void OnId_Boxeador2Changing(int value);
+    partial void OnId_Boxeador2Changed();
+    partial void OnId_TorneoChanging(int value);
+    partial void OnId_TorneoChanged();
+    partial void OnEtapaChanging(int value);
+    partial void OnEtapaChanged();
+    partial void OnGanadorChanging(System.Nullable<int> value);
+    partial void OnGanadorChanged();
+    partial void OnFechaChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaChanged();
+    #endregion
+		
+		public Pelea()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Pelea", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_Pelea
+		{
+			get
+			{
+				return this._Id_Pelea;
+			}
+			set
+			{
+				if ((this._Id_Pelea != value))
+				{
+					this.OnId_PeleaChanging(value);
+					this.SendPropertyChanging();
+					this._Id_Pelea = value;
+					this.SendPropertyChanged("Id_Pelea");
+					this.OnId_PeleaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Boxeador1", DbType="Int NOT NULL")]
+		public int Id_Boxeador1
+		{
+			get
+			{
+				return this._Id_Boxeador1;
+			}
+			set
+			{
+				if ((this._Id_Boxeador1 != value))
+				{
+					this.OnId_Boxeador1Changing(value);
+					this.SendPropertyChanging();
+					this._Id_Boxeador1 = value;
+					this.SendPropertyChanged("Id_Boxeador1");
+					this.OnId_Boxeador1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Boxeador2", DbType="Int NOT NULL")]
+		public int Id_Boxeador2
+		{
+			get
+			{
+				return this._Id_Boxeador2;
+			}
+			set
+			{
+				if ((this._Id_Boxeador2 != value))
+				{
+					this.OnId_Boxeador2Changing(value);
+					this.SendPropertyChanging();
+					this._Id_Boxeador2 = value;
+					this.SendPropertyChanged("Id_Boxeador2");
+					this.OnId_Boxeador2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Torneo", DbType="Int NOT NULL")]
+		public int Id_Torneo
+		{
+			get
+			{
+				return this._Id_Torneo;
+			}
+			set
+			{
+				if ((this._Id_Torneo != value))
+				{
+					this.OnId_TorneoChanging(value);
+					this.SendPropertyChanging();
+					this._Id_Torneo = value;
+					this.SendPropertyChanged("Id_Torneo");
+					this.OnId_TorneoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Etapa", DbType="Int NOT NULL")]
+		public int Etapa
+		{
+			get
+			{
+				return this._Etapa;
+			}
+			set
+			{
+				if ((this._Etapa != value))
+				{
+					this.OnEtapaChanging(value);
+					this.SendPropertyChanging();
+					this._Etapa = value;
+					this.SendPropertyChanged("Etapa");
+					this.OnEtapaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ganador", DbType="Int")]
+		public System.Nullable<int> Ganador
+		{
+			get
+			{
+				return this._Ganador;
+			}
+			set
+			{
+				if ((this._Ganador != value))
+				{
+					this.OnGanadorChanging(value);
+					this.SendPropertyChanging();
+					this._Ganador = value;
+					this.SendPropertyChanged("Ganador");
+					this.OnGanadorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
 				}
 			}
 		}
