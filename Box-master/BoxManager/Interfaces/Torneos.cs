@@ -118,14 +118,50 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("", "", ""); //Division y categoria
+                    dt.Rows.Add(shuffle[0], "", "");
+                    dt.Rows.Add("", "", "");
+                    dt.Rows.Add(shuffle[1], "", "");
+                    dt.Rows.Add("", "", "");
+                    dt.Rows.Add(shuffle[2], "", "");
+
+                    style.BackColor = Color.RoyalBlue;
+                    style2.BackColor = Color.Firebrick;
+
+                    style.ForeColor = Color.White;
+                    style2.ForeColor = Color.White;
+
+                    dataGridView.DataSource = dt;
+                    dataGridView.Rows[1].Cells[0].Style = style;
+                    dataGridView.Rows[3].Cells[0].Style = style2;
+                    dataGridView.Rows[5].Cells[0].Style = style;
+
                     break;
                 case 4:
                     dt.Columns.Add("Ronda inicial", typeof(string));
                     dt.Columns.Add("Finales", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    style.BackColor = Color.RoyalBlue;
+                    style2.BackColor = Color.Firebrick;
+                    style.ForeColor = Color.White;
+                    style2.ForeColor = Color.White;
+
+                    dt.Rows.Add("", "", ""); //Division y categoria
+                    dt.Rows.Add(shuffle[0], "", "");
+                    dt.Rows.Add("", "", "");
+                    dt.Rows.Add(shuffle[1], "", "");
+                    dt.Rows.Add("", "", "");
+                    dt.Rows.Add(shuffle[2], "", "");
+                    dt.Rows.Add("", "", "");
+                    dt.Rows.Add(shuffle[3], "", "");
+
+                    dataGridView.DataSource = dt;
+                    dataGridView.Rows[1].Cells[0].Style = style;//azul
+                    dataGridView.Rows[3].Cells[0].Style = style2;//rojo
+                    dataGridView.Rows[5].Cells[0].Style = style;//azul
+                    dataGridView.Rows[7].Cells[0].Style = style2;//rojo
+                    //llenarTabla();
                     break;
                 case 5:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -133,7 +169,30 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    style.BackColor = Color.RoyalBlue;
+                    style2.BackColor = Color.Firebrick;
+                    style.ForeColor = Color.White;
+                    style2.ForeColor = Color.White;
+
+                    dt.Rows.Add("", "", "", ""); //Division y categoria
+                    dt.Rows.Add(shuffle[0], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[1], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[2], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[3], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[4], "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    dataGridView.Rows[1].Cells[0].Style = style;
+                    dataGridView.Rows[3].Cells[0].Style = style2;
+                    dataGridView.Rows[5].Cells[0].Style = style;
+                    dataGridView.Rows[7].Cells[0].Style = style2;
+                    dataGridView.Rows[9].Cells[0].Style = style;
+                    break;
+                    //llenarTabla();
                     break;
                 case 6:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -141,7 +200,21 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("", "", "", ""); //Division y categoria
+                    dt.Rows.Add(shuffle[0], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[1], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[2], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[3], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[4], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[5], "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 7:
                     dt.Columns.Add("Etapa inicial", typeof(string));
@@ -149,7 +222,23 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("", "", "", ""); //Division y categoria
+                    dt.Rows.Add(shuffle[0], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[1], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[2], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[3], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[4], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[5], "", "", "");
+                    dt.Rows.Add("", "", "", "");
+                    dt.Rows.Add(shuffle[6], "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 8:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -158,7 +247,27 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 9:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -167,7 +276,28 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 10:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -176,7 +306,30 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 11:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -185,7 +338,32 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[10], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 12:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -194,7 +372,34 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[10], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[11], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 13:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -203,7 +408,36 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[10], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[11], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[12], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 14:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -212,7 +446,38 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[10], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[11], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[12], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[13], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 15:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -221,7 +486,40 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[10], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[11], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[12], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[13], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[14], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
                 case 16:
                     dt.Columns.Add("Rondas iniciales", typeof(string));
@@ -230,7 +528,42 @@ namespace BoxManager.Interfaces
                     dt.Columns.Add("Final", typeof(string));
                     dt.Columns.Add("Campeón", typeof(string));
 
-                    llenarTabla();
+                    dt.Rows.Add("Division", "", "Categoria", "", ""); //Fila division ylm
+                    dt.Rows.Add("", "", "", "", ""); //separador 
+                    dt.Rows.Add(shuffle[0], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador1
+                    dt.Rows.Add(shuffle[1], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador5
+                    dt.Rows.Add(shuffle[2], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador2
+                    dt.Rows.Add(shuffle[3], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Campeón         
+                    dt.Rows.Add(shuffle[4], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador3
+                    dt.Rows.Add(shuffle[5], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//Ganador 7           
+                    dt.Rows.Add(shuffle[6], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador//ganador4
+                    dt.Rows.Add(shuffle[7], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");//separador
+                    dt.Rows.Add(shuffle[8], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[9], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[10], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[11], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[12], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[13], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[14], "", "", "", "");
+                    dt.Rows.Add("", "", "", "", "");
+                    dt.Rows.Add(shuffle[15], "", "", "", "");
+
+                    dataGridView.DataSource = dt;
+                    //llenarTabla();
                     break;
             }
             //dataGridView.DataSource = dt;
