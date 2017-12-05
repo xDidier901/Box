@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonHistorial = new System.Windows.Forms.Button();
             this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
+            this.buttonCrearTorneo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             this.SuspendLayout();
@@ -253,11 +254,27 @@
             this.pictureBoxMenu.TabIndex = 13;
             this.pictureBoxMenu.TabStop = false;
             // 
+            // buttonCrearTorneo
+            // 
+            this.buttonCrearTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCrearTorneo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonCrearTorneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
+            this.buttonCrearTorneo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCrearTorneo.Location = new System.Drawing.Point(669, 249);
+            this.buttonCrearTorneo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonCrearTorneo.Name = "buttonCrearTorneo";
+            this.buttonCrearTorneo.Size = new System.Drawing.Size(224, 95);
+            this.buttonCrearTorneo.TabIndex = 42;
+            this.buttonCrearTorneo.Text = "Crear Torneo";
+            this.buttonCrearTorneo.UseVisualStyleBackColor = true;
+            this.buttonCrearTorneo.Click += new System.EventHandler(this.buttonCrearTorneo_Click_1);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 639);
+            this.ClientSize = new System.Drawing.Size(905, 639);
+            this.Controls.Add(this.buttonCrearTorneo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCatDiv);
             this.Controls.Add(this.buttonHistorial);
@@ -296,6 +313,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonHistorial;
+        private System.Windows.Forms.Button buttonCrearTorneo;
     }
 }
 

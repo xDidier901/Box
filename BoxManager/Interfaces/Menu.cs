@@ -70,5 +70,10 @@ namespace BoxManager
             new BoxeadoresReport().Show();
         }
 
+        private void buttonCrearTorneo_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Interfaces.Torneo().Show();
+        }
     }
 }

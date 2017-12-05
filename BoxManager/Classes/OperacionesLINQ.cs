@@ -154,7 +154,7 @@ namespace BoxManager.Classes
         public ComboBox llenarMunicipios(ComboBox combo)
         {
             var query = from valor in Database.Municipios
-                        select new { Name = valor.Nombre, ID = valor.Id_Municipio.ToString().Trim() };
+                        select new { Name = valor.Nombre.Trim(), ID = valor.Id_Municipio.ToString().Trim() };
             combo.DisplayMember = "Name";
             combo.ValueMember = "ID";
             combo.DataSource = query.ToList();
@@ -438,6 +438,41 @@ namespace BoxManager.Classes
             datos[3] = Database.Acciones.Count();   //totalAcciones
             return datos;
         }
+
+        ///////////////Crear Torneo//////////////////////////
+
+        //Mostrar boxeadores en datagrid por filtro
+        public Boxeadore[] filtrarBoxeadores(int categoria, int divison, String rama)
+        {
+            
+            var query = from valor in Database.Boxeadores
+                        where 
+                        valor.Categoria == categoria &&
+                        valor.Division == divison &&
+                        valor.Rama.Equals(rama)
+                        orderby valor.Nombre ascending
+                        select new
+                        {
+                            ID = valor.Id_Boxeador,
+                            Nombre = valor.Nombre.Trim(),
+                        };
+            var algo = query.ToArray();
+            Boxeadore[] boxeadores = new Boxeadore[algo.Length];
+            int i = 0;
+            foreach(var value in algo)
+            {
+                Boxeadore y = new Boxeadore();
+                y.Nombre = value.Nombre;
+                y.Id_Boxeador = value.ID;
+                boxeadores[i] = y;
+                i++;
+            }
+
+            return boxeadores;
+            //return algo;
+            //x.DataSource = query;
+        }
+
 
     }
 }
