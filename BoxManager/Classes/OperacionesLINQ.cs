@@ -19,8 +19,8 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se agregó al boxeador " + x.Nombre + " en la base de datos");
-                MessageBox.Show("Boxeador " + x.Nombre + " agregado correctamente");
+                registrarAccion($"Se agregó al boxeador { x.Nombre } en la base de datos");
+                MessageBox.Show($"Boxeador { x.Nombre } agregado correctamente");
             }
             catch (Exception)
             {
@@ -46,8 +46,8 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se modificó al boxeador " + x.Nombre + " en la base de datos");
-                MessageBox.Show("Boxeador " + x.Nombre + " actualizado correctamente");
+                registrarAccion($"Se modificó al boxeador { x.Nombre } en la base de datos");
+                MessageBox.Show($"Boxeador { x.Nombre } actualizado correctamente");
             }
             catch (Exception)
             {
@@ -68,12 +68,12 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se eliminó al boxeador " + nombre + " de la base de datos");
-                MessageBox.Show("Se eliminó al boxeador " + nombre + " correctamente");
+                registrarAccion($"Se eliminó al boxeador { nombre } de la base de datos");
+                MessageBox.Show($"Se eliminó al boxeador { nombre } correctamente");
             }
             catch (Exception e)
             {
-                MessageBox.Show("Hubo un error al tratar de eliminar el boxeador", e.ToString());
+                MessageBox.Show($"Hubo un error al tratar de eliminar el boxeador { e.ToString() }");
             }
         }
 
@@ -309,8 +309,8 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se agregó la división " + d.Nombre + " en la base de datos");
-                MessageBox.Show("División " + d.Nombre + " agregada correctamente");
+                registrarAccion($"Se agregó la división { d.Nombre } en la base de datos");
+                MessageBox.Show($"División { d.Nombre } agregada correctamente");
             }
             catch (Exception)
             {
@@ -332,8 +332,8 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se modificó la división " + d.Nombre + " en la base de datos");
-                MessageBox.Show("División " + d.Nombre + " actualizada correctamente");
+                registrarAccion($"Se modificó la división { d.Nombre } en la base de datos");
+                MessageBox.Show($"División { d.Nombre } actualizada correctamente");
             }
             catch (Exception)
             {
@@ -355,12 +355,12 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se eliminó la división " + nombre + " de la base de datos");
-                MessageBox.Show("Se eliminó la división " + nombre + " correctamente");
+                registrarAccion($"Se eliminó la división { nombre } de la base de datos");
+                MessageBox.Show($"Se eliminó la división { nombre } correctamente");
             }
             catch (Exception e)
             {
-                MessageBox.Show("Hubo un error al tratar de eliminar la división", e.ToString());
+                MessageBox.Show($"Hubo un error al tratar de eliminar la división { e.ToString() }");
             }
         }
 
@@ -371,8 +371,8 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se agregó la categoría " + c.Nombre + " en la base de datos");
-                MessageBox.Show("Categoría " + c.Nombre + " agregada correctamente");
+                registrarAccion($"Se agregó la categoría { c.Nombre } en la base de datos");
+                MessageBox.Show($"Categoría { c.Nombre } agregada correctamente");
             }
             catch (Exception)
             {
@@ -394,8 +394,8 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se modificó la categoría " + c.Nombre + " en la base de datos");
-                MessageBox.Show("Categoría " + c.Nombre + " actualizada correctamente");
+                registrarAccion($"Se modificó la categoría { c.Nombre } en la base de datos");
+                MessageBox.Show($"Categoría { c.Nombre } actualizada correctamente");
             }
             catch (Exception)
             {
@@ -417,12 +417,12 @@ namespace BoxManager.Classes
             try
             {
                 Database.SubmitChanges();
-                registrarAccion("Se eliminó la categoría " + nombre + " de la base de datos");
-                MessageBox.Show("Se eliminó la categoría " + nombre + " correctamente");
+                registrarAccion($"Se eliminó la categoría { nombre } de la base de datos");
+                MessageBox.Show($"Se eliminó la categoría { nombre } correctamente");
             }
             catch (Exception e)
             {
-                MessageBox.Show("Hubo un error al tratar de eliminar la categoría", e.ToString());
+                MessageBox.Show($"Hubo un error al tratar de eliminar la categoría. Error: { e.ToString() }");
             }
         }
 
@@ -471,6 +471,55 @@ namespace BoxManager.Classes
             return boxeadores;
             //return algo;
             //x.DataSource = query;
+        }
+
+        //Crea un torneo
+        public int crearTorneo(int cantidadT, String nombreT, String ramaT, int categoriaT)
+        {
+            Torneo torneo = new Torneo();
+            torneo.Nombre = nombreT;
+            torneo.NumParticipantes = cantidadT;
+            torneo.Rama = ramaT;
+            torneo.Id_Categoria = categoriaT;
+            torneo.FechaCreacion = DateTime.Now;
+            Database.Torneos.InsertOnSubmit(torneo);
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion($"Se creó el torneo { torneo.Nombre } en la base de datos");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Error al intentar crear el torneo: { e }");
+                return -1;
+            }
+
+            return torneo.Id_Torneo;
+        }
+
+        //Crea una pelea de algún respectivo torneo
+        public Boolean crearPelea(int torneoID, int boxeador1ID, int boxeador2ID, int etapa)
+        {
+            Pelea pelea = new Pelea();
+            pelea.Id_Torneo = torneoID;
+            pelea.Id_Boxeador1 = boxeador1ID;
+            pelea.Id_Boxeador2 = boxeador2ID;
+            pelea.Etapa = etapa;
+
+            Database.Peleas.InsertOnSubmit(pelea);
+
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion($"Se registró la pelea: { pelea.Id_Pelea } en la base de datos");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Error al intentar crear la pelea: { pelea.Id_Pelea }. Error: { e }");
+                return false;
+            }
+
+            return true;
         }
 
 

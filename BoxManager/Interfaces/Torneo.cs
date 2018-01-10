@@ -114,6 +114,19 @@ namespace BoxManager.Interfaces
                 dgDisponibles.Rows.Remove(dr);
             }
             dgSeleccionados.Refresh();
+            checarCantidad();
+        }
+
+        private void checarCantidad()
+        {
+            if (dgSeleccionados.RowCount > 2)
+            {
+                buttonCrearT.Enabled = true;
+            }
+            else
+            {
+                buttonCrearT.Enabled = false;
+            }
         }
 
         public void deshabilitarFiltros()
@@ -140,6 +153,7 @@ namespace BoxManager.Interfaces
                 dgSeleccionados.Rows.Remove(dr);
             }
             dgDisponibles.Refresh();
+            checarCantidad();
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -156,6 +170,84 @@ namespace BoxManager.Interfaces
             dgDisponibles.Refresh();
             dgSeleccionados.Rows.Clear();
             dgSeleccionados.Refresh();
+            buttonCrearT.Enabled = false;
+            rbFemenil.Enabled = false;
+            rbVaronil.Enabled = false;
+        }
+
+        private void buttonCrearT_Click(object sender, EventArgs e)
+        {
+            //Llenado de variables para Torneo
+            int cantBoxeadores = dgSeleccionados.RowCount;
+            String nombreTorneo = textBoxNombreT.Text.Trim();
+            String rama = obtenerRama();
+            int categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue.ToString());
+
+            int idTorneo = action.crearTorneo(cantBoxeadores, nombreTorneo, rama, categoria);
+
+            //Si el torneo es creado exitosamente, se procede a crear los rounds de forma aleatoria
+            if (idTorneo > 0)
+            {
+
+                List<String> participantes = new List<String>();
+
+                foreach (DataGridViewRow dr in dgSeleccionados.Rows)
+                {
+                    participantes.Add(dr.Cells[0].Value.ToString().Trim());
+                }
+
+                if (cantBoxeadores %2 != 0)
+                {
+                    participantes.Add("-1");
+                }
+
+                //Creación de la lista de peladores en orden aleatorio
+                Random rnd = new Random();
+                participantes = participantes.OrderBy(item => rnd.Next()).ToList();
+
+                int aux = participantes.Count;
+
+                for (int i = 0; i < (aux/2); i++)
+                {
+                    int boxeador1 = Convert.ToInt32(participantes.Last());
+                    participantes.RemoveAt(participantes.Count - 1);
+
+                    int boxeador2 = Convert.ToInt32(participantes.Last());
+                    participantes.RemoveAt(participantes.Count - 1);
+
+                    Boolean resultPelea = action.crearPelea(idTorneo, boxeador1, boxeador2, 0);
+
+                    if (!resultPelea)
+                    {
+                        MessageBox.Show("Error al crear una de las peleas del torneo");
+                        return;
+                    }
+
+                }
+
+                MessageBox.Show($"Torneo {nombreTorneo} creado con éxito");
+                buttonLimpiar.PerformClick();
+
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al crear el torneo.");
+            }
+            
+        }
+
+        private void textBoxNombreT_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNombreT.Text.Length > 1)
+            {
+                rbVaronil.Enabled = true;
+                rbFemenil.Enabled = true;
+            }
+            else
+            {
+                rbVaronil.Enabled = false;
+                rbFemenil.Enabled = false;
+            }
         }
     }
 }

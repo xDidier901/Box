@@ -42,17 +42,17 @@
             this.labelRama = new System.Windows.Forms.Label();
             this.labelNombreT = new System.Windows.Forms.Label();
             this.dgDisponibles = new System.Windows.Forms.DataGridView();
+            this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgSeleccionados = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.labelDisponibles = new System.Windows.Forms.Label();
             this.labelSeleccionados = new System.Windows.Forms.Label();
             this.buttonCrearT = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeleccionados)).BeginInit();
@@ -108,6 +108,7 @@
             // 
             this.rbFemenil.AutoSize = true;
             this.rbFemenil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbFemenil.Enabled = false;
             this.rbFemenil.Location = new System.Drawing.Point(443, 132);
             this.rbFemenil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbFemenil.Name = "rbFemenil";
@@ -121,6 +122,7 @@
             // 
             this.rbVaronil.AutoSize = true;
             this.rbVaronil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbVaronil.Enabled = false;
             this.rbVaronil.Location = new System.Drawing.Point(254, 130);
             this.rbVaronil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbVaronil.Name = "rbVaronil";
@@ -148,6 +150,7 @@
             this.textBoxNombreT.Name = "textBoxNombreT";
             this.textBoxNombreT.Size = new System.Drawing.Size(492, 26);
             this.textBoxNombreT.TabIndex = 32;
+            this.textBoxNombreT.TextChanged += new System.EventHandler(this.textBoxNombreT_TextChanged);
             // 
             // labelDivisiones
             // 
@@ -213,6 +216,21 @@
             this.dgDisponibles.Size = new System.Drawing.Size(260, 300);
             this.dgDisponibles.TabIndex = 37;
             // 
+            // ID1
+            // 
+            this.ID1.HeaderText = "ID";
+            this.ID1.Name = "ID1";
+            this.ID1.ReadOnly = true;
+            this.ID1.Width = 62;
+            // 
+            // Nombre1
+            // 
+            this.Nombre1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Nombre1.HeaderText = "Nombre";
+            this.Nombre1.Name = "Nombre1";
+            this.Nombre1.ReadOnly = true;
+            this.Nombre1.Width = 101;
+            // 
             // dgSeleccionados
             // 
             this.dgSeleccionados.AllowUserToAddRows = false;
@@ -235,6 +253,20 @@
             this.dgSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSeleccionados.Size = new System.Drawing.Size(260, 300);
             this.dgSeleccionados.TabIndex = 38;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 62;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 101;
             // 
             // buttonAgregar
             // 
@@ -285,6 +317,7 @@
             // buttonCrearT
             // 
             this.buttonCrearT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCrearT.Enabled = false;
             this.buttonCrearT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCrearT.Location = new System.Drawing.Point(838, 605);
             this.buttonCrearT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -293,6 +326,7 @@
             this.buttonCrearT.TabIndex = 43;
             this.buttonCrearT.Text = "Crear Torneo";
             this.buttonCrearT.UseVisualStyleBackColor = true;
+            this.buttonCrearT.Click += new System.EventHandler(this.buttonCrearT_Click);
             // 
             // buttonLimpiar
             // 
@@ -306,35 +340,6 @@
             this.buttonLimpiar.Text = "Limpiar Campos";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 62;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 101;
-            // 
-            // ID1
-            // 
-            this.ID1.HeaderText = "ID";
-            this.ID1.Name = "ID1";
-            this.ID1.ReadOnly = true;
-            this.ID1.Width = 62;
-            // 
-            // Nombre1
-            // 
-            this.Nombre1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Nombre1.HeaderText = "Nombre";
-            this.Nombre1.Name = "Nombre1";
-            this.Nombre1.ReadOnly = true;
-            this.Nombre1.Width = 101;
             // 
             // Torneo
             // 
