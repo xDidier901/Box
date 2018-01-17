@@ -249,5 +249,10 @@ namespace BoxManager.Interfaces
                 rbFemenil.Enabled = false;
             }
         }
+
+        private void labelDisponibles_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

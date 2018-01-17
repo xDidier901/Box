@@ -52,31 +52,34 @@
             this.dgAcciones.AllowUserToDeleteRows = false;
             this.dgAcciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgAcciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAcciones.Location = new System.Drawing.Point(12, 330);
+            this.dgAcciones.Location = new System.Drawing.Point(9, 268);
+            this.dgAcciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgAcciones.Name = "dgAcciones";
             this.dgAcciones.ReadOnly = true;
             this.dgAcciones.RowTemplate.Height = 24;
-            this.dgAcciones.Size = new System.Drawing.Size(736, 447);
+            this.dgAcciones.Size = new System.Drawing.Size(504, 363);
             this.dgAcciones.TabIndex = 0;
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitulo.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(140, 44);
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(105, 36);
+            this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(442, 49);
+            this.labelTitulo.Size = new System.Drawing.Size(342, 39);
             this.labelTitulo.TabIndex = 17;
             this.labelTitulo.Text = "Historial de Acciones";
             // 
             // buttonMenu
             // 
             this.buttonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMenu.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMenu.Location = new System.Drawing.Point(12, 12);
+            this.buttonMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMenu.Location = new System.Drawing.Point(9, 10);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(109, 51);
+            this.buttonMenu.Size = new System.Drawing.Size(82, 41);
             this.buttonMenu.TabIndex = 18;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -85,18 +88,20 @@
             // labelBuscarNombre
             // 
             this.labelBuscarNombre.AutoSize = true;
-            this.labelBuscarNombre.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscarNombre.Location = new System.Drawing.Point(12, 284);
+            this.labelBuscarNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBuscarNombre.Location = new System.Drawing.Point(9, 231);
+            this.labelBuscarNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBuscarNombre.Name = "labelBuscarNombre";
-            this.labelBuscarNombre.Size = new System.Drawing.Size(214, 20);
+            this.labelBuscarNombre.Size = new System.Drawing.Size(180, 17);
             this.labelBuscarNombre.TabIndex = 19;
             this.labelBuscarNombre.Text = "Buscar por descripción:";
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(257, 284);
+            this.textBoxBuscar.Location = new System.Drawing.Point(193, 231);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(491, 22);
+            this.textBoxBuscar.Size = new System.Drawing.Size(320, 20);
             this.textBoxBuscar.TabIndex = 20;
             this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
@@ -107,10 +112,12 @@
             this.groupBoxBusqueda.Controls.Add(this.label1);
             this.groupBoxBusqueda.Controls.Add(this.dtpFecha1);
             this.groupBoxBusqueda.Controls.Add(this.labelFecha1);
-            this.groupBoxBusqueda.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxBusqueda.Location = new System.Drawing.Point(16, 107);
+            this.groupBoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxBusqueda.Location = new System.Drawing.Point(12, 87);
+            this.groupBoxBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxBusqueda.Name = "groupBoxBusqueda";
-            this.groupBoxBusqueda.Size = new System.Drawing.Size(732, 156);
+            this.groupBoxBusqueda.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxBusqueda.Size = new System.Drawing.Size(361, 127);
             this.groupBoxBusqueda.TabIndex = 21;
             this.groupBoxBusqueda.TabStop = false;
             this.groupBoxBusqueda.Text = "Buscar por rango de fechas:";
@@ -118,9 +125,10 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBuscar.Location = new System.Drawing.Point(559, 95);
+            this.buttonBuscar.Location = new System.Drawing.Point(261, 49);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(89, 46);
+            this.buttonBuscar.Size = new System.Drawing.Size(82, 45);
             this.buttonBuscar.TabIndex = 22;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -129,71 +137,77 @@
             // dtpFecha2
             // 
             this.dtpFecha2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpFecha2.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha2.Location = new System.Drawing.Point(492, 57);
+            this.dtpFecha2.Location = new System.Drawing.Point(122, 75);
+            this.dtpFecha2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFecha2.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.Size = new System.Drawing.Size(156, 23);
+            this.dtpFecha2.Size = new System.Drawing.Size(118, 19);
             this.dtpFecha2.TabIndex = 14;
             this.dtpFecha2.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(358, 60);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 77);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 13;
             this.label1.Text = "Fecha final:";
             // 
             // dtpFecha1
             // 
             this.dtpFecha1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpFecha1.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(162, 57);
+            this.dtpFecha1.Location = new System.Drawing.Point(122, 47);
+            this.dtpFecha1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFecha1.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(156, 23);
+            this.dtpFecha1.Size = new System.Drawing.Size(118, 19);
             this.dtpFecha1.TabIndex = 12;
             this.dtpFecha1.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // labelFecha1
             // 
             this.labelFecha1.AutoSize = true;
-            this.labelFecha1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha1.Location = new System.Drawing.Point(6, 60);
+            this.labelFecha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha1.Location = new System.Drawing.Point(4, 49);
+            this.labelFecha1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFecha1.Name = "labelFecha1";
-            this.labelFecha1.Size = new System.Drawing.Size(126, 20);
+            this.labelFecha1.Size = new System.Drawing.Size(104, 17);
             this.labelFecha1.TabIndex = 3;
             this.labelFecha1.Text = "Fecha inicial:";
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(601, 12);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(387, 134);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(160, 50);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(136, 41);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 24;
             this.pictureBoxLogo.TabStop = false;
             // 
             // Acciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 803);
+            this.ClientSize = new System.Drawing.Size(534, 643);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.groupBoxBusqueda);
             this.Controls.Add(this.labelBuscarNombre);
             this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.dgAcciones);
-            this.Controls.Add(this.pictureBoxLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Acciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

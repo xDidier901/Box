@@ -75,5 +75,10 @@ namespace BoxManager
             this.Hide();
             new Interfaces.Torneo().Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
