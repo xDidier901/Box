@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BoxManager.Interfaces
 {
-    public partial class Torneo : Form
+    public partial class CrearTorneo : Form
     {
 
         //Variables
@@ -19,7 +19,7 @@ namespace BoxManager.Interfaces
         private int categoria;
 
 
-        public Torneo()
+        public CrearTorneo()
         {
             InitializeComponent();
         }
@@ -225,9 +225,10 @@ namespace BoxManager.Interfaces
 
                 }
 
-                MessageBox.Show($"Torneo {nombreTorneo} creado con éxito");
-                buttonLimpiar.PerformClick();
-
+                //Se muestra un progressBar sólo para hacer más notorio que las peleas son aleatorias
+                labelCreandoRandom.Visible = true;
+                progressBarPeleas.Visible = true;
+                timer1.Start();
             }
             else
             {
@@ -235,6 +236,8 @@ namespace BoxManager.Interfaces
             }
             
         }
+
+        
 
         private void textBoxNombreT_TextChanged(object sender, EventArgs e)
         {
@@ -252,6 +255,22 @@ namespace BoxManager.Interfaces
 
         private void labelDisponibles_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+                progressBarPeleas.PerformStep();
+
+            if (progressBarPeleas.Value.Equals(100))
+            {
+                labelCreandoRandom.Visible = false;
+                progressBarPeleas.Visible = false;
+                buttonLimpiar.PerformClick();
+                timer1.Stop();
+                progressBarPeleas.Value = 0;
+                MessageBox.Show($"Torneo {textBoxNombreT.Text.Trim()} creado con éxito");
+            }
 
         }
     }

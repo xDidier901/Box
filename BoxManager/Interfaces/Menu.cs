@@ -73,12 +73,18 @@ namespace BoxManager
         private void buttonCrearTorneo_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            new Interfaces.Torneo().Show();
+            new Interfaces.CrearTorneo().Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAdministrarTorneo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Interfaces.AdmisnitrarTorneo().Show();
         }
     }
 }

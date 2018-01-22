@@ -1,6 +1,6 @@
 ﻿namespace BoxManager.Interfaces
 {
-    partial class Torneo
+    partial class CrearTorneo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Torneo));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearTorneo));
             this.labelTitulo = new System.Windows.Forms.Label();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -54,6 +55,10 @@
             this.buttonCrearT = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.tableAdapterManager1 = new BoxManager.Reportes.GraficaDataSetTableAdapters.TableAdapterManager();
+            this.progressBarPeleas = new System.Windows.Forms.ProgressBar();
+            this.reporteGraficaTableAdapter1 = new BoxManager.Reportes.GraficaDataSetTableAdapters.ReporteGraficaTableAdapter();
+            this.labelCreandoRandom = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeleccionados)).BeginInit();
@@ -64,7 +69,7 @@
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.BackColor = System.Drawing.Color.Transparent;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(454, 9);
+            this.labelTitulo.Location = new System.Drawing.Point(360, -4);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(225, 63);
@@ -87,7 +92,7 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(201, 242);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(154, 242);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(301, 145);
@@ -217,9 +222,10 @@
             this.dgDisponibles.Name = "dgDisponibles";
             this.dgDisponibles.ReadOnly = true;
             this.dgDisponibles.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgDisponibles.RowHeadersVisible = false;
             this.dgDisponibles.RowTemplate.Height = 24;
             this.dgDisponibles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDisponibles.Size = new System.Drawing.Size(173, 273);
+            this.dgDisponibles.Size = new System.Drawing.Size(126, 273);
             this.dgDisponibles.TabIndex = 37;
             // 
             // ID1
@@ -251,13 +257,14 @@
             this.ID,
             this.Nombre});
             this.dgSeleccionados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgSeleccionados.Location = new System.Drawing.Point(506, 242);
+            this.dgSeleccionados.Location = new System.Drawing.Point(459, 242);
             this.dgSeleccionados.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgSeleccionados.Name = "dgSeleccionados";
             this.dgSeleccionados.ReadOnly = true;
+            this.dgSeleccionados.RowHeadersVisible = false;
             this.dgSeleccionados.RowTemplate.Height = 24;
             this.dgSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSeleccionados.Size = new System.Drawing.Size(173, 273);
+            this.dgSeleccionados.Size = new System.Drawing.Size(126, 273);
             this.dgSeleccionados.TabIndex = 38;
             // 
             // ID
@@ -281,7 +288,7 @@
             this.buttonAgregar.Location = new System.Drawing.Point(24, 521);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(173, 32);
+            this.buttonAgregar.Size = new System.Drawing.Size(126, 32);
             this.buttonAgregar.TabIndex = 39;
             this.buttonAgregar.Text = "Agregar";
             this.buttonAgregar.UseVisualStyleBackColor = true;
@@ -291,10 +298,10 @@
             // 
             this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(506, 521);
+            this.buttonEliminar.Location = new System.Drawing.Point(459, 521);
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(173, 32);
+            this.buttonEliminar.Size = new System.Drawing.Size(126, 32);
             this.buttonEliminar.TabIndex = 40;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
@@ -304,7 +311,7 @@
             // 
             this.labelDisponibles.AutoSize = true;
             this.labelDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDisponibles.Location = new System.Drawing.Point(19, 209);
+            this.labelDisponibles.Location = new System.Drawing.Point(19, 214);
             this.labelDisponibles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDisponibles.Name = "labelDisponibles";
             this.labelDisponibles.Size = new System.Drawing.Size(223, 25);
@@ -316,7 +323,7 @@
             // 
             this.labelSeleccionados.AutoSize = true;
             this.labelSeleccionados.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSeleccionados.Location = new System.Drawing.Point(428, 209);
+            this.labelSeleccionados.Location = new System.Drawing.Point(334, 214);
             this.labelSeleccionados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSeleccionados.Name = "labelSeleccionados";
             this.labelSeleccionados.Size = new System.Drawing.Size(251, 25);
@@ -328,7 +335,7 @@
             this.buttonCrearT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCrearT.Enabled = false;
             this.buttonCrearT.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCrearT.Location = new System.Drawing.Point(241, 495);
+            this.buttonCrearT.Location = new System.Drawing.Point(191, 495);
             this.buttonCrearT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonCrearT.Name = "buttonCrearT";
             this.buttonCrearT.Size = new System.Drawing.Size(221, 96);
@@ -356,11 +363,42 @@
             this.tableAdapterManager1.Connection = null;
             this.tableAdapterManager1.UpdateOrder = BoxManager.Reportes.GraficaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // Torneo
+            // progressBarPeleas
+            // 
+            this.progressBarPeleas.Location = new System.Drawing.Point(191, 451);
+            this.progressBarPeleas.Name = "progressBarPeleas";
+            this.progressBarPeleas.Size = new System.Drawing.Size(221, 23);
+            this.progressBarPeleas.Step = 3;
+            this.progressBarPeleas.TabIndex = 45;
+            this.progressBarPeleas.Visible = false;
+            // 
+            // reporteGraficaTableAdapter1
+            // 
+            this.reporteGraficaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // labelCreandoRandom
+            // 
+            this.labelCreandoRandom.AutoSize = true;
+            this.labelCreandoRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreandoRandom.Location = new System.Drawing.Point(177, 423);
+            this.labelCreandoRandom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCreandoRandom.Name = "labelCreandoRandom";
+            this.labelCreandoRandom.Size = new System.Drawing.Size(255, 25);
+            this.labelCreandoRandom.TabIndex = 46;
+            this.labelCreandoRandom.Text = "Creando peleas aleatorias...";
+            this.labelCreandoRandom.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // CrearTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 603);
+            this.ClientSize = new System.Drawing.Size(598, 603);
+            this.Controls.Add(this.labelCreandoRandom);
+            this.Controls.Add(this.progressBarPeleas);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonCrearT);
@@ -382,9 +420,9 @@
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.labelTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "Torneo";
+            this.Name = "CrearTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Torneo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Torneo_FormClosing);
@@ -424,5 +462,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre1;
         private Reportes.GraficaDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.ProgressBar progressBarPeleas;
+        private Reportes.GraficaDataSetTableAdapters.ReporteGraficaTableAdapter reporteGraficaTableAdapter1;
+        private System.Windows.Forms.Label labelCreandoRandom;
+        private System.Windows.Forms.Timer timer1;
     }
 }

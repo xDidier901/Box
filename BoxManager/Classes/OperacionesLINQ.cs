@@ -506,6 +506,16 @@ namespace BoxManager.Classes
             pelea.Id_Boxeador2 = boxeador2ID;
             pelea.Etapa = etapa;
 
+            if (boxeador1ID == -1)
+            {
+                pelea.Ganador = boxeador2ID;
+                pelea.Fecha = DateTime.Today;
+            } else if (boxeador2ID == -1)
+            {
+                pelea.Ganador = boxeador1ID;
+                pelea.Fecha = DateTime.Today;
+            }
+
             Database.Peleas.InsertOnSubmit(pelea);
 
             try
@@ -521,6 +531,94 @@ namespace BoxManager.Classes
 
             return true;
         }
+
+        ///////////////Administrar Torneo//////////////////////////
+
+        //Llena un combobox con todos los Torneos
+        public ComboBox llenarTorneos(ComboBox combo)
+        {
+            var query = from valor in Database.Torneos
+                        orderby valor.Id_Torneo descending
+                        select new
+                        {
+                            Name = valor.Nombre.Trim(),
+                            ID = valor.Id_Torneo.ToString().Trim(),
+                        };
+            combo.DisplayMember = "Name";
+            combo.ValueMember = "ID";
+            combo.DataSource = query.ToList();
+            return combo;
+        }
+
+        //Muestra las peleas de la etapa más reciente de un Torneo
+        public void mostrarPeleas(DataGridView x, int torneoID)
+        {
+            var query1 = from valor in Database.Peleas
+                         orderby valor.Etapa descending
+                         where valor.Id_Torneo == torneoID
+                         select new
+                         {
+                             Pelea_ID = valor.Id_Pelea,
+                             Boxeador_1 = valor.Id_Boxeador1.Equals(-1) ? "LIBRE" : valor.Id_Boxeador1.ToString().Trim(),
+                             Boxeador_2 = valor.Id_Boxeador2.Equals(-1) ? "LIBRE" : valor.Id_Boxeador2.ToString().Trim(),
+                             Torneo_ID = valor.Id_Torneo,
+                             Etapa = valor.Etapa.ToString().Trim(),
+                             Ganador = valor.Ganador.ToString().Trim(),
+                             Fecha = valor.Fecha
+                         };
+
+            x.DataSource = query1;
+        }
+
+        //Actualiza una pelea de algún respectivo torneo
+        public Boolean actualizarPelea(int peleaID, int ganador)
+        {
+
+            var resultado = from valor in Database.Peleas
+                            where valor.Id_Pelea == peleaID
+                            select valor;
+            foreach (var valor in resultado)
+            {
+                valor.Ganador = ganador;
+                valor.Fecha = DateTime.Today;
+            }
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion($"Se actualizó la pelea: { peleaID } en la base de datos");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Hubo un error al actualizar la pelea {peleaID}. Error: {e.Message}");
+                return false;
+            }
+            return true;
+
+        }
+
+        //Elimina un torneo
+        public void eliminarTorneo(int torneoID)
+        {
+
+            var query = from valor in Database.Torneos
+                        where valor.Id_Torneo == torneoID
+                        select valor;
+            foreach (var detail in query)
+            {
+                Database.Torneos.DeleteOnSubmit(detail);
+            }
+            try
+            {
+                Database.SubmitChanges();
+                registrarAccion($"Se eliminó el torneo { torneoID } de la base de datos");
+                MessageBox.Show($"Se eliminó el torneo exitosamente correctamente");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Hubo un error al tratar de eliminar el torneo. Error: { e.ToString() }");
+            }
+        }
+
 
 
     }

@@ -44,9 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonHistorial = new System.Windows.Forms.Button();
-            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.buttonCrearTorneo = new System.Windows.Forms.Button();
-            this.buttonCargarTorneo = new System.Windows.Forms.Button();
+            this.buttonAdministrarTorneo = new System.Windows.Forms.Button();
+            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             this.SuspendLayout();
@@ -252,18 +252,6 @@
             this.buttonHistorial.UseVisualStyleBackColor = true;
             this.buttonHistorial.Click += new System.EventHandler(this.buttonHistorial_Click);
             // 
-            // pictureBoxMenu
-            // 
-            this.pictureBoxMenu.Image = global::BoxManager.Properties.Resources.Logo;
-            this.pictureBoxMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBoxMenu.Location = new System.Drawing.Point(64, 12);
-            this.pictureBoxMenu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBoxMenu.Name = "pictureBoxMenu";
-            this.pictureBoxMenu.Size = new System.Drawing.Size(431, 133);
-            this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMenu.TabIndex = 13;
-            this.pictureBoxMenu.TabStop = false;
-            // 
             // buttonCrearTorneo
             // 
             this.buttonCrearTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -279,26 +267,39 @@
             this.buttonCrearTorneo.UseVisualStyleBackColor = true;
             this.buttonCrearTorneo.Click += new System.EventHandler(this.buttonCrearTorneo_Click_1);
             // 
-            // buttonCargarTorneo
+            // buttonAdministrarTorneo
             // 
-            this.buttonCargarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCargarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCargarTorneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.buttonCargarTorneo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCargarTorneo.Location = new System.Drawing.Point(412, 320);
-            this.buttonCargarTorneo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonCargarTorneo.Name = "buttonCargarTorneo";
-            this.buttonCargarTorneo.Size = new System.Drawing.Size(149, 62);
-            this.buttonCargarTorneo.TabIndex = 43;
-            this.buttonCargarTorneo.Text = "Cargar Torneo";
-            this.buttonCargarTorneo.UseVisualStyleBackColor = true;
+            this.buttonAdministrarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdministrarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonAdministrarTorneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
+            this.buttonAdministrarTorneo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonAdministrarTorneo.Location = new System.Drawing.Point(412, 320);
+            this.buttonAdministrarTorneo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonAdministrarTorneo.Name = "buttonAdministrarTorneo";
+            this.buttonAdministrarTorneo.Size = new System.Drawing.Size(149, 62);
+            this.buttonAdministrarTorneo.TabIndex = 43;
+            this.buttonAdministrarTorneo.Text = "Administrar Torneo";
+            this.buttonAdministrarTorneo.UseVisualStyleBackColor = true;
+            this.buttonAdministrarTorneo.Click += new System.EventHandler(this.buttonAdministrarTorneo_Click);
+            // 
+            // pictureBoxMenu
+            // 
+            this.pictureBoxMenu.Image = global::BoxManager.Properties.Resources.Logo;
+            this.pictureBoxMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxMenu.Location = new System.Drawing.Point(64, 12);
+            this.pictureBoxMenu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBoxMenu.Name = "pictureBoxMenu";
+            this.pictureBoxMenu.Size = new System.Drawing.Size(431, 133);
+            this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMenu.TabIndex = 13;
+            this.pictureBoxMenu.TabStop = false;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 393);
-            this.Controls.Add(this.buttonCargarTorneo);
+            this.Controls.Add(this.buttonAdministrarTorneo);
             this.Controls.Add(this.buttonCrearTorneo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCatDiv);
@@ -339,7 +340,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonHistorial;
         private System.Windows.Forms.Button buttonCrearTorneo;
-        private System.Windows.Forms.Button buttonCargarTorneo;
+        private System.Windows.Forms.Button buttonAdministrarTorneo;
     }
 }
 

@@ -117,6 +117,7 @@
             this.dgDivisiones.MultiSelect = false;
             this.dgDivisiones.Name = "dgDivisiones";
             this.dgDivisiones.ReadOnly = true;
+            this.dgDivisiones.RowHeadersVisible = false;
             this.dgDivisiones.RowTemplate.Height = 24;
             this.dgDivisiones.Size = new System.Drawing.Size(617, 311);
             this.dgDivisiones.TabIndex = 21;
@@ -137,6 +138,7 @@
             this.dgCategorias.MultiSelect = false;
             this.dgCategorias.Name = "dgCategorias";
             this.dgCategorias.ReadOnly = true;
+            this.dgCategorias.RowHeadersVisible = false;
             this.dgCategorias.RowTemplate.Height = 24;
             this.dgCategorias.Size = new System.Drawing.Size(381, 185);
             this.dgCategorias.TabIndex = 22;

@@ -102,6 +102,12 @@
     <Compile Include="Interfaces\Acciones.Designer.cs">
       <DependentUpon>Acciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\AdmisnitrarTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdmisnitrarTorneo.Designer.cs">
+      <DependentUpon>AdmisnitrarTorneo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Boxeadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
       <DependentUpon>GraficaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Interfaces\AdmisnitrarTorneo.resx">
+      <DependentUpon>AdmisnitrarTorneo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Torneo.resx">
       <DependentUpon>Torneo.cs</DependentUpon>
     </EmbeddedResource>

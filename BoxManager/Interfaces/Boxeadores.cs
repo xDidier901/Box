@@ -287,5 +287,10 @@ namespace BoxManager.Interfaces
                 reestablecerPredeterminado();
             }
         }
+
+        private void comboBoxMunicipios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

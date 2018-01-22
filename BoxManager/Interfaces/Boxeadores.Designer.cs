@@ -66,7 +66,7 @@
             this.buttonCancelar.Enabled = false;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.Location = new System.Drawing.Point(786, 293);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(89, 32);
             this.buttonCancelar.TabIndex = 15;
@@ -79,7 +79,7 @@
             this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.Location = new System.Drawing.Point(880, 293);
-            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(112, 32);
             this.buttonEliminar.TabIndex = 14;
@@ -92,7 +92,7 @@
             this.buttonEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditar.Location = new System.Drawing.Point(686, 293);
-            this.buttonEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(96, 32);
             this.buttonEditar.TabIndex = 13;
@@ -105,7 +105,7 @@
             this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregar.Location = new System.Drawing.Point(564, 293);
-            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(117, 32);
             this.buttonAgregar.TabIndex = 12;
@@ -133,9 +133,9 @@
             this.groupBoxDatos.Enabled = false;
             this.groupBoxDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDatos.Location = new System.Drawing.Point(16, 110);
-            this.groupBoxDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDatos.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxDatos.Name = "groupBoxDatos";
-            this.groupBoxDatos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDatos.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxDatos.Size = new System.Drawing.Size(976, 165);
             this.groupBoxDatos.TabIndex = 11;
             this.groupBoxDatos.TabStop = false;
@@ -145,7 +145,7 @@
             // 
             this.textBoxEdad.Enabled = false;
             this.textBoxEdad.Location = new System.Drawing.Point(582, 84);
-            this.textBoxEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEdad.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEdad.Name = "textBoxEdad";
             this.textBoxEdad.Size = new System.Drawing.Size(60, 23);
             this.textBoxEdad.TabIndex = 14;
@@ -156,18 +156,19 @@
             this.comboBoxMunicipios.DisplayMember = "Nombre";
             this.comboBoxMunicipios.FormattingEnabled = true;
             this.comboBoxMunicipios.Location = new System.Drawing.Point(582, 51);
-            this.comboBoxMunicipios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMunicipios.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMunicipios.Name = "comboBoxMunicipios";
             this.comboBoxMunicipios.Size = new System.Drawing.Size(329, 25);
             this.comboBoxMunicipios.TabIndex = 13;
             this.comboBoxMunicipios.ValueMember = "Id_Municipio";
+            this.comboBoxMunicipios.SelectedIndexChanged += new System.EventHandler(this.comboBoxMunicipios_SelectedIndexChanged);
             // 
             // comboBoxDivisiones
             // 
             this.comboBoxDivisiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxDivisiones.FormattingEnabled = true;
             this.comboBoxDivisiones.Location = new System.Drawing.Point(581, 24);
-            this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDivisiones.Name = "comboBoxDivisiones";
             this.comboBoxDivisiones.Size = new System.Drawing.Size(330, 25);
             this.comboBoxDivisiones.TabIndex = 10;
@@ -178,7 +179,7 @@
             this.dtpFechaN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaN.Location = new System.Drawing.Point(158, 87);
-            this.dtpFechaN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaN.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaN.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFechaN.Name = "dtpFechaN";
             this.dtpFechaN.Size = new System.Drawing.Size(118, 19);
@@ -191,7 +192,7 @@
             this.rbFemenil.AutoSize = true;
             this.rbFemenil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbFemenil.Location = new System.Drawing.Point(240, 56);
-            this.rbFemenil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbFemenil.Margin = new System.Windows.Forms.Padding(2);
             this.rbFemenil.Name = "rbFemenil";
             this.rbFemenil.Size = new System.Drawing.Size(82, 21);
             this.rbFemenil.TabIndex = 11;
@@ -205,7 +206,7 @@
             this.rbVaronil.Checked = true;
             this.rbVaronil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbVaronil.Location = new System.Drawing.Point(158, 56);
-            this.rbVaronil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbVaronil.Margin = new System.Windows.Forms.Padding(2);
             this.rbVaronil.Name = "rbVaronil";
             this.rbVaronil.Size = new System.Drawing.Size(77, 21);
             this.rbVaronil.TabIndex = 10;
@@ -219,7 +220,7 @@
             this.comboBoxCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxCategorias.FormattingEnabled = true;
             this.comboBoxCategorias.Location = new System.Drawing.Point(158, 113);
-            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(308, 25);
             this.comboBoxCategorias.TabIndex = 9;
@@ -228,7 +229,7 @@
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(158, 20);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(308, 23);
             this.textBoxNombre.TabIndex = 8;
@@ -312,8 +313,8 @@
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(164, 308);
-            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxBuscar.Location = new System.Drawing.Point(174, 308);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(360, 20);
             this.textBoxBuscar.TabIndex = 1;
@@ -324,7 +325,7 @@
             this.buttonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenu.Location = new System.Drawing.Point(16, 10);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 41);
             this.buttonMenu.TabIndex = 9;
@@ -344,10 +345,11 @@
             this.dgBoxeadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgBoxeadores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgBoxeadores.Location = new System.Drawing.Point(16, 343);
-            this.dgBoxeadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgBoxeadores.Margin = new System.Windows.Forms.Padding(2);
             this.dgBoxeadores.MultiSelect = false;
             this.dgBoxeadores.Name = "dgBoxeadores";
             this.dgBoxeadores.ReadOnly = true;
+            this.dgBoxeadores.RowHeadersVisible = false;
             this.dgBoxeadores.RowTemplate.Height = 24;
             this.dgBoxeadores.Size = new System.Drawing.Size(976, 318);
             this.dgBoxeadores.TabIndex = 8;
@@ -379,7 +381,7 @@
             // 
             this.pictureBoxLogo.Image = global::BoxManager.Properties.Resources.Logo;
             this.pictureBoxLogo.Location = new System.Drawing.Point(829, 7);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(171, 73);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -404,7 +406,7 @@
             this.Controls.Add(this.dgBoxeadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Boxeadores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

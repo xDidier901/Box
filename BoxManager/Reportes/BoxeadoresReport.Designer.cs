@@ -90,7 +90,7 @@
             this.reportBoxeadores.LocalReport.DataSources.Add(reportDataSource1);
             this.reportBoxeadores.LocalReport.ReportEmbeddedResource = "BoxManager.Reportes.ReportBox.rdlc";
             this.reportBoxeadores.Location = new System.Drawing.Point(9, 65);
-            this.reportBoxeadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportBoxeadores.Margin = new System.Windows.Forms.Padding(2);
             this.reportBoxeadores.Name = "reportBoxeadores";
             this.reportBoxeadores.Size = new System.Drawing.Size(681, 496);
             this.reportBoxeadores.TabIndex = 0;
@@ -111,7 +111,7 @@
             this.buttonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenu.Location = new System.Drawing.Point(9, 10);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 41);
             this.buttonMenu.TabIndex = 21;
@@ -138,9 +138,9 @@
             this.groupBoxFiltros.Controls.Add(this.labelRama);
             this.groupBoxFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFiltros.Location = new System.Drawing.Point(694, 60);
-            this.groupBoxFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxFiltros.Name = "groupBoxFiltros";
-            this.groupBoxFiltros.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxFiltros.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxFiltros.Size = new System.Drawing.Size(388, 229);
             this.groupBoxFiltros.TabIndex = 22;
             this.groupBoxFiltros.TabStop = false;
@@ -152,7 +152,7 @@
             this.buttonGenerarR.Enabled = false;
             this.buttonGenerarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerarR.Location = new System.Drawing.Point(248, 183);
-            this.buttonGenerarR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGenerarR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGenerarR.Name = "buttonGenerarR";
             this.buttonGenerarR.Size = new System.Drawing.Size(127, 33);
             this.buttonGenerarR.TabIndex = 23;
@@ -165,7 +165,7 @@
             this.buttonReestablecer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReestablecer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReestablecer.Location = new System.Drawing.Point(7, 183);
-            this.buttonReestablecer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonReestablecer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReestablecer.Name = "buttonReestablecer";
             this.buttonReestablecer.Size = new System.Drawing.Size(127, 33);
             this.buttonReestablecer.TabIndex = 24;
@@ -179,7 +179,7 @@
             this.comboBoxMunicipios.DisplayMember = "Nombre";
             this.comboBoxMunicipios.FormattingEnabled = true;
             this.comboBoxMunicipios.Location = new System.Drawing.Point(92, 130);
-            this.comboBoxMunicipios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMunicipios.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMunicipios.Name = "comboBoxMunicipios";
             this.comboBoxMunicipios.Size = new System.Drawing.Size(284, 25);
             this.comboBoxMunicipios.TabIndex = 13;
@@ -192,7 +192,7 @@
             this.comboBoxDivisiones.Enabled = false;
             this.comboBoxDivisiones.FormattingEnabled = true;
             this.comboBoxDivisiones.Location = new System.Drawing.Point(92, 92);
-            this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDivisiones.Name = "comboBoxDivisiones";
             this.comboBoxDivisiones.Size = new System.Drawing.Size(284, 25);
             this.comboBoxDivisiones.TabIndex = 10;
@@ -203,7 +203,7 @@
             this.rbFemenil.AutoSize = true;
             this.rbFemenil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbFemenil.Location = new System.Drawing.Point(174, 21);
-            this.rbFemenil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbFemenil.Margin = new System.Windows.Forms.Padding(2);
             this.rbFemenil.Name = "rbFemenil";
             this.rbFemenil.Size = new System.Drawing.Size(82, 21);
             this.rbFemenil.TabIndex = 11;
@@ -216,7 +216,7 @@
             this.rbVaronil.AutoSize = true;
             this.rbVaronil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbVaronil.Location = new System.Drawing.Point(92, 21);
-            this.rbVaronil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbVaronil.Margin = new System.Windows.Forms.Padding(2);
             this.rbVaronil.Name = "rbVaronil";
             this.rbVaronil.Size = new System.Drawing.Size(77, 21);
             this.rbVaronil.TabIndex = 10;
@@ -229,7 +229,7 @@
             this.comboBoxCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxCategorias.FormattingEnabled = true;
             this.comboBoxCategorias.Location = new System.Drawing.Point(92, 54);
-            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(284, 25);
             this.comboBoxCategorias.TabIndex = 9;
@@ -286,7 +286,7 @@
             this.reportGrafica.LocalReport.DataSources.Add(reportDataSource2);
             this.reportGrafica.LocalReport.ReportEmbeddedResource = "BoxManager.Reportes.ReportGrafica.rdlc";
             this.reportGrafica.Location = new System.Drawing.Point(694, 294);
-            this.reportGrafica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportGrafica.Margin = new System.Windows.Forms.Padding(2);
             this.reportGrafica.Name = "reportGrafica";
             this.reportGrafica.Size = new System.Drawing.Size(395, 270);
             this.reportGrafica.TabIndex = 23;
@@ -300,7 +300,7 @@
             // 
             this.pictureBox1.Image = global::BoxManager.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(927, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(161, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -320,7 +320,8 @@
             this.Controls.Add(this.reportBoxeadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "BoxeadoresReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteBoxeadores";
