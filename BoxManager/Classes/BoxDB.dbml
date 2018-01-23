@@ -58,11 +58,11 @@
   <Table Name="dbo.Pelea" Member="Peleas">
     <Type Name="Pelea">
       <Column Name="Id_Pelea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Id_Boxeador1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Id_Boxeador2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Boxeador1" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Boxeador2" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="Id_Torneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Etapa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Ganador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ganador" Type="System.String" DbType="NChar(80)" CanBeNull="true" />
       <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>

@@ -193,12 +193,12 @@ namespace BoxManager.Interfaces
 
                 foreach (DataGridViewRow dr in dgSeleccionados.Rows)
                 {
-                    participantes.Add(dr.Cells[0].Value.ToString().Trim());
+                    participantes.Add(dr.Cells[0].Value.ToString().Trim() + "-" + dr.Cells[1].Value.ToString().Trim());
                 }
 
                 if (cantBoxeadores %2 != 0)
                 {
-                    participantes.Add("-1");
+                    participantes.Add("LIBRE");
                 }
 
                 //Creación de la lista de peladores en orden aleatorio
@@ -209,10 +209,10 @@ namespace BoxManager.Interfaces
 
                 for (int i = 0; i < (aux/2); i++)
                 {
-                    int boxeador1 = Convert.ToInt32(participantes.Last());
+                    string boxeador1 = participantes.Last();
                     participantes.RemoveAt(participantes.Count - 1);
 
-                    int boxeador2 = Convert.ToInt32(participantes.Last());
+                    string boxeador2 = participantes.Last();
                     participantes.RemoveAt(participantes.Count - 1);
 
                     Boolean resultPelea = action.crearPelea(idTorneo, boxeador1, boxeador2, 0);

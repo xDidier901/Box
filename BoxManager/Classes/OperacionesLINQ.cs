@@ -502,7 +502,7 @@ namespace BoxManager.Classes
         }
 
         //Crea una pelea de algún respectivo torneo
-        public Boolean crearPelea(int torneoID, int boxeador1ID, int boxeador2ID, int etapa)
+        public Boolean crearPelea(int torneoID, String boxeador1ID, String boxeador2ID, int etapa)
         {
             Pelea pelea = new Pelea();
             pelea.Id_Torneo = torneoID;
@@ -510,12 +510,12 @@ namespace BoxManager.Classes
             pelea.Id_Boxeador2 = boxeador2ID;
             pelea.Etapa = etapa;
 
-            if (boxeador1ID == -1)
+            if (boxeador1ID.Equals("LIBRE"))
             {
                 pelea.Ganador = boxeador2ID;
                 pelea.Fecha = DateTime.Today;
             }
-            else if (boxeador2ID == -1)
+            else if (boxeador2ID.Equals("LIBRE"))
             {
                 pelea.Ganador = boxeador1ID;
                 pelea.Fecha = DateTime.Today;
@@ -561,21 +561,34 @@ namespace BoxManager.Classes
             var query1 = from valor in Database.Peleas
                          orderby valor.Etapa descending
                          where valor.Id_Torneo == torneoID
-                         select new
-                         {
-                             Pelea_ID = valor.Id_Pelea,
-                             Boxeador_1 = valor.Id_Boxeador1.Equals(-1) ? "LIBRE" : valor.Id_Boxeador1.ToString().Trim(),
-                             Boxeador_2 = valor.Id_Boxeador2.Equals(-1) ? "LIBRE" : valor.Id_Boxeador2.ToString().Trim(),
-                             Etapa = valor.Etapa.ToString().Trim(),
-                             Ganador = valor.Ganador.ToString().Trim(),
-                             Fecha = valor.Fecha
-                         };
+                         select valor;
+            //select new
+            //{
+            //    Pelea_ID = valor.Id_Pelea,
+            //    Boxeador_1 = valor.Id_Boxeador1.Equals(-1) ? "LIBRE" : valor.Id_Boxeador1.ToString().Trim(),
+            //    Boxeador_2 = valor.Id_Boxeador2.Equals(-1) ? "LIBRE" : valor.Id_Boxeador2.ToString().Trim(),
+            //    Etapa = valor.Etapa.ToString().Trim(),
+            //    Ganador = valor.Ganador.ToString().Trim(),
+            //    Fecha = valor.Fecha
+            //};
+            var algo = query1.ToList();
 
-            x.DataSource = query1;
+            for (int i = 0; i < algo.Count; i++)
+            {
+                algo[i].Id_Boxeador1 = algo[i].Id_Boxeador1.Trim();
+                algo[i].Id_Boxeador2 = algo[i].Id_Boxeador2.Trim();
+
+                if (algo[i].Ganador != null)
+                {
+                    algo[i].Ganador = algo[i].Ganador.Trim();
+                }
+            }
+
+            x.DataSource = algo;
         }
 
         //Actualiza una pelea de algún respectivo torneo
-        public void actualizarPelea(int peleaID, int ganador)
+        public void actualizarPelea(int peleaID, string ganador)
         {
 
             var resultado = from valor in Database.Peleas
@@ -657,16 +670,16 @@ namespace BoxManager.Classes
         }
 
         //Obtiene informacion de un boxeador
-        public List<string> obtenerDatosBoxeador(int boxeadorID)
+        public List<string> obtenerDatosBoxeador(String boxeadorID)
         {
             var nombre = from valor in Database.Boxeadores
-                         where valor.Id_Boxeador == boxeadorID
+                         where valor.Id_Boxeador == Convert.ToInt32(boxeadorID)
                          select valor.Nombre;
 
             var municipio = from valor in Database.Boxeadores
                             from valor2 in Database.Municipios
                             where valor.Municipio == valor2.Id_Municipio &&
-                            valor.Id_Boxeador == boxeadorID
+                            valor.Id_Boxeador == Convert.ToInt32(boxeadorID)
                             select valor2.Nombre;
 
             List<string> datos = new List<string>();
@@ -675,6 +688,30 @@ namespace BoxManager.Classes
 
             return datos;
         }
+
+        ////Obtiene una lista de nombres de boxeadores en base a una lista de ID's
+        //public List<string> obtenerListaNombres(List<int> ids)
+        //{
+
+        //    List<string> listaNombres = new List<string>();
+
+        //    foreach (int id in ids)
+        //    {
+
+        //        if (id == -1)
+        //        {
+        //            listaNombres.Add("LIBRE");
+        //        } else
+        //        {
+        //            var nombre = from valor in Database.Boxeadores
+        //                         where valor.Id_Boxeador == id
+        //                         select valor.Nombre.Trim();
+        //            listaNombres.Add(nombre.ToList().First());
+        //        }
+        //    }
+
+        //    return listaNombres;
+        //}
 
 
     }

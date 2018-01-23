@@ -44,15 +44,15 @@
             this.buttonEliminarTorneo = new System.Windows.Forms.Button();
             this.buttonEtapa = new System.Windows.Forms.Button();
             this.groupBoxDatos = new System.Windows.Forms.GroupBox();
+            this.labelMunicipio = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
             this.labelDescMunicipio = new System.Windows.Forms.Label();
             this.labelDescNombre = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelMunicipio = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelCategoria = new System.Windows.Forms.Label();
-            this.labelDescCategoria = new System.Windows.Forms.Label();
             this.labelParticipantes = new System.Windows.Forms.Label();
             this.labelDescParticipantes = new System.Windows.Forms.Label();
+            this.labelCategoria = new System.Windows.Forms.Label();
+            this.labelDescCategoria = new System.Windows.Forms.Label();
             this.labelCreandoRandom = new System.Windows.Forms.Label();
             this.progressBarPeleas = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -65,7 +65,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BoxManager.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(595, 328);
+            this.pictureBox1.Location = new System.Drawing.Point(692, 328);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(293, 122);
@@ -122,7 +122,7 @@
             this.dgPeleas.ReadOnly = true;
             this.dgPeleas.RowHeadersVisible = false;
             this.dgPeleas.RowTemplate.Height = 24;
-            this.dgPeleas.Size = new System.Drawing.Size(450, 303);
+            this.dgPeleas.Size = new System.Drawing.Size(560, 303);
             this.dgPeleas.TabIndex = 28;
             this.dgPeleas.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPeleas_CellEnter);
             // 
@@ -131,7 +131,7 @@
             this.buttonCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancelar.Enabled = false;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(467, 183);
+            this.buttonCancelar.Location = new System.Drawing.Point(577, 183);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(110, 30);
             this.buttonCancelar.TabIndex = 35;
@@ -143,7 +143,7 @@
             // 
             this.buttonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImprimir.Location = new System.Drawing.Point(467, 219);
+            this.buttonImprimir.Location = new System.Drawing.Point(577, 219);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(110, 30);
             this.buttonImprimir.TabIndex = 34;
@@ -155,7 +155,7 @@
             this.buttonGanador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGanador.Enabled = false;
             this.buttonGanador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGanador.Location = new System.Drawing.Point(467, 147);
+            this.buttonGanador.Location = new System.Drawing.Point(577, 147);
             this.buttonGanador.Name = "buttonGanador";
             this.buttonGanador.Size = new System.Drawing.Size(110, 30);
             this.buttonGanador.TabIndex = 33;
@@ -177,7 +177,7 @@
             // 
             this.buttonGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardarCambios.Location = new System.Drawing.Point(467, 403);
+            this.buttonGuardarCambios.Location = new System.Drawing.Point(577, 403);
             this.buttonGuardarCambios.Name = "buttonGuardarCambios";
             this.buttonGuardarCambios.Size = new System.Drawing.Size(110, 47);
             this.buttonGuardarCambios.TabIndex = 38;
@@ -202,7 +202,7 @@
             // 
             this.buttonEliminarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminarTorneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarTorneo.Location = new System.Drawing.Point(778, 27);
+            this.buttonEliminarTorneo.Location = new System.Drawing.Point(864, 27);
             this.buttonEliminarTorneo.Name = "buttonEliminarTorneo";
             this.buttonEliminarTorneo.Size = new System.Drawing.Size(110, 47);
             this.buttonEliminarTorneo.TabIndex = 40;
@@ -215,7 +215,7 @@
             this.buttonEtapa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEtapa.Enabled = false;
             this.buttonEtapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEtapa.Location = new System.Drawing.Point(467, 328);
+            this.buttonEtapa.Location = new System.Drawing.Point(577, 328);
             this.buttonEtapa.Name = "buttonEtapa";
             this.buttonEtapa.Size = new System.Drawing.Size(110, 45);
             this.buttonEtapa.TabIndex = 41;
@@ -230,7 +230,7 @@
             this.groupBoxDatos.Controls.Add(this.labelDescMunicipio);
             this.groupBoxDatos.Controls.Add(this.labelDescNombre);
             this.groupBoxDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDatos.Location = new System.Drawing.Point(595, 181);
+            this.groupBoxDatos.Location = new System.Drawing.Point(692, 181);
             this.groupBoxDatos.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxDatos.Name = "groupBoxDatos";
             this.groupBoxDatos.Padding = new System.Windows.Forms.Padding(2);
@@ -238,6 +238,28 @@
             this.groupBoxDatos.TabIndex = 42;
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "Datos del boxeador";
+            // 
+            // labelMunicipio
+            // 
+            this.labelMunicipio.AutoSize = true;
+            this.labelMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMunicipio.Location = new System.Drawing.Point(73, 57);
+            this.labelMunicipio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMunicipio.Name = "labelMunicipio";
+            this.labelMunicipio.Size = new System.Drawing.Size(114, 13);
+            this.labelMunicipio.TabIndex = 8;
+            this.labelMunicipio.Text = "MunicipioBoxeador";
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(73, 26);
+            this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(103, 13);
+            this.labelNombre.TabIndex = 7;
+            this.labelNombre.Text = "NombreBoxeador";
             // 
             // labelDescMunicipio
             // 
@@ -261,28 +283,6 @@
             this.labelDescNombre.TabIndex = 1;
             this.labelDescNombre.Text = "Nombre:";
             // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(73, 26);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(103, 13);
-            this.labelNombre.TabIndex = 7;
-            this.labelNombre.Text = "NombreBoxeador";
-            // 
-            // labelMunicipio
-            // 
-            this.labelMunicipio.AutoSize = true;
-            this.labelMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMunicipio.Location = new System.Drawing.Point(73, 57);
-            this.labelMunicipio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMunicipio.Name = "labelMunicipio";
-            this.labelMunicipio.Size = new System.Drawing.Size(114, 13);
-            this.labelMunicipio.TabIndex = 8;
-            this.labelMunicipio.Text = "MunicipioBoxeador";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.labelParticipantes);
@@ -290,7 +290,7 @@
             this.groupBox1.Controls.Add(this.labelCategoria);
             this.groupBox1.Controls.Add(this.labelDescCategoria);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(595, 92);
+            this.groupBox1.Location = new System.Drawing.Point(692, 92);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -298,27 +298,6 @@
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Torneo";
-            // 
-            // labelCategoria
-            // 
-            this.labelCategoria.AutoSize = true;
-            this.labelCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategoria.Location = new System.Drawing.Point(89, 26);
-            this.labelCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCategoria.Name = "labelCategoria";
-            this.labelCategoria.Size = new System.Drawing.Size(0, 13);
-            this.labelCategoria.TabIndex = 7;
-            // 
-            // labelDescCategoria
-            // 
-            this.labelDescCategoria.AutoSize = true;
-            this.labelDescCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescCategoria.Location = new System.Drawing.Point(22, 26);
-            this.labelDescCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelDescCategoria.Name = "labelDescCategoria";
-            this.labelDescCategoria.Size = new System.Drawing.Size(67, 13);
-            this.labelDescCategoria.TabIndex = 1;
-            this.labelDescCategoria.Text = "Categoría:";
             // 
             // labelParticipantes
             // 
@@ -341,11 +320,32 @@
             this.labelDescParticipantes.TabIndex = 9;
             this.labelDescParticipantes.Text = "Participantes:";
             // 
+            // labelCategoria
+            // 
+            this.labelCategoria.AutoSize = true;
+            this.labelCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategoria.Location = new System.Drawing.Point(89, 26);
+            this.labelCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCategoria.Name = "labelCategoria";
+            this.labelCategoria.Size = new System.Drawing.Size(0, 13);
+            this.labelCategoria.TabIndex = 7;
+            // 
+            // labelDescCategoria
+            // 
+            this.labelDescCategoria.AutoSize = true;
+            this.labelDescCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescCategoria.Location = new System.Drawing.Point(22, 26);
+            this.labelDescCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDescCategoria.Name = "labelDescCategoria";
+            this.labelDescCategoria.Size = new System.Drawing.Size(67, 13);
+            this.labelDescCategoria.TabIndex = 1;
+            this.labelDescCategoria.Text = "Categoría:";
+            // 
             // labelCreandoRandom
             // 
             this.labelCreandoRandom.AutoSize = true;
             this.labelCreandoRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreandoRandom.Location = new System.Drawing.Point(616, 272);
+            this.labelCreandoRandom.Location = new System.Drawing.Point(713, 272);
             this.labelCreandoRandom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCreandoRandom.Name = "labelCreandoRandom";
             this.labelCreandoRandom.Size = new System.Drawing.Size(255, 25);
@@ -355,7 +355,7 @@
             // 
             // progressBarPeleas
             // 
-            this.progressBarPeleas.Location = new System.Drawing.Point(630, 300);
+            this.progressBarPeleas.Location = new System.Drawing.Point(727, 300);
             this.progressBarPeleas.Name = "progressBarPeleas";
             this.progressBarPeleas.Size = new System.Drawing.Size(221, 23);
             this.progressBarPeleas.Step = 3;
@@ -370,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 467);
+            this.ClientSize = new System.Drawing.Size(1058, 467);
             this.Controls.Add(this.labelCreandoRandom);
             this.Controls.Add(this.progressBarPeleas);
             this.Controls.Add(this.groupBox1);

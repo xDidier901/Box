@@ -1143,15 +1143,15 @@ namespace BoxManager.Classes
 		
 		private int _Id_Pelea;
 		
-		private int _Id_Boxeador1;
+		private string _Id_Boxeador1;
 		
-		private int _Id_Boxeador2;
+		private string _Id_Boxeador2;
 		
 		private int _Id_Torneo;
 		
 		private int _Etapa;
 		
-		private System.Nullable<int> _Ganador;
+		private string _Ganador;
 		
 		private System.Nullable<System.DateTime> _Fecha;
 		
@@ -1161,15 +1161,15 @@ namespace BoxManager.Classes
     partial void OnCreated();
     partial void OnId_PeleaChanging(int value);
     partial void OnId_PeleaChanged();
-    partial void OnId_Boxeador1Changing(int value);
+    partial void OnId_Boxeador1Changing(string value);
     partial void OnId_Boxeador1Changed();
-    partial void OnId_Boxeador2Changing(int value);
+    partial void OnId_Boxeador2Changing(string value);
     partial void OnId_Boxeador2Changed();
     partial void OnId_TorneoChanging(int value);
     partial void OnId_TorneoChanged();
     partial void OnEtapaChanging(int value);
     partial void OnEtapaChanged();
-    partial void OnGanadorChanging(System.Nullable<int> value);
+    partial void OnGanadorChanging(string value);
     partial void OnGanadorChanged();
     partial void OnFechaChanging(System.Nullable<System.DateTime> value);
     partial void OnFechaChanged();
@@ -1200,8 +1200,8 @@ namespace BoxManager.Classes
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Boxeador1", DbType="Int NOT NULL")]
-		public int Id_Boxeador1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Boxeador1", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string Id_Boxeador1
 		{
 			get
 			{
@@ -1220,8 +1220,8 @@ namespace BoxManager.Classes
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Boxeador2", DbType="Int NOT NULL")]
-		public int Id_Boxeador2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Boxeador2", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string Id_Boxeador2
 		{
 			get
 			{
@@ -1280,8 +1280,8 @@ namespace BoxManager.Classes
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ganador", DbType="Int")]
-		public System.Nullable<int> Ganador
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ganador", DbType="NChar(80)")]
+		public string Ganador
 		{
 			get
 			{
