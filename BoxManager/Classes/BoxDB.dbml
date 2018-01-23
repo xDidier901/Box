@@ -172,4 +172,14 @@
       <Column Name="Divisiones" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.reportePeleasPorTorneoID" Method="reportePeleasPorTorneoID">
+    <Parameter Name="torneo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="reportePeleasPorTorneoIDResult">
+      <Column Name="Boxeador_1" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Boxeador_2" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Etapa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ganador" Type="System.String" DbType="NChar(80)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

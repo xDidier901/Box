@@ -90,6 +90,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxManagerDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoxManagerDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BoxManagerDBDataSetPeleasPorTorneoID.cs">
+      <DependentUpon>BoxManagerDBDataSetPeleasPorTorneoID.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BoxManagerDBDataSetPeleasPorTorneoID.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoxManagerDBDataSetPeleasPorTorneoID.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BoxManagerDBDataSetPeleasPRO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoxManagerDBDataSetPeleasPRO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BoxManagerDBDataSetReportePeleasID.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoxManagerDBDataSetReportePeleasID.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Classes\BoxDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +173,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GraficaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteTorneos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteTorneos.Designer.cs">
+      <DependentUpon>ReporteTorneos.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Interfaces\AdmisnitrarTorneo.resx">
       <DependentUpon>AdmisnitrarTorneo.cs</DependentUpon>
@@ -160,8 +189,58 @@
     <EmbeddedResource Include="Reportes\BoxeadoresReport.resx">
       <DependentUpon>BoxeadoresReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteTorneos.resx">
+      <DependentUpon>ReporteTorneos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportGrafica.rdlc" />
     <EmbeddedResource Include="Reportes\ReportBox.rdlc" />
+    <None Include="BoxManagerDBDataSet.xsc">
+      <DependentUpon>BoxManagerDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoxManagerDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BoxManagerDBDataSet.xss">
+      <DependentUpon>BoxManagerDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSetPeleasPorTorneoID.xsc">
+      <DependentUpon>BoxManagerDBDataSetPeleasPorTorneoID.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSetPeleasPorTorneoID.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoxManagerDBDataSetPeleasPorTorneoID.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BoxManagerDBDataSetPeleasPorTorneoID.xss">
+      <DependentUpon>BoxManagerDBDataSetPeleasPorTorneoID.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSetPeleasPRO.xsc">
+      <DependentUpon>BoxManagerDBDataSetPeleasPRO.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSetPeleasPRO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoxManagerDBDataSetPeleasPRO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BoxManagerDBDataSetPeleasPRO.xss">
+      <DependentUpon>BoxManagerDBDataSetPeleasPRO.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSetReportePeleasID.xsc">
+      <DependentUpon>BoxManagerDBDataSetReportePeleasID.xsd</DependentUpon>
+    </None>
+    <None Include="BoxManagerDBDataSetReportePeleasID.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoxManagerDBDataSetReportePeleasID.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BoxManagerDBDataSetReportePeleasID.xss">
+      <DependentUpon>BoxManagerDBDataSetReportePeleasID.xsd</DependentUpon>
+    </None>
     <None Include="BoxManager_TemporaryKey.pfx" />
     <None Include="Classes\BoxDB.dbml.layout">
       <DependentUpon>BoxDB.dbml</DependentUpon>

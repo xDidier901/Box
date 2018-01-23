@@ -1,4 +1,5 @@
 ﻿using BoxManager.Classes;
+using BoxManager.Reportes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -201,6 +202,7 @@ namespace BoxManager.Interfaces
         private void comboBoxTorneos_SelectionChangeCommitted(object sender, EventArgs e)
         {
             actualizarTabla();
+            this.buttonImprimir.Enabled = true;
         }
 
         private void mostrarInfoTorneo()
@@ -349,5 +351,9 @@ namespace BoxManager.Interfaces
             mostrarInfoTorneo();
         }
 
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            new ReporteTorneos(Convert.ToInt32(comboBoxTorneos.SelectedValue)).Show();
+        }
     }
 }

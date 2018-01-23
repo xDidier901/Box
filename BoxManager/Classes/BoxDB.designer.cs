@@ -219,6 +219,13 @@ namespace BoxManager.Classes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<ReporteGraficaResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reportePeleasPorTorneoID")]
+		public ISingleResult<reportePeleasPorTorneoIDResult> reportePeleasPorTorneoID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> torneo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), torneo);
+			return ((ISingleResult<reportePeleasPorTorneoIDResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Acciones")]
@@ -2352,6 +2359,104 @@ namespace BoxManager.Classes
 				if ((this._Divisiones != value))
 				{
 					this._Divisiones = value;
+				}
+			}
+		}
+	}
+	
+	public partial class reportePeleasPorTorneoIDResult
+	{
+		
+		private string _Boxeador_1;
+		
+		private string _Boxeador_2;
+		
+		private int _Etapa;
+		
+		private string _Ganador;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		public reportePeleasPorTorneoIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Boxeador_1", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string Boxeador_1
+		{
+			get
+			{
+				return this._Boxeador_1;
+			}
+			set
+			{
+				if ((this._Boxeador_1 != value))
+				{
+					this._Boxeador_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Boxeador_2", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string Boxeador_2
+		{
+			get
+			{
+				return this._Boxeador_2;
+			}
+			set
+			{
+				if ((this._Boxeador_2 != value))
+				{
+					this._Boxeador_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Etapa", DbType="Int NOT NULL")]
+		public int Etapa
+		{
+			get
+			{
+				return this._Etapa;
+			}
+			set
+			{
+				if ((this._Etapa != value))
+				{
+					this._Etapa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ganador", DbType="NChar(80)")]
+		public string Ganador
+		{
+			get
+			{
+				return this._Ganador;
+			}
+			set
+			{
+				if ((this._Ganador != value))
+				{
+					this._Ganador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
 				}
 			}
 		}
