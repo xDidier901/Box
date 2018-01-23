@@ -37,6 +37,7 @@ namespace BoxManager.Interfaces
             new Menu().Show();
         }
 
+        //Carga el combobox con los torneos existentes
         private void cargarTorneos()
         {
             comboBoxTorneos = action.llenarTorneos(comboBoxTorneos);
@@ -47,6 +48,7 @@ namespace BoxManager.Interfaces
 
         }
 
+        //Actualiza la tabla para darle una mejor visual
         private void formatearCampos()
         {
 
@@ -58,7 +60,7 @@ namespace BoxManager.Interfaces
             foreach (DataGridViewRow dr in dgPeleas.Rows)
             {
 
-                dr.Cells[5].Style.BackColor = Color.White;
+                dr.Cells[4].Style.BackColor = Color.White;
 
                 dr.Cells[1].Style.BackColor = azul.BackColor;
                 dr.Cells[1].Style.ForeColor = Color.White;
@@ -69,32 +71,33 @@ namespace BoxManager.Interfaces
                 if (dr.Cells[1].Value.Equals("LIBRE"))
                 {
                     dr.Cells[1].Style.BackColor = Color.BlueViolet;
-                    dr.Cells[5].Style.BackColor = Color.BlueViolet;
-                    dr.Cells[5].Style.ForeColor = Color.White;
+                    dr.Cells[4].Style.BackColor = Color.BlueViolet;
+                    dr.Cells[4].Style.ForeColor = Color.White;
                 }
                 else if (dr.Cells[2].Value.Equals("LIBRE"))
                 {
                     dr.Cells[2].Style.BackColor = Color.BlueViolet;
-                    dr.Cells[5].Style.BackColor = Color.BlueViolet;
-                    dr.Cells[5].Style.ForeColor = Color.White;
+                    dr.Cells[4].Style.BackColor = Color.BlueViolet;
+                    dr.Cells[4].Style.ForeColor = Color.White;
                 }
-                else if (dr.Cells[5].Value != null)
+                else if (dr.Cells[4].Value != null)
                 {
-                    if (dr.Cells[5].Value.Equals(dr.Cells[1].Value))
+                    if (dr.Cells[4].Value.Equals(dr.Cells[1].Value))
                     {
-                        dr.Cells[5].Style.BackColor = azul.BackColor;
-                        dr.Cells[5].Style.ForeColor = Color.White;
+                        dr.Cells[4].Style.BackColor = azul.BackColor;
+                        dr.Cells[4].Style.ForeColor = Color.White;
                     }
-                    else if (dr.Cells[5].Value.Equals(dr.Cells[2].Value))
+                    else if (dr.Cells[4].Value.Equals(dr.Cells[2].Value))
                     {
-                        dr.Cells[5].Style.BackColor = rojo.BackColor;
-                        dr.Cells[5].Style.ForeColor = Color.White;
+                        dr.Cells[4].Style.BackColor = rojo.BackColor;
+                        dr.Cells[4].Style.ForeColor = Color.White;
                     }
                 }
             }
             etapaLista();
         }
 
+        //Verifica si todas las peleas de la etapa actual han concluido
         private void etapaLista()
         {
             int peleasTotales = dgPeleas.RowCount;
@@ -106,7 +109,7 @@ namespace BoxManager.Interfaces
             int cantEtapas = 0;
             foreach (DataGridViewRow dr in dgPeleas.Rows)
             {
-                if (Convert.ToInt32(dr.Cells[4].Value).Equals(etapa))
+                if (Convert.ToInt32(dr.Cells[3].Value).Equals(etapa))
                 {
                     cantEtapas++;
                 }
@@ -123,7 +126,7 @@ namespace BoxManager.Interfaces
 
                 foreach (DataGridViewRow dr in dgPeleas.Rows)
                 {
-                    if (dr.Cells[5].Value != null)
+                    if (dr.Cells[4].Value != null)
                     {
                         peleasListas++;
                     }
@@ -140,13 +143,14 @@ namespace BoxManager.Interfaces
             }
         }
 
+        //Al entrar a una celda, se puede activar el boton de ganador o el de cancelar, así como cargar si información.
         private void dgPeleas_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if ((dgPeleas.CurrentCell.ColumnIndex == 1 || dgPeleas.CurrentCell.ColumnIndex == 2) && dgPeleas.CurrentRow.Cells[5].Style.BackColor == Color.White)
+            if ((dgPeleas.CurrentCell.ColumnIndex == 1 || dgPeleas.CurrentCell.ColumnIndex == 2) && dgPeleas.CurrentRow.Cells[4].Style.BackColor == Color.White)
             {
                 buttonGanador.Enabled = true;
             }
-            else if (dgPeleas.CurrentRow.Cells[5].Style.BackColor != Color.White && dgPeleas.CurrentRow.Cells[5].Value == null)
+            else if (dgPeleas.CurrentRow.Cells[4].Style.BackColor != Color.White && dgPeleas.CurrentRow.Cells[4].Value == null)
             {
                 buttonCancelar.Enabled = true;
             } else
@@ -154,6 +158,29 @@ namespace BoxManager.Interfaces
                 buttonGanador.Enabled = false;
                 buttonCancelar.Enabled = false;
             }
+
+            //Si es la celda de algún boxeador, carga su información.
+            try
+            {
+                string valorCelda = dgPeleas.CurrentCell.Value.ToString().Trim();
+                if ((dgPeleas.CurrentCell.ColumnIndex == 1 || dgPeleas.CurrentCell.ColumnIndex == 2 || dgPeleas.CurrentCell.ColumnIndex == 4) && !valorCelda.Equals("LIBRE"))
+                {
+                    List<string> datosBoxeadores = action.obtenerDatosBoxeador(Convert.ToInt32(dgPeleas.CurrentCell.Value));
+                    labelNombre.Text = datosBoxeadores.First();
+                    labelMunicipio.Text = datosBoxeadores.Last();
+                }
+                else
+                {
+                    labelNombre.Text = "";
+                    labelMunicipio.Text = "";
+                }
+            }
+            catch (Exception)
+            {
+                labelNombre.Text = "";
+                labelMunicipio.Text = "";
+            }
+
         }
 
         private void buttonGanador_Click(object sender, EventArgs e)
@@ -161,21 +188,21 @@ namespace BoxManager.Interfaces
 
             if (dgPeleas.CurrentCell.Style.BackColor == azul.BackColor)
             {
-                dgPeleas.CurrentRow.Cells[5].Style.BackColor = azul.BackColor;
+                dgPeleas.CurrentRow.Cells[4].Style.BackColor = azul.BackColor;
             }
             else if (dgPeleas.CurrentCell.Style.BackColor == rojo.BackColor)
             {
-                dgPeleas.CurrentRow.Cells[5].Style.BackColor = rojo.BackColor;
+                dgPeleas.CurrentRow.Cells[4].Style.BackColor = rojo.BackColor;
             }
-            //dgPeleas.CurrentRow.Cells[5].Value = dgPeleas.CurrentCell.Value;
-            //dgPeleas.CurrentRow.Cells[5].Style.BackColor = Color.Green;
-            //dgPeleas.CurrentRow.Cells[5].Style.ForeColor = Color.White;
+            //dgPeleas.CurrentRow.Cells[4].Value = dgPeleas.CurrentCell.Value;
+            //dgPeleas.CurrentRow.Cells[4].Style.BackColor = Color.Green;
+            //dgPeleas.CurrentRow.Cells[4].Style.ForeColor = Color.White;
             buttonGanador.Enabled = false;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            dgPeleas.CurrentRow.Cells[5].Style.BackColor = Color.White;
+            dgPeleas.CurrentRow.Cells[4].Style.BackColor = Color.White;
             buttonCancelar.Enabled = false;
         }
 
@@ -195,17 +222,17 @@ namespace BoxManager.Interfaces
         private void buttonGuardarCambios_Click(object sender, EventArgs e)
         {
             int peleasActualizadas = 0;
-            int etapa = Convert.ToInt32(dgPeleas[4, 0].Value);
+            int etapa = Convert.ToInt32(dgPeleas[3, 0].Value);
 
             foreach (DataGridViewRow dr in dgPeleas.Rows)
             {
                 int peleaID, ganador;
 
-                if (dr.Cells[5].Style.BackColor == azul.BackColor && Convert.ToInt32(dr.Cells[4].Value).Equals(etapa))
+                if (dr.Cells[4].Style.BackColor == azul.BackColor && Convert.ToInt32(dr.Cells[3].Value).Equals(etapa) && dr.Cells[4].Value == null)
                 {
                     ganador = Convert.ToInt32(dr.Cells[1].Value);
                 }
-                else if (dr.Cells[5].Style.BackColor == rojo.BackColor && Convert.ToInt32(dr.Cells[4].Value).Equals(etapa))
+                else if (dr.Cells[4].Style.BackColor == rojo.BackColor && Convert.ToInt32(dr.Cells[3].Value).Equals(etapa) && dr.Cells[4].Value == null)
                 {
                     ganador = Convert.ToInt32(dr.Cells[2].Value);
                 }
@@ -247,12 +274,12 @@ namespace BoxManager.Interfaces
         private void buttonEtapa_Click(object sender, EventArgs e)
         {
             int cantBoxeadores = 0;
-            int etapa = Convert.ToInt32(dgPeleas[4, 0].Value);
+            int etapa = Convert.ToInt32(dgPeleas[3, 0].Value);
             int idTorneo = Convert.ToInt32(comboBoxTorneos.SelectedValue);
 
             foreach (DataGridViewRow dr in dgPeleas.Rows)
             {
-                if (Convert.ToInt32(dr.Cells[4].Value).Equals(etapa))
+                if (Convert.ToInt32(dr.Cells[3].Value).Equals(etapa))
                 {
                     cantBoxeadores++;
                 }
@@ -263,9 +290,9 @@ namespace BoxManager.Interfaces
 
             foreach (DataGridViewRow dr in dgPeleas.Rows)
             {
-                if (Convert.ToInt32(dr.Cells[4].Value).Equals(etapa))
+                if (Convert.ToInt32(dr.Cells[3].Value).Equals(etapa))
                 {
-                    participantes.Add(dr.Cells[5].Value.ToString().Trim());
+                    participantes.Add(dr.Cells[4].Value.ToString().Trim());
                 }
             }
 
@@ -300,10 +327,15 @@ namespace BoxManager.Interfaces
             }
 
             //Se muestra un progressBar sólo para hacer más notorio que las peleas son aleatorias
-            labelCreandoRandom.Visible = true;
-            progressBarPeleas.Visible = true;
-            timer1.Start();
-
+            if (aux > 2)
+            {
+                labelCreandoRandom.Visible = true;
+                progressBarPeleas.Visible = true;
+                timer1.Start();
+            } else
+            {
+                actualizarTabla();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -86,8 +86,8 @@ namespace BoxManager.Classes
                         join valor2 in Database.Categorias on valor.Categoria equals valor2.Id_Categoria
                         join valor3 in Database.Divisiones on valor.Division equals valor3.Id_Division
                         from valor4 in Database.Municipios
-                        //from valor2 in Database.Categorias
-                        //from valor3 in Database.Divisiones
+                            //from valor2 in Database.Categorias
+                            //from valor3 in Database.Divisiones
                         where valor2.Id_Categoria == valor.Categoria &&
                          valor3.Id_Division == valor.Division &&
                          valor4.Id_Municipio == valor.Municipio
@@ -448,9 +448,9 @@ namespace BoxManager.Classes
         //Mostrar boxeadores en datagrid por filtro
         public Boxeadore[] filtrarBoxeadores(int categoria, int divison, String rama)
         {
-            
+
             var query = from valor in Database.Boxeadores
-                        where 
+                        where
                         valor.Categoria == categoria &&
                         valor.Division == divison &&
                         valor.Rama.Equals(rama)
@@ -463,7 +463,7 @@ namespace BoxManager.Classes
             var algo = query.ToArray();
             Boxeadore[] boxeadores = new Boxeadore[algo.Length];
             int i = 0;
-            foreach(var value in algo)
+            foreach (var value in algo)
             {
                 Boxeadore y = new Boxeadore();
                 y.Nombre = value.Nombre;
@@ -514,7 +514,8 @@ namespace BoxManager.Classes
             {
                 pelea.Ganador = boxeador2ID;
                 pelea.Fecha = DateTime.Today;
-            } else if (boxeador2ID == -1)
+            }
+            else if (boxeador2ID == -1)
             {
                 pelea.Ganador = boxeador1ID;
                 pelea.Fecha = DateTime.Today;
@@ -565,7 +566,6 @@ namespace BoxManager.Classes
                              Pelea_ID = valor.Id_Pelea,
                              Boxeador_1 = valor.Id_Boxeador1.Equals(-1) ? "LIBRE" : valor.Id_Boxeador1.ToString().Trim(),
                              Boxeador_2 = valor.Id_Boxeador2.Equals(-1) ? "LIBRE" : valor.Id_Boxeador2.ToString().Trim(),
-                             Torneo_ID = valor.Id_Torneo,
                              Etapa = valor.Etapa.ToString().Trim(),
                              Ganador = valor.Ganador.ToString().Trim(),
                              Fecha = valor.Fecha
@@ -640,10 +640,10 @@ namespace BoxManager.Classes
         public List<string> obtenerDatosTorneo(int torneoID)
         {
             var categoria = from valor in Database.Torneos
-                               from valor2 in Database.Categorias
-                               where valor.Id_Torneo == torneoID &&
-                               valor2.Id_Categoria == valor.Id_Categoria
-                               select valor2.Nombre;
+                            from valor2 in Database.Categorias
+                            where valor.Id_Torneo == torneoID &&
+                            valor2.Id_Categoria == valor.Id_Categoria
+                            select valor2.Nombre;
 
             var numParticipantes = from valor in Database.Torneos
                                    where valor.Id_Torneo == torneoID
@@ -656,6 +656,25 @@ namespace BoxManager.Classes
             return datos;
         }
 
+        //Obtiene informacion de un boxeador
+        public List<string> obtenerDatosBoxeador(int boxeadorID)
+        {
+            var nombre = from valor in Database.Boxeadores
+                         where valor.Id_Boxeador == boxeadorID
+                         select valor.Nombre;
+
+            var municipio = from valor in Database.Boxeadores
+                            from valor2 in Database.Municipios
+                            where valor.Municipio == valor2.Id_Municipio &&
+                            valor.Id_Boxeador == boxeadorID
+                            select valor2.Nombre;
+
+            List<string> datos = new List<string>();
+            datos.Add(nombre.ToList().First().Trim());
+            datos.Add(municipio.ToList().First().Trim());
+
+            return datos;
+        }
 
 
     }
