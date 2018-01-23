@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -80,10 +81,13 @@ namespace BoxManager.Classes
         //Mostrar boxeadores en datagrid
         public void mostrarBoxeadores(DataGridView x)
         {
+
             var query = from valor in Database.Boxeadores
-                        from valor2 in Database.Categorias
-                        from valor3 in Database.Divisiones
+                        join valor2 in Database.Categorias on valor.Categoria equals valor2.Id_Categoria
+                        join valor3 in Database.Divisiones on valor.Division equals valor3.Id_Division
                         from valor4 in Database.Municipios
+                        //from valor2 in Database.Categorias
+                        //from valor3 in Database.Divisiones
                         where valor2.Id_Categoria == valor.Categoria &&
                          valor3.Id_Division == valor.Division &&
                          valor4.Id_Municipio == valor.Municipio
@@ -571,7 +575,7 @@ namespace BoxManager.Classes
         }
 
         //Actualiza una pelea de algún respectivo torneo
-        public Boolean actualizarPelea(int peleaID, int ganador)
+        public void actualizarPelea(int peleaID, int ganador)
         {
 
             var resultado = from valor in Database.Peleas
@@ -590,9 +594,9 @@ namespace BoxManager.Classes
             catch (Exception e)
             {
                 MessageBox.Show($"Hubo un error al actualizar la pelea {peleaID}. Error: {e.Message}");
-                return false;
+                return;
             }
-            return true;
+            return;
 
         }
 
@@ -617,6 +621,39 @@ namespace BoxManager.Classes
             {
                 MessageBox.Show($"Hubo un error al tratar de eliminar el torneo. Error: { e.ToString() }");
             }
+        }
+
+        //Obtiene la última etapa del torneo
+        public int obtenerUltimaEtapa(int torneoID)
+        {
+            var query1 = from valor in Database.Peleas
+                         orderby valor.Etapa descending
+                         where valor.Id_Torneo == torneoID
+                         select valor.Etapa;
+
+            List<int> etapas = query1.ToList();
+
+            return etapas.First();
+        }
+
+        //Obtiene informacion de un torneo
+        public List<string> obtenerDatosTorneo(int torneoID)
+        {
+            var categoria = from valor in Database.Torneos
+                               from valor2 in Database.Categorias
+                               where valor.Id_Torneo == torneoID &&
+                               valor2.Id_Categoria == valor.Id_Categoria
+                               select valor2.Nombre;
+
+            var numParticipantes = from valor in Database.Torneos
+                                   where valor.Id_Torneo == torneoID
+                                   select valor.NumParticipantes;
+
+            List<string> datos = new List<string>();
+            datos.Add(categoria.ToList().First().Trim());
+            datos.Add(numParticipantes.ToList().First().ToString().Trim());
+
+            return datos;
         }
 
 
