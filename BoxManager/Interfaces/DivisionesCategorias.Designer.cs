@@ -97,7 +97,7 @@
             this.buttonMenu.Location = new System.Drawing.Point(12, 12);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(109, 51);
-            this.buttonMenu.TabIndex = 20;
+            this.buttonMenu.TabIndex = 18;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -166,14 +166,14 @@
             this.comboBoxCategorias.Location = new System.Drawing.Point(114, 130);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(343, 21);
-            this.comboBoxCategorias.TabIndex = 34;
+            this.comboBoxCategorias.TabIndex = 12;
             // 
             // textBoxNombreDiv
             // 
             this.textBoxNombreDiv.Location = new System.Drawing.Point(114, 56);
             this.textBoxNombreDiv.Name = "textBoxNombreDiv";
             this.textBoxNombreDiv.Size = new System.Drawing.Size(343, 20);
-            this.textBoxNombreDiv.TabIndex = 8;
+            this.textBoxNombreDiv.TabIndex = 11;
             // 
             // labelCategoria
             // 
@@ -203,7 +203,7 @@
             this.buttonCancelarDiv.Location = new System.Drawing.Point(230, 607);
             this.buttonCancelarDiv.Name = "buttonCancelarDiv";
             this.buttonCancelarDiv.Size = new System.Drawing.Size(79, 30);
-            this.buttonCancelarDiv.TabIndex = 27;
+            this.buttonCancelarDiv.TabIndex = 15;
             this.buttonCancelarDiv.Text = "Cancelar";
             this.buttonCancelarDiv.UseVisualStyleBackColor = true;
             this.buttonCancelarDiv.Click += new System.EventHandler(this.buttonCancelarDiv_Click);
@@ -215,7 +215,7 @@
             this.buttonEliminarDiv.Location = new System.Drawing.Point(315, 607);
             this.buttonEliminarDiv.Name = "buttonEliminarDiv";
             this.buttonEliminarDiv.Size = new System.Drawing.Size(110, 30);
-            this.buttonEliminarDiv.TabIndex = 26;
+            this.buttonEliminarDiv.TabIndex = 16;
             this.buttonEliminarDiv.Text = "Eliminar";
             this.buttonEliminarDiv.UseVisualStyleBackColor = true;
             this.buttonEliminarDiv.Click += new System.EventHandler(this.buttonEliminarDiv_Click);
@@ -227,7 +227,7 @@
             this.buttonEditarDiv.Location = new System.Drawing.Point(136, 607);
             this.buttonEditarDiv.Name = "buttonEditarDiv";
             this.buttonEditarDiv.Size = new System.Drawing.Size(88, 30);
-            this.buttonEditarDiv.TabIndex = 25;
+            this.buttonEditarDiv.TabIndex = 14;
             this.buttonEditarDiv.Text = "Editar";
             this.buttonEditarDiv.UseVisualStyleBackColor = true;
             this.buttonEditarDiv.Click += new System.EventHandler(this.buttonEditarDiv_Click);
@@ -239,7 +239,7 @@
             this.buttonAgregarDiv.Location = new System.Drawing.Point(14, 607);
             this.buttonAgregarDiv.Name = "buttonAgregarDiv";
             this.buttonAgregarDiv.Size = new System.Drawing.Size(116, 30);
-            this.buttonAgregarDiv.TabIndex = 24;
+            this.buttonAgregarDiv.TabIndex = 13;
             this.buttonAgregarDiv.Text = "Agregar";
             this.buttonAgregarDiv.UseVisualStyleBackColor = true;
             this.buttonAgregarDiv.Click += new System.EventHandler(this.buttonAgregarDiv_Click);
@@ -260,7 +260,7 @@
             this.textBoxBuscarDivision.Location = new System.Drawing.Point(616, 297);
             this.textBoxBuscarDivision.Name = "textBoxBuscarDivision";
             this.textBoxBuscarDivision.Size = new System.Drawing.Size(497, 20);
-            this.textBoxBuscarDivision.TabIndex = 29;
+            this.textBoxBuscarDivision.TabIndex = 17;
             this.textBoxBuscarDivision.TextChanged += new System.EventHandler(this.textBoxBuscarDivision_TextChanged);
             // 
             // labelBuscarNombreCat
@@ -279,7 +279,7 @@
             this.textBoxBuscarCategoria.Location = new System.Drawing.Point(616, 51);
             this.textBoxBuscarCategoria.Name = "textBoxBuscarCategoria";
             this.textBoxBuscarCategoria.Size = new System.Drawing.Size(261, 20);
-            this.textBoxBuscarCategoria.TabIndex = 31;
+            this.textBoxBuscarCategoria.TabIndex = 9;
             this.textBoxBuscarCategoria.TextChanged += new System.EventHandler(this.textBoxBuscarCategoria_TextChanged);
             // 
             // buttonCancelarCat
@@ -290,7 +290,7 @@
             this.buttonCancelarCat.Location = new System.Drawing.Point(245, 226);
             this.buttonCancelarCat.Name = "buttonCancelarCat";
             this.buttonCancelarCat.Size = new System.Drawing.Size(110, 30);
-            this.buttonCancelarCat.TabIndex = 32;
+            this.buttonCancelarCat.TabIndex = 7;
             this.buttonCancelarCat.Text = "Cancelar";
             this.buttonCancelarCat.UseVisualStyleBackColor = true;
             this.buttonCancelarCat.Click += new System.EventHandler(this.buttonCancelarCat_Click);
@@ -302,7 +302,7 @@
             this.buttonEliminarCat.Location = new System.Drawing.Point(361, 226);
             this.buttonEliminarCat.Name = "buttonEliminarCat";
             this.buttonEliminarCat.Size = new System.Drawing.Size(110, 30);
-            this.buttonEliminarCat.TabIndex = 31;
+            this.buttonEliminarCat.TabIndex = 8;
             this.buttonEliminarCat.Text = "Eliminar";
             this.buttonEliminarCat.UseVisualStyleBackColor = true;
             this.buttonEliminarCat.Click += new System.EventHandler(this.buttonEliminarCat_Click);
@@ -314,7 +314,7 @@
             this.buttonEditarCat.Location = new System.Drawing.Point(129, 226);
             this.buttonEditarCat.Name = "buttonEditarCat";
             this.buttonEditarCat.Size = new System.Drawing.Size(110, 30);
-            this.buttonEditarCat.TabIndex = 30;
+            this.buttonEditarCat.TabIndex = 6;
             this.buttonEditarCat.Text = "Editar";
             this.buttonEditarCat.UseVisualStyleBackColor = true;
             this.buttonEditarCat.Click += new System.EventHandler(this.buttonEditarCat_Click);
@@ -326,7 +326,7 @@
             this.buttonAgregarCat.Location = new System.Drawing.Point(13, 226);
             this.buttonAgregarCat.Name = "buttonAgregarCat";
             this.buttonAgregarCat.Size = new System.Drawing.Size(110, 30);
-            this.buttonAgregarCat.TabIndex = 29;
+            this.buttonAgregarCat.TabIndex = 5;
             this.buttonAgregarCat.Text = "Agregar";
             this.buttonAgregarCat.UseVisualStyleBackColor = true;
             this.buttonAgregarCat.Click += new System.EventHandler(this.buttonAgregarCat_Click);
@@ -354,7 +354,7 @@
             this.rbFemCat.Location = new System.Drawing.Point(230, 59);
             this.rbFemCat.Name = "rbFemCat";
             this.rbFemCat.Size = new System.Drawing.Size(68, 17);
-            this.rbFemCat.TabIndex = 11;
+            this.rbFemCat.TabIndex = 4;
             this.rbFemCat.Text = "Femenil";
             this.rbFemCat.UseVisualStyleBackColor = true;
             // 
@@ -366,7 +366,7 @@
             this.rbVarCat.Location = new System.Drawing.Point(120, 59);
             this.rbVarCat.Name = "rbVarCat";
             this.rbVarCat.Size = new System.Drawing.Size(64, 17);
-            this.rbVarCat.TabIndex = 10;
+            this.rbVarCat.TabIndex = 3;
             this.rbVarCat.TabStop = true;
             this.rbVarCat.Text = "Varonil";
             this.rbVarCat.UseVisualStyleBackColor = true;
@@ -376,7 +376,7 @@
             this.textBoxNombreCat.Location = new System.Drawing.Point(114, 26);
             this.textBoxNombreCat.Name = "textBoxNombreCat";
             this.textBoxNombreCat.Size = new System.Drawing.Size(344, 20);
-            this.textBoxNombreCat.TabIndex = 8;
+            this.textBoxNombreCat.TabIndex = 2;
             // 
             // labelRamaCat
             // 
@@ -416,7 +416,7 @@
             this.comboBoxFiltCat.Location = new System.Drawing.Point(154, 328);
             this.comboBoxFiltCat.Name = "comboBoxFiltCat";
             this.comboBoxFiltCat.Size = new System.Drawing.Size(317, 21);
-            this.comboBoxFiltCat.TabIndex = 35;
+            this.comboBoxFiltCat.TabIndex = 10;
             this.comboBoxFiltCat.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltCat_SelectedIndexChanged);
             this.comboBoxFiltCat.Click += new System.EventHandler(this.comboBoxFiltCat_Click);
             // 
@@ -431,7 +431,7 @@
             this.comboBoxFiltRama.Location = new System.Drawing.Point(127, 78);
             this.comboBoxFiltRama.Name = "comboBoxFiltRama";
             this.comboBoxFiltRama.Size = new System.Drawing.Size(344, 21);
-            this.comboBoxFiltRama.TabIndex = 37;
+            this.comboBoxFiltRama.TabIndex = 1;
             this.comboBoxFiltRama.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltRama_SelectedIndexChanged);
             this.comboBoxFiltRama.Click += new System.EventHandler(this.comboBoxFiltRama_Click);
             // 

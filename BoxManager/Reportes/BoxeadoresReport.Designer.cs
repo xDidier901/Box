@@ -114,7 +114,7 @@
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 41);
-            this.buttonMenu.TabIndex = 21;
+            this.buttonMenu.TabIndex = 8;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -155,7 +155,7 @@
             this.buttonGenerarR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGenerarR.Name = "buttonGenerarR";
             this.buttonGenerarR.Size = new System.Drawing.Size(127, 33);
-            this.buttonGenerarR.TabIndex = 23;
+            this.buttonGenerarR.TabIndex = 6;
             this.buttonGenerarR.Text = "Generar Reporte";
             this.buttonGenerarR.UseVisualStyleBackColor = true;
             this.buttonGenerarR.Click += new System.EventHandler(this.buttonGenerarR_Click);
@@ -168,7 +168,7 @@
             this.buttonReestablecer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReestablecer.Name = "buttonReestablecer";
             this.buttonReestablecer.Size = new System.Drawing.Size(127, 33);
-            this.buttonReestablecer.TabIndex = 24;
+            this.buttonReestablecer.TabIndex = 7;
             this.buttonReestablecer.Text = "Reestablecer";
             this.buttonReestablecer.UseVisualStyleBackColor = true;
             this.buttonReestablecer.Click += new System.EventHandler(this.buttonReestablecer_Click);
@@ -182,7 +182,7 @@
             this.comboBoxMunicipios.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMunicipios.Name = "comboBoxMunicipios";
             this.comboBoxMunicipios.Size = new System.Drawing.Size(284, 25);
-            this.comboBoxMunicipios.TabIndex = 13;
+            this.comboBoxMunicipios.TabIndex = 5;
             this.comboBoxMunicipios.ValueMember = "Id_Municipio";
             this.comboBoxMunicipios.Click += new System.EventHandler(this.comboBoxMunicipios_Click);
             // 
@@ -195,7 +195,7 @@
             this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDivisiones.Name = "comboBoxDivisiones";
             this.comboBoxDivisiones.Size = new System.Drawing.Size(284, 25);
-            this.comboBoxDivisiones.TabIndex = 10;
+            this.comboBoxDivisiones.TabIndex = 4;
             this.comboBoxDivisiones.Click += new System.EventHandler(this.comboBoxDivisiones_Click);
             // 
             // rbFemenil
@@ -206,7 +206,7 @@
             this.rbFemenil.Margin = new System.Windows.Forms.Padding(2);
             this.rbFemenil.Name = "rbFemenil";
             this.rbFemenil.Size = new System.Drawing.Size(82, 21);
-            this.rbFemenil.TabIndex = 11;
+            this.rbFemenil.TabIndex = 2;
             this.rbFemenil.Text = "Femenil";
             this.rbFemenil.UseVisualStyleBackColor = true;
             this.rbFemenil.CheckedChanged += new System.EventHandler(this.rbFemenil_CheckedChanged);
@@ -219,7 +219,7 @@
             this.rbVaronil.Margin = new System.Windows.Forms.Padding(2);
             this.rbVaronil.Name = "rbVaronil";
             this.rbVaronil.Size = new System.Drawing.Size(77, 21);
-            this.rbVaronil.TabIndex = 10;
+            this.rbVaronil.TabIndex = 1;
             this.rbVaronil.Text = "Varonil";
             this.rbVaronil.UseVisualStyleBackColor = true;
             this.rbVaronil.CheckedChanged += new System.EventHandler(this.rbVaronil_CheckedChanged);
@@ -232,7 +232,7 @@
             this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(284, 25);
-            this.comboBoxCategorias.TabIndex = 9;
+            this.comboBoxCategorias.TabIndex = 3;
             this.comboBoxCategorias.Click += new System.EventHandler(this.comboBoxCategorias_Click);
             // 
             // labelMunicipio

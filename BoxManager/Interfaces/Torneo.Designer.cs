@@ -54,11 +54,11 @@
             this.labelSeleccionados = new System.Windows.Forms.Label();
             this.buttonCrearT = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.tableAdapterManager1 = new BoxManager.Reportes.GraficaDataSetTableAdapters.TableAdapterManager();
             this.progressBarPeleas = new System.Windows.Forms.ProgressBar();
-            this.reporteGraficaTableAdapter1 = new BoxManager.Reportes.GraficaDataSetTableAdapters.ReporteGraficaTableAdapter();
             this.labelCreandoRandom = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tableAdapterManager1 = new BoxManager.Reportes.GraficaDataSetTableAdapters.TableAdapterManager();
+            this.reporteGraficaTableAdapter1 = new BoxManager.Reportes.GraficaDataSetTableAdapters.ReporteGraficaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSeleccionados)).BeginInit();
@@ -84,7 +84,7 @@
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 42);
-            this.buttonMenu.TabIndex = 18;
+            this.buttonMenu.TabIndex = 11;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -108,7 +108,7 @@
             this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxDivisiones.Name = "comboBoxDivisiones";
             this.comboBoxDivisiones.Size = new System.Drawing.Size(329, 21);
-            this.comboBoxDivisiones.TabIndex = 34;
+            this.comboBoxDivisiones.TabIndex = 5;
             this.comboBoxDivisiones.SelectedIndexChanged += new System.EventHandler(this.comboBoxDivisiones_SelectedIndexChanged);
             // 
             // rbFemenil
@@ -120,7 +120,7 @@
             this.rbFemenil.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rbFemenil.Name = "rbFemenil";
             this.rbFemenil.Size = new System.Drawing.Size(61, 17);
-            this.rbFemenil.TabIndex = 36;
+            this.rbFemenil.TabIndex = 3;
             this.rbFemenil.Text = "Femenil";
             this.rbFemenil.UseVisualStyleBackColor = true;
             this.rbFemenil.CheckedChanged += new System.EventHandler(this.rbFemenil_CheckedChanged);
@@ -134,7 +134,7 @@
             this.rbVaronil.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rbVaronil.Name = "rbVaronil";
             this.rbVaronil.Size = new System.Drawing.Size(57, 17);
-            this.rbVaronil.TabIndex = 35;
+            this.rbVaronil.TabIndex = 2;
             this.rbVaronil.Text = "Varonil";
             this.rbVaronil.UseVisualStyleBackColor = true;
             this.rbVaronil.CheckedChanged += new System.EventHandler(this.rbVaronil_CheckedChanged);
@@ -147,7 +147,7 @@
             this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(329, 21);
-            this.comboBoxCategorias.TabIndex = 33;
+            this.comboBoxCategorias.TabIndex = 4;
             this.comboBoxCategorias.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorias_SelectedIndexChanged);
             // 
             // textBoxNombreT
@@ -156,7 +156,7 @@
             this.textBoxNombreT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBoxNombreT.Name = "textBoxNombreT";
             this.textBoxNombreT.Size = new System.Drawing.Size(329, 20);
-            this.textBoxNombreT.TabIndex = 32;
+            this.textBoxNombreT.TabIndex = 1;
             this.textBoxNombreT.TextChanged += new System.EventHandler(this.textBoxNombreT_TextChanged);
             // 
             // labelDivisiones
@@ -289,7 +289,7 @@
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(126, 32);
-            this.buttonAgregar.TabIndex = 39;
+            this.buttonAgregar.TabIndex = 6;
             this.buttonAgregar.Text = "Agregar";
             this.buttonAgregar.UseVisualStyleBackColor = true;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
@@ -302,7 +302,7 @@
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(126, 32);
-            this.buttonEliminar.TabIndex = 40;
+            this.buttonEliminar.TabIndex = 8;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
@@ -339,7 +339,7 @@
             this.buttonCrearT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonCrearT.Name = "buttonCrearT";
             this.buttonCrearT.Size = new System.Drawing.Size(221, 96);
-            this.buttonCrearT.TabIndex = 43;
+            this.buttonCrearT.TabIndex = 9;
             this.buttonCrearT.Text = "Crear Torneo";
             this.buttonCrearT.UseVisualStyleBackColor = true;
             this.buttonCrearT.Click += new System.EventHandler(this.buttonCrearT_Click);
@@ -352,16 +352,10 @@
             this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(145, 32);
-            this.buttonLimpiar.TabIndex = 44;
+            this.buttonLimpiar.TabIndex = 10;
             this.buttonLimpiar.Text = "Limpiar Campos";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.UpdateOrder = BoxManager.Reportes.GraficaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // progressBarPeleas
             // 
@@ -371,10 +365,6 @@
             this.progressBarPeleas.Step = 3;
             this.progressBarPeleas.TabIndex = 45;
             this.progressBarPeleas.Visible = false;
-            // 
-            // reporteGraficaTableAdapter1
-            // 
-            this.reporteGraficaTableAdapter1.ClearBeforeFill = true;
             // 
             // labelCreandoRandom
             // 
@@ -391,6 +381,16 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = BoxManager.Reportes.GraficaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // reporteGraficaTableAdapter1
+            // 
+            this.reporteGraficaTableAdapter1.ClearBeforeFill = true;
             // 
             // CrearTorneo
             // 

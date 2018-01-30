@@ -16,7 +16,6 @@ namespace BoxManager
         public Menu()
         {
             InitializeComponent();
-
             registro = action.obtenerRegistros();
             llenarRegistrios();
         }
@@ -85,6 +84,11 @@ namespace BoxManager
         {
             this.Hide();
             new Interfaces.AdmisnitrarTorneo().Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new Interfaces.AboutUs().Show();
         }
     }
 }

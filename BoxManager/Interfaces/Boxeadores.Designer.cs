@@ -69,7 +69,7 @@
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(89, 32);
-            this.buttonCancelar.TabIndex = 15;
+            this.buttonCancelar.TabIndex = 10;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -82,7 +82,7 @@
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(112, 32);
-            this.buttonEliminar.TabIndex = 14;
+            this.buttonEliminar.TabIndex = 11;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
@@ -95,7 +95,7 @@
             this.buttonEditar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(96, 32);
-            this.buttonEditar.TabIndex = 13;
+            this.buttonEditar.TabIndex = 9;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
@@ -108,7 +108,7 @@
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(117, 32);
-            this.buttonAgregar.TabIndex = 12;
+            this.buttonAgregar.TabIndex = 8;
             this.buttonAgregar.Text = "Agregar";
             this.buttonAgregar.UseVisualStyleBackColor = true;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
@@ -159,7 +159,7 @@
             this.comboBoxMunicipios.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMunicipios.Name = "comboBoxMunicipios";
             this.comboBoxMunicipios.Size = new System.Drawing.Size(329, 25);
-            this.comboBoxMunicipios.TabIndex = 13;
+            this.comboBoxMunicipios.TabIndex = 7;
             this.comboBoxMunicipios.ValueMember = "Id_Municipio";
             this.comboBoxMunicipios.SelectedIndexChanged += new System.EventHandler(this.comboBoxMunicipios_SelectedIndexChanged);
             // 
@@ -171,7 +171,7 @@
             this.comboBoxDivisiones.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxDivisiones.Name = "comboBoxDivisiones";
             this.comboBoxDivisiones.Size = new System.Drawing.Size(330, 25);
-            this.comboBoxDivisiones.TabIndex = 10;
+            this.comboBoxDivisiones.TabIndex = 6;
             // 
             // dtpFechaN
             // 
@@ -183,7 +183,7 @@
             this.dtpFechaN.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFechaN.Name = "dtpFechaN";
             this.dtpFechaN.Size = new System.Drawing.Size(118, 19);
-            this.dtpFechaN.TabIndex = 12;
+            this.dtpFechaN.TabIndex = 4;
             this.dtpFechaN.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFechaN.ValueChanged += new System.EventHandler(this.dtpFechaN_ValueChanged);
             // 
@@ -195,7 +195,7 @@
             this.rbFemenil.Margin = new System.Windows.Forms.Padding(2);
             this.rbFemenil.Name = "rbFemenil";
             this.rbFemenil.Size = new System.Drawing.Size(82, 21);
-            this.rbFemenil.TabIndex = 11;
+            this.rbFemenil.TabIndex = 3;
             this.rbFemenil.Text = "Femenil";
             this.rbFemenil.UseVisualStyleBackColor = true;
             this.rbFemenil.CheckedChanged += new System.EventHandler(this.rbFemenil_CheckedChanged);
@@ -209,7 +209,7 @@
             this.rbVaronil.Margin = new System.Windows.Forms.Padding(2);
             this.rbVaronil.Name = "rbVaronil";
             this.rbVaronil.Size = new System.Drawing.Size(77, 21);
-            this.rbVaronil.TabIndex = 10;
+            this.rbVaronil.TabIndex = 2;
             this.rbVaronil.TabStop = true;
             this.rbVaronil.Text = "Varonil";
             this.rbVaronil.UseVisualStyleBackColor = true;
@@ -223,7 +223,7 @@
             this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(308, 25);
-            this.comboBoxCategorias.TabIndex = 9;
+            this.comboBoxCategorias.TabIndex = 5;
             this.comboBoxCategorias.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorias_SelectedIndexChanged);
             // 
             // textBoxNombre
@@ -232,7 +232,7 @@
             this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(308, 23);
-            this.textBoxNombre.TabIndex = 8;
+            this.textBoxNombre.TabIndex = 1;
             // 
             // labelEdad
             // 
@@ -317,7 +317,7 @@
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(360, 20);
-            this.textBoxBuscar.TabIndex = 1;
+            this.textBoxBuscar.TabIndex = 12;
             this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // buttonMenu
@@ -328,7 +328,7 @@
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 41);
-            this.buttonMenu.TabIndex = 9;
+            this.buttonMenu.TabIndex = 13;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);

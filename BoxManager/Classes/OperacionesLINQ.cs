@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,7 +10,12 @@ namespace BoxManager.Classes
     {
 
         //Variables
-        BoxDBDataContext Database = new BoxDBDataContext();
+        //BoxDBDataContext Database = new BoxDBDataContext();
+
+        static string path = Path.GetFullPath(Environment.CurrentDirectory);
+        static string databaseName = "BoxManagerDB.mdf";
+        static string cnx = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=" + path + @"\" + databaseName + ";Integrated Security=True";
+        BoxDBDataContext Database = new BoxDBDataContext(cnx);
 
         ///////////////BOXEADORES//////////////////////////
 

@@ -74,6 +74,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.2\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -119,6 +120,12 @@
       <DependentUpon>BoxDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Classes\OperacionesLINQ.cs" />
+    <Compile Include="Interfaces\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Acciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +187,9 @@
       <DependentUpon>ReporteTorneos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Interfaces\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\AdmisnitrarTorneo.resx">
       <DependentUpon>AdmisnitrarTorneo.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,7 +318,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\BoxMenu.png" />
@@ -336,6 +348,7 @@
       <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Recursos\info.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

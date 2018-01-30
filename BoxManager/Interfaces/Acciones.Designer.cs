@@ -81,7 +81,7 @@
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 41);
-            this.buttonMenu.TabIndex = 18;
+            this.buttonMenu.TabIndex = 5;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -103,7 +103,7 @@
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(279, 20);
-            this.textBoxBuscar.TabIndex = 20;
+            this.textBoxBuscar.TabIndex = 4;
             this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // groupBoxBusqueda
@@ -130,7 +130,7 @@
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(82, 45);
-            this.buttonBuscar.TabIndex = 22;
+            this.buttonBuscar.TabIndex = 3;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
@@ -145,7 +145,7 @@
             this.dtpFecha2.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFecha2.Name = "dtpFecha2";
             this.dtpFecha2.Size = new System.Drawing.Size(118, 19);
-            this.dtpFecha2.TabIndex = 14;
+            this.dtpFecha2.TabIndex = 2;
             this.dtpFecha2.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // label1
@@ -169,7 +169,7 @@
             this.dtpFecha1.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpFecha1.Name = "dtpFecha1";
             this.dtpFecha1.Size = new System.Drawing.Size(118, 19);
-            this.dtpFecha1.TabIndex = 12;
+            this.dtpFecha1.TabIndex = 1;
             this.dtpFecha1.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // labelFecha1

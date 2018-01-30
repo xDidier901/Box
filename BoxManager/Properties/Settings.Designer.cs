@@ -26,8 +26,8 @@ namespace BoxManager.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BoxManagerDB;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\v11.0;AttachDbFilename=C:\\BoxManagerDB.mdf;Initial Catalog=" +
+            "BoxManagerDB;Integrated Security=True")]
         public string BoxManagerDBConnectionString {
             get {
                 return ((string)(this["BoxManagerDBConnectionString"]));

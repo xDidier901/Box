@@ -70,7 +70,7 @@
             this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(82, 41);
-            this.buttonMenu.TabIndex = 26;
+            this.buttonMenu.TabIndex = 8;
             this.buttonMenu.Text = "Menú";
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -123,7 +123,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(577, 183);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(110, 30);
-            this.buttonCancelar.TabIndex = 35;
+            this.buttonCancelar.TabIndex = 3;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -136,7 +136,7 @@
             this.buttonImprimir.Location = new System.Drawing.Point(577, 219);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(110, 30);
-            this.buttonImprimir.TabIndex = 34;
+            this.buttonImprimir.TabIndex = 6;
             this.buttonImprimir.Text = "Imprimir";
             this.buttonImprimir.UseVisualStyleBackColor = true;
             this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
@@ -149,7 +149,7 @@
             this.buttonGanador.Location = new System.Drawing.Point(577, 147);
             this.buttonGanador.Name = "buttonGanador";
             this.buttonGanador.Size = new System.Drawing.Size(110, 30);
-            this.buttonGanador.TabIndex = 33;
+            this.buttonGanador.TabIndex = 2;
             this.buttonGanador.Text = "Ganador";
             this.buttonGanador.UseVisualStyleBackColor = true;
             this.buttonGanador.Click += new System.EventHandler(this.buttonGanador_Click);
@@ -171,7 +171,7 @@
             this.buttonGuardarCambios.Location = new System.Drawing.Point(577, 403);
             this.buttonGuardarCambios.Name = "buttonGuardarCambios";
             this.buttonGuardarCambios.Size = new System.Drawing.Size(110, 47);
-            this.buttonGuardarCambios.TabIndex = 38;
+            this.buttonGuardarCambios.TabIndex = 4;
             this.buttonGuardarCambios.Text = "Guardar Cambios";
             this.buttonGuardarCambios.UseVisualStyleBackColor = true;
             this.buttonGuardarCambios.Click += new System.EventHandler(this.buttonGuardarCambios_Click);
@@ -185,7 +185,7 @@
             this.comboBoxTorneos.Location = new System.Drawing.Point(173, 123);
             this.comboBoxTorneos.Name = "comboBoxTorneos";
             this.comboBoxTorneos.Size = new System.Drawing.Size(288, 21);
-            this.comboBoxTorneos.TabIndex = 39;
+            this.comboBoxTorneos.TabIndex = 1;
             this.comboBoxTorneos.SelectedIndexChanged += new System.EventHandler(this.comboBoxTorneos_SelectedIndexChanged);
             this.comboBoxTorneos.SelectionChangeCommitted += new System.EventHandler(this.comboBoxTorneos_SelectionChangeCommitted);
             // 
@@ -196,7 +196,7 @@
             this.buttonEliminarTorneo.Location = new System.Drawing.Point(864, 27);
             this.buttonEliminarTorneo.Name = "buttonEliminarTorneo";
             this.buttonEliminarTorneo.Size = new System.Drawing.Size(110, 47);
-            this.buttonEliminarTorneo.TabIndex = 40;
+            this.buttonEliminarTorneo.TabIndex = 7;
             this.buttonEliminarTorneo.Text = "Eliminar Torneo";
             this.buttonEliminarTorneo.UseVisualStyleBackColor = true;
             this.buttonEliminarTorneo.Click += new System.EventHandler(this.buttonEliminarTorneo_Click);
@@ -209,7 +209,7 @@
             this.buttonEtapa.Location = new System.Drawing.Point(577, 328);
             this.buttonEtapa.Name = "buttonEtapa";
             this.buttonEtapa.Size = new System.Drawing.Size(110, 45);
-            this.buttonEtapa.TabIndex = 41;
+            this.buttonEtapa.TabIndex = 5;
             this.buttonEtapa.Text = "Siguiente Etapa";
             this.buttonEtapa.UseVisualStyleBackColor = true;
             this.buttonEtapa.Click += new System.EventHandler(this.buttonEtapa_Click);
